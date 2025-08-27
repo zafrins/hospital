@@ -1044,10 +1044,24 @@
           }
         }
       },
+      "Hospital.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Hospital.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hospital.Models.dll": {}
+        }
+      },
       "Hospital.Repositories/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Hospital.Models": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
         },
@@ -2840,6 +2854,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Hospital.Models/1.0.0": {
+      "type": "project",
+      "path": "../Hospital.Models/Hospital.Models.csproj",
+      "msbuildProject": "../Hospital.Models/Hospital.Models.csproj"
+    },
     "Hospital.Repositories/1.0.0": {
       "type": "project",
       "path": "../Hospital.Repositories/Hospital.Repositories.csproj",
@@ -2848,6 +2867,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Hospital.Models >= 1.0.0",
       "Hospital.Repositories >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
       "Microsoft.Extensions.Identity.Stores >= 8.0.11"
@@ -2886,6 +2906,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "D:\\SD3.2\\Hospital\\Hospital.Models\\Hospital.Models.csproj": {
+              "projectPath": "D:\\SD3.2\\Hospital\\Hospital.Models\\Hospital.Models.csproj"
+            },
             "D:\\SD3.2\\Hospital\\Hospital.Repositories\\Hospital.Repositories.csproj": {
               "projectPath": "D:\\SD3.2\\Hospital\\Hospital.Repositories\\Hospital.Repositories.csproj"
             }
