@@ -1,0 +1,14 @@
+D:\SD3.2\Hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.deps.json
+D:\SD3.2\Hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.runtimeconfig.json
+D:\SD3.2\Hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.dll
+D:\SD3.2\Hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.pdb
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.csproj.AssemblyReference.cache
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.AssemblyInfoInputs.cache
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.AssemblyInfo.cs
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.csproj.CoreCompileInputs.cache
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.dll
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\refint\Hospital.Repositories.dll
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.pdb
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.genruntimeconfig.cache
+D:\SD3.2\Hospital\Hospital.Repositories\obj\Debug\net8.0\ref\Hospital.Repositories.dll
