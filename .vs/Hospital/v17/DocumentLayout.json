@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\SD3.2\\Hospital\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3A86C154-89C2-4A2E-A212-830BDD0B1466}|Hospital.Models\\Hospital.Models.csproj|d:\\sd3.2\\hospital\\hospital.models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A86C154-89C2-4A2E-A212-830BDD0B1466}|Hospital.Models\\Hospital.Models.csproj|solutionrelative:hospital.models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{79F75F0F-55EC-4DCF-8A4C-7D0167F3C5D0}|Hospitals.Utilities\\Hospitals.Utilities.csproj|d:\\sd3.2\\hospital\\hospitals.utilities\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79F75F0F-55EC-4DCF-8A4C-7D0167F3C5D0}|Hospitals.Utilities\\Hospitals.Utilities.csproj|solutionrelative:hospitals.utilities\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3A86C154-89C2-4A2E-A212-830BDD0B1466}|Hospital.Models\\Hospital.Models.csproj|d:\\sd3.2\\hospital\\hospital.models\\hospital.models.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{3A86C154-89C2-4A2E-A212-830BDD0B1466}|Hospital.Models\\Hospital.Models.csproj|solutionrelative:hospital.models\\hospital.models.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A86C154-89C2-4A2E-A212-830BDD0B1466}|Hospital.Models\\Hospital.Models.csproj|d:\\sd3.2\\hospital\\hospital.models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A86C154-89C2-4A2E-A212-830BDD0B1466}|Hospital.Models\\Hospital.Models.csproj|solutionrelative:hospital.models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{79F75F0F-55EC-4DCF-8A4C-7D0167F3C5D0}|Hospitals.Utilities\\Hospitals.Utilities.csproj|d:\\sd3.2\\hospital\\hospitals.utilities\\hospitals.utilities.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -58,30 +58,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Hospital.Models",
+              "DocumentIndex": 3,
+              "Title": "Hospital.Models.csproj",
               "DocumentMoniker": "D:\\SD3.2\\Hospital\\Hospital.Models\\Hospital.Models.csproj",
               "RelativeDocumentMoniker": "Hospital.Models\\Hospital.Models.csproj",
               "ToolTip": "D:\\SD3.2\\Hospital\\Hospital.Models\\Hospital.Models.csproj",
               "RelativeToolTip": "Hospital.Models\\Hospital.Models.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-27T05:18:19.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T05:18:19.655Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\SD3.2\\Hospital\\Hospital.Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Hospital.Models\\ApplicationUser.cs",
               "ToolTip": "D:\\SD3.2\\Hospital\\Hospital.Models\\ApplicationUser.cs",
               "RelativeToolTip": "Hospital.Models\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T05:13:29.291Z",
               "EditorCaption": ""
@@ -89,19 +88,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Hospitals.Utilities",
+              "Title": "Hospitals.Utilities.csproj",
               "DocumentMoniker": "D:\\SD3.2\\Hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj",
               "RelativeDocumentMoniker": "Hospitals.Utilities\\Hospitals.Utilities.csproj",
               "ToolTip": "D:\\SD3.2\\Hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj",
               "RelativeToolTip": "Hospitals.Utilities\\Hospitals.Utilities.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-27T05:01:37.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T05:01:37.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DbInitializer.cs",
               "DocumentMoniker": "D:\\SD3.2\\Hospital\\Hospitals.Utilities\\DbInitializer.cs",
               "RelativeDocumentMoniker": "Hospitals.Utilities\\DbInitializer.cs",
@@ -122,8 +120,7 @@
               "RelativeToolTip": "Hospitals.Utilities\\IDbInitializer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T04:58:23.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T04:58:23.314Z"
             },
             {
               "$type": "Document",
@@ -135,8 +132,7 @@
               "RelativeToolTip": "Hospitals.Utilities\\WebSiteRoles.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T04:55:45.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T04:55:45.741Z"
             },
             {
               "$type": "Document",
@@ -148,8 +144,7 @@
               "RelativeToolTip": "Hospital.Web\\ScaffoldingReadMe.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-08-27T04:49:52.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T04:49:52.074Z"
             },
             {
               "$type": "Document",
@@ -161,8 +156,7 @@
               "RelativeToolTip": "Hospital.Web\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T03:40:21.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T03:40:21.064Z"
             },
             {
               "$type": "Document",
@@ -174,8 +168,7 @@
               "RelativeToolTip": "Hospital.Web\\Hospital.Web.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-27T03:39:56.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T03:39:56.295Z"
             },
             {
               "$type": "Document",
@@ -187,8 +180,7 @@
               "RelativeToolTip": "Hospital.Web\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-27T03:39:00.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T03:39:00.366Z"
             },
             {
               "$type": "Document",
@@ -200,12 +192,11 @@
               "RelativeToolTip": "Hospital.Repositories\\Hospital.Repositories.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-27T03:18:56.289Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T03:18:56.289Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\SD3.2\\Hospital\\Hospital.Repositories\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Hospital.Repositories\\ApplicationDbContext.cs",
@@ -213,8 +204,7 @@
               "RelativeToolTip": "Hospital.Repositories\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAADgvxIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T03:22:26.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-27T03:22:26.361Z"
             },
             {
               "$type": "Bookmark",
