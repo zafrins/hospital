@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace Hospital.Repositories
 {
-
     public class ApplicationDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
         {
             // Constructor body added to fix CS0501
         }
+
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

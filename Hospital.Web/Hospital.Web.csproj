@@ -20,6 +20,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Hospital.Repositories\Hospital.Repositories.csproj" />
+    <ProjectReference Include="..\Hospitals.Utilities\Hospitals.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Doctor\Controllers\" />
+    <Folder Include="Areas\Doctor\Views\" />
   </ItemGroup>
 
 </Project>
