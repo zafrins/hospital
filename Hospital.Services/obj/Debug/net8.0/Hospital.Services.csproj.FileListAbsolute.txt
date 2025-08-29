@@ -1,0 +1,12 @@
+D:\SD3.2\Hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.deps.json
+D:\SD3.2\Hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.dll
+D:\SD3.2\Hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.pdb
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.AssemblyInfoInputs.cache
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.AssemblyInfo.cs
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.csproj.CoreCompileInputs.cache
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.sourcelink.json
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.dll
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\refint\Hospital.Services.dll
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.pdb
+D:\SD3.2\Hospital\Hospital.Services\obj\Debug\net8.0\ref\Hospital.Services.dll
