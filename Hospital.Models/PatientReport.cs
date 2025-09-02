@@ -13,6 +13,7 @@ namespace Hospital.Models
         public ApplicationUser Doctor { get; set; }
         public ApplicationUser Patient { get; set; }
 
-        public ICollection<PrescribedMedicine> PrescribedMedicine{ get;
-    }
+        public ICollection<PrescribedMedicine> PrescribedMedicine { get;
+        }
+}
 }

@@ -17,3 +17,4 @@ namespace Hospital.Models
         public ICollection<MedicineReport> MedicineReport { get; set;
     }
 }
+}
