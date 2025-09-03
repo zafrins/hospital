@@ -11,7 +11,7 @@ namespace Hospital.Web.Controllers
     public class ContactsController : Controller
     {
 
-        private IRoomService _contact;
+        private IContactService _contact;
         private IHospitalInfo _hospitalInfo;
 
         public ContactsController(IContactService contact,IHospitalInfo hospitalInfo)
@@ -28,16 +28,16 @@ namespace Hospital.Web.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            ViewBag.Hospitals = new SelectList(_hospitalInfo.GetAll(1, 100).Data, "Id", "Name");
-            var viewModel = _contact.GetContactByID(id);
+            ViewBag.hospital = new SelectList(_hospitalInfo.GetAll(1, 100).Data, "Id", "Name");
+            var viewModel = _contact.GetContactById(id);
             return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult Edit(RoomViewModel vm)
+        public IActionResult Edit(ContactViewModel vm)
         {
 
-            _room.UpdateRoom(vm);
+            _contact.UpdateContact(vm);
             return RedirectToAction("Index");
         }
         [HttpGet]
@@ -46,15 +46,15 @@ namespace Hospital.Web.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(RoomViewModel vm)
+        public IActionResult Create(ContactViewModel vm)
         {
-            _room.InsertRoom(vm);
+            _contact.InsertContact(vm);
             return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
         {
-            _room.DeleteRoom(id);
+            _contact.DeleteContact(id);
             return View("Index");
         }
     }
