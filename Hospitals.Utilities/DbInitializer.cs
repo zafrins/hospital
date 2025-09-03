@@ -12,11 +12,11 @@ namespace Hospitals.Utilities
 {
     public class DbInitializer : IDbInitializer
     {
-        private UserManager<IdentityUser> _userManager;
+        private UserManager<IdentityUser> _userManager;  
         private RoleManager<IdentityRole> _roleManager;
         private ApplicationDbContext _context;
 
-        public DbInitializer(UserManager<IdentityUser> userManager,
+        public DbInitializer(UserManager<IdentityUser> userManager,    
             RoleManager<IdentityRole> roleManager,
             ApplicationDbContext context)
         {
@@ -57,18 +57,6 @@ namespace Hospitals.Utilities
 
                 }
             }
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
