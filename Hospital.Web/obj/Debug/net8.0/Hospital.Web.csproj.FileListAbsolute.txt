@@ -904,3 +904,9 @@ D:\sdpr\Hospital.Web\obj\Debug\net8.0\refint\Hospital.Web.dll
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\Hospital.Web.pdb
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\Hospital.Web.genruntimeconfig.cache
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\ref\Hospital.Web.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Hospital.Services.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Hospital.ViewModels.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Hospital.Services.pdb
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Hospital.ViewModels.pdb
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\cloudscribe.Pagination.Models.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\cloudscribe.Web.Pagination.dll
