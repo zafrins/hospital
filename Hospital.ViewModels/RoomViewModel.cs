@@ -22,7 +22,6 @@ namespace Hospital.ViewModels
         public HospitalInfo HospitalInfo { get; set; }
 
 
-
         public RoomViewModel()
         {
             

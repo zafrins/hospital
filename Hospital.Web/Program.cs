@@ -1,12 +1,13 @@
+using Hospital.Models;
 using Hospital.Repositories;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Internal;
-using Hospitals.Utilities;
-using Hospital.Repositories.Interfaces;
 using Hospital.Repositories.Implementation;
-using Microsoft.AspNetCore.Identity.UI.Services;
+using Hospital.Repositories.Interfaces;
 using Hospital.Services;
+using Hospitals.Utilities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,8 +17,13 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+
+
+//change korsi ektu
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
 
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();

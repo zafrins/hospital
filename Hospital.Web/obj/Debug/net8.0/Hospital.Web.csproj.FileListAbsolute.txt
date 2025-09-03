@@ -595,7 +595,6 @@ D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.b
 D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.development.json
 D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\Hospital.D7BD65CF.Up2Date
 D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\Hospital.Web.dll
 D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\refint\Hospital.Web.dll
@@ -910,3 +909,10 @@ D:\sdpr\Hospital.Web\bin\Debug\net8.0\Hospital.Services.pdb
 D:\sdpr\Hospital.Web\bin\Debug\net8.0\Hospital.ViewModels.pdb
 D:\sdpr\Hospital.Web\bin\Debug\net8.0\cloudscribe.Pagination.Models.dll
 D:\sdpr\Hospital.Web\bin\Debug\net8.0\cloudscribe.Web.Pagination.dll
+D:\Downloads\subject\sd\hospital\Hospital.Web\bin\Debug\net8.0\cloudscribe.Pagination.Models.dll
+D:\Downloads\subject\sd\hospital\Hospital.Web\bin\Debug\net8.0\cloudscribe.Web.Pagination.dll
+D:\Downloads\subject\sd\hospital\Hospital.Web\bin\Debug\net8.0\Hospital.Services.dll
+D:\Downloads\subject\sd\hospital\Hospital.Web\bin\Debug\net8.0\Hospital.ViewModels.dll
+D:\Downloads\subject\sd\hospital\Hospital.Web\bin\Debug\net8.0\Hospital.Services.pdb
+D:\Downloads\subject\sd\hospital\Hospital.Web\bin\Debug\net8.0\Hospital.ViewModels.pdb
+D:\Downloads\subject\sd\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
