@@ -1,45 +1,81 @@
 ﻿@model Hospital.ViewModels.ContactViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Contact";
 }
 
-<h1>Create</h1>
+<div class="container my-5">
 
-<h4>ContactViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="text-success fw-bold">Create Contact</h1>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left-circle me-1"></i> Back to List
+        </a>
+    </div>
+
+    <!-- Form Card -->
+    <div class="card shadow-sm p-4 bg-light rounded">
+        <h4 class="mb-3 text-success">Contact Details</h4>
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Id" class="form-label fw-bold"></label>
                 <input asp-for="Id" class="form-control" />
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label fw-bold"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Phone" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label fw-bold"></label>
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="HospitalInfoId" class="control-label"></label>
+
+            <div class="mb-3">
+                <label asp-for="HospitalInfoId" class="form-label fw-bold"></label>
                 <input asp-for="HospitalInfoId" class="form-control" />
                 <span asp-validation-for="HospitalInfoId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="d-flex justify-content-end gap-2">
+                <input type="submit" value="Create" class="btn btn-gradient-success" />
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<style>
+    /* Gradient button for create */
+    .btn-gradient-success {
+        background: linear-gradient(45deg, #28a745, #218838);
+        color: #fff;
+        border: none;
+        transition: all 0.2s;
+    }
 
+        .btn-gradient-success:hover {
+            background: linear-gradient(45deg, #218838, #28a745);
+            box-shadow: 0 4px 8px rgba(33, 136, 56, 0.3);
+        }
+
+    /* Card style */
+    .bg-light {
+        background: #f9fef9;
+    }
+
+    .form-label {
+        font-size: 0.95rem;
+    }
+
+    input.form-control {
+        border-radius: 0.5rem;
+    }
+</style>

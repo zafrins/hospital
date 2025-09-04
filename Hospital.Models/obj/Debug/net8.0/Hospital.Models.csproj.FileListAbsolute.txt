@@ -37,3 +37,16 @@ D:\sdpr\Hospital.Models\bin\Debug\net8.0\Hospital.Models.deps.json
 D:\sdpr\Hospital.Models\bin\Debug\net8.0\Hospital.Models.dll
 D:\sdpr\Hospital.Models\bin\Debug\net8.0\Hospital.Models.pdb
 D:\sdpr\Hospital.Models\obj\Debug\net8.0\ref\Hospital.Models.dll
+D:\3.2\SDHospital\Hospital.Models\bin\Debug\net8.0\Hospital.Models.deps.json
+D:\3.2\SDHospital\Hospital.Models\bin\Debug\net8.0\Hospital.Models.dll
+D:\3.2\SDHospital\Hospital.Models\bin\Debug\net8.0\Hospital.Models.pdb
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\Hospital.Models.csproj.AssemblyReference.cache
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\Hospital.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\Hospital.Models.AssemblyInfoInputs.cache
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\Hospital.Models.AssemblyInfo.cs
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\Hospital.Models.csproj.CoreCompileInputs.cache
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\Hospital.Models.sourcelink.json
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\Hospital.Models.dll
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\refint\Hospital.Models.dll
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\Hospital.Models.pdb
+D:\3.2\SDHospital\Hospital.Models\obj\Debug\net8.0\ref\Hospital.Models.dll

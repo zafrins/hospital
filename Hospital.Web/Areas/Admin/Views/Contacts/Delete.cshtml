@@ -1,44 +1,68 @@
 ﻿@model Hospital.ViewModels.ContactViewModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Delete Contact";
 }
 
-<h1>Delete</h1>
+<div class="container my-5">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ContactViewModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HospitalInfoId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HospitalInfoId)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="text-danger fw-bold">Delete Contact</h1>
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left-circle me-1"></i> Back to List
+        </a>
+    </div>
+
+    <!-- Confirmation Card -->
+    <div class="card shadow-sm p-4 bg-light rounded">
+        <h5 class="text-warning fw-bold mb-3">Are you sure you want to delete this contact?</h5>
+        <dl class="row mb-4">
+            <dt class="col-sm-3 fw-bold">Id</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Id)</dd>
+
+            <dt class="col-sm-3 fw-bold">Email</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt class="col-sm-3 fw-bold">Phone</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Phone)</dd>
+
+            <dt class="col-sm-3 fw-bold">Hospital</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.HospitalInfoId)</dd>
+        </dl>
+
+        <form asp-action="Delete" class="d-flex justify-content-end gap-2">
+            <input type="submit" value="Delete" class="btn btn-gradient-danger" />
+            <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+        </form>
+    </div>
+
 </div>
+
+<style>
+    /* Gradient delete button */
+    .btn-gradient-danger {
+        background: linear-gradient(45deg, #dc3545, #b02a37);
+        color: #fff;
+        border: none;
+        transition: all 0.2s;
+    }
+
+        .btn-gradient-danger:hover {
+            background: linear-gradient(45deg, #b02a37, #dc3545);
+            box-shadow: 0 4px 8px rgba(220,53,69,0.3);
+        }
+
+    /* Card style */
+    .bg-light {
+        background: #f9fef9;
+    }
+
+    dt {
+        font-size: 0.95rem;
+    }
+
+    dd {
+        font-size: 0.95rem;
+    }
+</style>

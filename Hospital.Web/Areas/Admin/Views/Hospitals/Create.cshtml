@@ -4,48 +4,114 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
 
-<h4>HospitalInfoViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h1 class="dashboard-title mb-4">Add New Hospital</h1>
 
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+            <div class="card shadow-sm border-success border-2 p-4 form-card">
+                <form asp-action="Create" novalidate>
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label fw-semibold"></label>
+                        <input asp-for="Name" class="form-control form-control-pill" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Type" class="form-label fw-semibold"></label>
+                        <input asp-for="Type" class="form-control form-control-pill" />
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="City" class="form-label fw-semibold"></label>
+                        <input asp-for="City" class="form-control form-control-pill" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="PinCode" class="form-label fw-semibold"></label>
+                        <input asp-for="PinCode" class="form-control form-control-pill" />
+                        <span asp-validation-for="PinCode" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Country" class="form-label fw-semibold"></label>
+                        <input asp-for="Country" class="form-control form-control-pill" />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <input type="submit" value="Create" class="btn btn-gradient-green flex-fill me-2" />
+                        <a asp-action="Index" class="btn btn-outline-secondary flex-fill">Back</a>
+                    </div>
+
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <input asp-for="Type" class="form-control" />
-                <span asp-validation-for="Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PinCode" class="control-label"></label>
-                <input asp-for="PinCode" class="form-control" />
-                <span asp-validation-for="PinCode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
-                <input asp-for="Country" class="form-control" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<style>
+    /* Form card */
+    .form-card {
+        border-radius: 1rem;
+        background: #ffffff;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
+        .form-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 128, 0, 0.08);
+        }
+
+    /* Dashboard title */
+    .dashboard-title {
+        font-weight: 700;
+        font-size: 2rem;
+        color: #198754;
+    }
+
+    /* Pill-shaped inputs */
+    .form-control-pill {
+        border-radius: 50px;
+        padding: 0.55rem 1rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+
+        .form-control-pill:focus {
+            box-shadow: 0 4px 10px rgba(0,128,0,0.2);
+            transform: translateY(-1px);
+            border-color: #28a745;
+        }
+
+    /* Labels */
+    .form-label {
+        font-weight: 600;
+    }
+
+    /* Gradient buttons */
+    .btn-gradient-green {
+        border: none;
+        border-radius: 50px;
+        font-weight: 500;
+        background: linear-gradient(90deg, #28a745, #20c997);
+        color: #fff;
+        transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+        .btn-gradient-green:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+    /* Back button */
+    .btn-outline-secondary {
+        border-radius: 50px;
+        font-weight: 500;
+    }
+</style>
