@@ -123,12 +123,12 @@ namespace Hospital.Repositories.Implementation
             return entity;
         }
 
-    //    public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
-    //Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-    //string includeProperties = "")
-    //    {
-    //        throw new NotImplementedException();
-    //    }
+        //    public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
+        //Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+        //string includeProperties = "")
+        //    {
+        //        throw new NotImplementedException();
+        //    }
 
 
     }

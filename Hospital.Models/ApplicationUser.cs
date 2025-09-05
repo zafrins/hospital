@@ -11,7 +11,7 @@ namespace Hospital.Models
     public class ApplicationUser : IdentityUser
     {
         public string Name { get; set; }
-
+        public string City { get; set; }
         public Gender Gender{get;set;}
 
         public string Nationality { get; set; }

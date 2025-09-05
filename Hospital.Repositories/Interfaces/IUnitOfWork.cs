@@ -10,6 +10,6 @@ namespace Hospital.Repositories.Interfaces
     {
         IGenericRepository<T> Repository<T>() where T : class;
         void Save();
-        
+
     }
 }

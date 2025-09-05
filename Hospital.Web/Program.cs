@@ -22,7 +22,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 //change korsi ektu
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+    .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
@@ -31,6 +31,8 @@ builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddTransient<IHospitalInfo, HopitalInfoService>();
 builder.Services.AddTransient<IRoomService, RoomService>();
 builder.Services.AddTransient<IContactService, ContactService>();
+builder.Services.AddTransient<IApplicationUserService, ApplicationUserService>();
+
 builder.Services.AddRazorPages();
 
 
