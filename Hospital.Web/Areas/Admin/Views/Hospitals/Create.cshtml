@@ -54,64 +54,75 @@
         </div>
     </div>
 </div>
-
 <style>
-    /* Form card */
+    /* Form card with gradient and blur */
     .form-card {
         border-radius: 1rem;
-        background: #ffffff;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,250,252,0.85));
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 2rem;
     }
 
         .form-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 128, 0, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(31, 122, 140, 0.15);
         }
 
-    /* Dashboard title */
+    /* Dashboard-style title */
     .dashboard-title {
         font-weight: 700;
-        font-size: 2rem;
-        color: #198754;
+        font-size: 2.3rem;
+        color: #1f7a8c;
+        margin-bottom: 2rem;
     }
 
-    /* Pill-shaped inputs */
+    /* Pill-shaped inputs with subtle glow */
     .form-control-pill {
         border-radius: 50px;
         padding: 0.55rem 1rem;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        transition: box-shadow 0.2s ease, transform 0.15s ease;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        transition: box-shadow 0.25s ease, transform 0.2s ease, border-color 0.2s ease;
     }
 
         .form-control-pill:focus {
-            box-shadow: 0 4px 10px rgba(0,128,0,0.2);
+            box-shadow: 0 0 8px rgba(31,122,140,0.4);
+            border-color: #1f7a8c;
             transform: translateY(-1px);
-            border-color: #28a745;
         }
 
     /* Labels */
     .form-label {
         font-weight: 600;
+        color: #333;
     }
 
-    /* Gradient buttons */
+    /* Gradient buttons consistent with dashboard */
     .btn-gradient-green {
         border: none;
         border-radius: 50px;
-        font-weight: 500;
-        background: linear-gradient(90deg, #28a745, #20c997);
+        font-weight: 600;
+        background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
         color: #fff;
-        transition: transform 0.15s, box-shadow 0.2s;
+        padding: 0.65rem 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
         .btn-gradient-green:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 18px rgba(31,122,140,0.35);
         }
 
-    /* Back button */
+    /* Back button consistent with style */
     .btn-outline-secondary {
         border-radius: 50px;
-        font-weight: 500;
+        font-weight: 600;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
+
+        .btn-outline-secondary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
 </style>

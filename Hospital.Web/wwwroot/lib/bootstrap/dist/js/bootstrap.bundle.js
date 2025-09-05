@@ -1081,7 +1081,8 @@
 
   const SWIPE_THRESHOLD = 40;
   const Default$a = {
-    interval: 5000,
+      interval: 
+    ,
     keyboard: true,
     slide: false,
     pause: 'hover',

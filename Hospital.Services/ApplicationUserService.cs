@@ -32,7 +32,7 @@ namespace Hospital.Services
                 var modelList = _unitOfWork.Repository<ApplicationUser>()
                       .GetAll().Skip(ExcludeRecords).Take(PageSize).ToList();
 
-                totalCount = _unitOfWork.Repository<ApplicationUser>().GetAll().Count();
+                totalCount = _unitOfWork.Repository<ApplicationUser>().GetAll().ToList().Count;
 
                 vmList = ConvertModelToViewModelList(modelList);
 
@@ -54,13 +54,45 @@ namespace Hospital.Services
                 };
             return result;
         }
-        
 
-       /* public PagedResult<ApplicationUserViewModel> GetAllDoctor(int PageNumber, int PageSize)
-        {
-            throw new NotImplementedException();
-        }*/
 
+        public PagedResult<ApplicationUserViewModel> GetAllDoctor(int PageNumber, int PageSize)
+         {
+            var vm = new ApplicationUserViewModel();
+            int totalCount;
+            List<ApplicationUserViewModel> vmList = new List<ApplicationUserViewModel>();
+            try
+            {
+                int ExcludeRecords = (PageSize * PageNumber) - PageSize;
+
+                var modelList = _unitOfWork.Repository<ApplicationUser>()
+                      .GetAll(x=>x.IsDoctor==true).Skip(ExcludeRecords).Take(PageSize).ToList();
+
+                totalCount = _unitOfWork.Repository<ApplicationUser>().GetAll(x=>x.IsDoctor==true).ToList().Count;
+
+                vmList = ConvertModelToViewModelList(modelList);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            var result = new PagedResult<ApplicationUserViewModel>
+            {
+
+                Data = vmList,
+                TotalItems = totalCount,
+                PageNumber = PageNumber,
+                PageSize = PageSize
+
+
+
+            };
+            return result;
+        }
+
+        /*
         public PagedResult<ApplicationUserViewModel> GetAllDoctor(int PageNumber, int PageSize)
         {
             int totalCount;
@@ -93,7 +125,7 @@ namespace Hospital.Services
                 PageSize = PageSize
             };
         }
-
+        */
         public PagedResult<ApplicationUserViewModel> GetAllPatient(int PageNumber, int PageSize)
         {
             int totalCount;
