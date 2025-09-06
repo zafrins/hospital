@@ -20,3 +20,57 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Custom header styles */
+.header-gradient {
+    background: linear-gradient(90deg, #1f7a8c, #3fb0ac);
+}
+/* Navbar Enhancements */
+.navbar-brand {
+    font-size: 1.6rem; /* Bigger logo text */
+    font-weight: 700; /* Bold */
+    letter-spacing: 1px; /* Space between letters */
+    color: #fff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Glow effect */
+}
+
+.nav-link {
+    font-size: 1.1rem; /* Bigger menu text */
+    font-weight: 600;
+    color: rgba(255,255,255,0.9) !important;
+    padding: 0.75rem 1rem; /* More clickable space */
+    transition: all 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: #fffae3 !important; /* Warmer hover color */
+        text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+        transform: translateY(-3px) scale(1.05); /* Pop effect */
+    }
+
+
+/* Dropdown menu customization */
+.dropdown-menu {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    right: auto !important;
+    background: #1f7a8c; /* Gradient background like header */
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* Remove default border */
+    padding: 0.5rem;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+}
+.dropdown-item {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+    .dropdown-item:hover {
+        background: #3fb0ac;
+        color: #fffae3;
+        padding-left: 1.7rem; /* Slight slide effect without breaking alignment */
+    }
