@@ -34,6 +34,8 @@ builder.Services.AddTransient<IDoctorService, DoctorService>();
 builder.Services.AddTransient<IRoomService, RoomService>();
 builder.Services.AddTransient<IContactService, ContactService>();
 builder.Services.AddTransient<IApplicationUserService, ApplicationUserService>();
+builder.Services.AddScoped<IMedicineService, MedicineService>();
+
 
 builder.Services.AddRazorPages();
 

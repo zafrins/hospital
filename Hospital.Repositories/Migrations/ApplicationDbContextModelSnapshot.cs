@@ -282,9 +282,23 @@ namespace Hospital.Repositories.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Manufacturer")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.Property<string>("Type")
                         .IsRequired()

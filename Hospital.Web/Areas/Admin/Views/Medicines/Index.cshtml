@@ -1,0 +1,84 @@
+﻿@using Hospitals.Utilities
+@model PagedResult<Hospital.ViewModels.MedicineViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Cost
+            </th>
+            <th>
+               Description
+            </th>
+            <th>
+                Stock
+            </th>
+            <th>
+                ExpiryDate
+            </th>
+            <th>
+                Manufacturer
+            </th>
+            <th>
+                ImageUrl
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Data) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpiryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

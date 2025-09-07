@@ -611,7 +611,6 @@ D:\sdpr\Hospital.Web\obj\Debug\net8.0\staticwebassets.build.json
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\staticwebassets.development.json
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\sdpr\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\Hospital.D7BD65CF.Up2Date
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\Hospital.Web.dll
 D:\sdpr\Hospital.Web\obj\Debug\net8.0\refint\Hospital.Web.dll
@@ -1235,3 +1234,15 @@ D:\3.2\SDHospital\Hospital.Web\obj\Debug\net8.0\Hospital.Web.pdb
 D:\3.2\SDHospital\Hospital.Web\obj\Debug\net8.0\Hospital.Web.genruntimeconfig.cache
 D:\3.2\SDHospital\Hospital.Web\obj\Debug\net8.0\ref\Hospital.Web.dll
 D:\3.2\SDHospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+D:\sdpr\Hospital.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\sdpr\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
