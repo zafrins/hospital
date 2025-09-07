@@ -4,6 +4,7 @@ wwwroot\Images\f0j3CB.jpg
 wwwroot\Images\hospital1.jpg
 wwwroot\Images\hospital2.jpg
 wwwroot\Images\hospital3.jpg
+wwwroot\Images\hospital4.jpg
 wwwroot\Images\logo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

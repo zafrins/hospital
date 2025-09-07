@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Services
 {
-    public interface IDoctorServices
+    public interface IDoctorService
     {
 
         PagedResult<TimingViewModel> GetAll(int pageNumber, int pageSize);
