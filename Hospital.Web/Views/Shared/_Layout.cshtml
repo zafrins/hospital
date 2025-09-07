@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Hospital.Web</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Hospital.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
 </head>
 <body>
+    <div class="page-wrapper d-flex flex-column min-vh-100">
     <header>
+
         <nav class="navbar navbar-expand-lg navbar-dark header-gradient shadow-sm">
             <div class="container-fluid">
                 <!-- Logo -->
@@ -33,6 +38,10 @@
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Users" asp-action="Index">Users</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Users" asp-action="AllDoctors">Doctors</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Admin" asp-controller="DoctorTimings" asp-action="Index">Doctor Timing</a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="registerDropdown" role="button" data-bs-toggle="dropdown">Register</a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -55,17 +64,37 @@
             </div>
         </nav>
     </header> *@
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
+        <main role="main" class="flex-grow-1">
+            <div class="container py-3">
+                @RenderBody()
+            </div>
         </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Hospital.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+        <footer class ="site-footer">
+            
+            <div class="footer-top py-2">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="footer-brand mb-3 mb-md-0">
+                    <span>HospitalHub</span>
+                </div>
+                <div class="footer-links d-flex flex-wrap gap-3 justify-content-center justify-content-md-end">
+                    <a href="/" class="footer-link">Home</a>
+                    <a href="/Rooms" class="footer-link">Rooms</a>
+                    <a href="/Doctors" class="footer-link">Doctors</a>
+                    <a href="/Contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center py-3">
+            &copy; @DateTime.Now.Year HospitalHub. All rights reserved.
         </div>
     </footer>
+
+    </div>
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
@@ -74,6 +103,25 @@
 </html>
 
 <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* full viewport height */
+    }
+
+    main.flex-grow-1 {
+        flex: 1; /* grow to fill remaining space */
+    }
+
+    .site-footer {
+        margin-top: auto; /* sticky footer */
+    }
+
     /* Header gradient */
     .header-gradient {
         background: linear-gradient(90deg, #1f7a8c, #3fb0ac);
@@ -127,4 +175,115 @@
             color: #fffae3;
             padding-left: 1.8rem;
         }
+
+    /* Footer base */
+    .site-footer {
+        background: linear-gradient(135deg, #0b486b, #1f7a8c, #3fb0ac);
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.25);
+        margin-top: 2rem;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        overflow: hidden;
+    }
+
+    /* Top section */
+    .footer-top {
+        border-bottom: 2px solid rgba(255,255,255,0.15);
+    }
+
+    /* Brand */
+    .footer-brand span {
+        font-size: 1.7rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Footer links */
+    .footer-links a {
+        color: rgba(255,255,255,0.85);
+        font-weight: 500;
+        text-decoration: none;
+        position: relative;
+        padding: 0.3rem 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+        .footer-links a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background: #ffcc70;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .footer-links a:hover::after {
+            width: 60%;
+        }
+
+        .footer-links a:hover {
+            color: #fffae3;
+            transform: translateY(-3px) scale(1.05);
+            text-shadow: 0 0 6px rgba(255,255,255,0.5);
+        }
+
+    /* Bottom section */
+    /* .footer-bottom {
+        font-size: 0.95rem;
+        color: rgba(255,255,255,0.8);
+        background: rgba(0,0,0,0.1);
+    }
+
+    /* Neon glow effect for top section */
+    .footer-top::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(270deg, #28a745, #20c997, #28a745);
+        opacity: 0.1;
+        z-index: 0;
+        border-radius: 20px 20px 0 0;
+        animation: footerGlow 6s linear infinite;
+    }
+
+    @@keyframes footerGlow {
+        0%
+
+    {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .footer-top
+
+    {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    } */
+
+    }
 </style>

@@ -29,6 +29,8 @@ builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddTransient<IHospitalInfo, HopitalInfoService>();
+builder.Services.AddTransient<IDoctorService, DoctorService>();
+
 builder.Services.AddTransient<IRoomService, RoomService>();
 builder.Services.AddTransient<IContactService, ContactService>();
 builder.Services.AddTransient<IApplicationUserService, ApplicationUserService>();

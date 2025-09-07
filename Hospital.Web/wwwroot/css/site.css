@@ -1,76 +1,427 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
+    background: #f7f9fb;
 }
 
-/* Custom header styles */
-.header-gradient {
-    background: linear-gradient(90deg, #1f7a8c, #3fb0ac);
-}
-/* Navbar Enhancements */
-.navbar-brand {
-    font-size: 1.6rem; /* Bigger logo text */
-    font-weight: 700; /* Bold */
-    letter-spacing: 1px; /* Space between letters */
-    color: #fff !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Glow effect */
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
-.nav-link {
-    font-size: 1.1rem; /* Bigger menu text */
-    font-weight: 600;
-    color: rgba(255,255,255,0.9) !important;
-    padding: 0.75rem 1rem; /* More clickable space */
-    transition: all 0.3s ease;
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full viewport height */
 }
 
-    .nav-link:hover {
-        color: #fffae3 !important; /* Warmer hover color */
-        text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
-        transform: translateY(-3px) scale(1.05); /* Pop effect */
+main.flex-grow-1 {
+    flex: 1; /* grow to fill remaining space */
+}
+
+/*.site-footer {
+    margin-top: auto;*/ /* sticky footer */
+/*}*/
+
+
+/* ================================
+   NAVBAR STYLING
+   ================================ */
+.navbar {
+    background: linear-gradient(135deg, #1f7a8c, #0b486b, #3fb0ac);
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid #ffcc70;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
     }
 
+    50% {
+        background-position: 100% 50%;
+    }
 
-/* Dropdown menu customization */
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Brand / Logo */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+    .navbar-brand:hover {
+        transform: scale(1.1) rotate(-2deg);
+    }
+
+/* Nav Links */
+.nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9) !important;
+    padding: 0.75rem 1.2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background: #ffcc70;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+        width: 60%;
+    }
+
+    .nav-link:hover {
+        color: #fff !important;
+        transform: translateY(-3px);
+        text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+    }
+
+/* ================================
+   DROPDOWN MENU
+   ================================ */
 .dropdown-menu {
     left: 50% !important;
     transform: translateX(-50%) !important;
     right: auto !important;
-    background: #1f7a8c; /* Gradient background like header */
-    border-radius: 8px; /* Rounded corners */
-    border: none; /* Remove default border */
+    background: #0b486b;
+    border-radius: 12px;
+    border: 2px solid #3fb0ac;
     padding: 0.5rem;
-    box-shadow: 0px 6px 20px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.25);
+    animation: dropdownFade 0.3s ease;
 }
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+    }
+}
+
 .dropdown-item {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #fff;
-    padding: 0.7rem 1.2rem;
-    border-radius: 5px;
+    padding: 0.8rem 1.3rem;
+    border-radius: 6px;
     transition: all 0.3s ease;
 }
 
     .dropdown-item:hover {
         background: #3fb0ac;
         color: #fffae3;
-        padding-left: 1.7rem; /* Slight slide effect without breaking alignment */
+        transform: translateX(10px);
     }
+
+/* ================================
+   UTILITY
+   ================================ */
+/* Footer Wrapper */
+/* Bottom section */
+/* ================================
+   FOOTER STYLING
+   ================================ */
+.site-footer {
+    background: linear-gradient(135deg, #0b486b, #1f7a8c, #3fb0ac); /* gradient background */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    padding: 1rem 0; /* give some height */
+    position: relative; /* needed if using ::before */
+}
+
+    /* If you want a solid fallback color behind the gradient */
+    .site-footer::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: #1f7a8c; /* fallback solid color */
+        z-index: -1;
+    }
+
+
+.footer-top {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding: 0.5rem 0; /* smaller top padding */
+}
+
+.footer-brand span {
+    font-size: 1.3rem; /* smaller text */
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.2rem 0.5rem;
+    position: relative;
+    font-size: 0.95rem; /* smaller link text */
+    transition: all 0.3s ease;
+}
+
+    .footer-links a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: #ffcc70;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .footer-links a:hover::after {
+        width: 60%;
+    }
+
+    .footer-links a:hover {
+        color: #fffae3;
+        transform: translateY(-2px) scale(1.03);
+        text-shadow: 0 0 4px rgba(255,255,255,0.5);
+    }
+
+.footer-bottom {
+    font-size: 0.85rem; /* smaller bottom text */
+    color: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.08);
+    padding: 0.25rem 0; /* smaller bottom padding */
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+.register-container {
+    background: #f4f7f6; /* soft background to make box pop */
+}
+
+/* Card container */
+.register-card {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Left side image */
+.register-image {
+    flex: 1;
+    background: url('/images/hospital4.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Right side form */
+.register-form {
+    flex: 1;
+    background: #ffffff;
+    color: #004d40; /* dark teal */
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    /* Form heading */
+    .register-form h2 {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #00796b; /* teal accent */
+    }
+
+    /* Input fields - white background */
+    .register-form .form-control {
+        border: 2px solid #26a69a; /* teal border */
+        border-radius: 8px;
+        padding: 12px 15px;
+        color: #004d40; /* typed text is dark teal */
+        background: #ffffff; /* pure white background */
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+        /* Placeholder text (optional, if you use it) */
+        .register-form .form-control::placeholder {
+            color: #00796b; /* teal placeholder */
+            opacity: 1;
+        }
+
+        /* Focused input */
+        .register-form .form-control:focus {
+            border-color: #00897b; /* darker teal */
+            box-shadow: 0 0 6px rgba(0, 150, 136, 0.3);
+            background: #ffffff; /* keep white */
+            color: #004d40;
+        }
+
+    /* Floating label */
+    .register-form label {
+        color: #00796b; /* teal label */
+        font-weight: 600;
+    }
+
+
+    /* Select dropdown */
+    .register-form select.form-select {
+        border: 2px solid #26a69a !important;
+        border-radius: 8px !important;
+        padding: 12px 15px !important;
+        color: #004d40 !important; /* default text */
+        background-color: #b2dfdb !important;
+        font-size: 16px !important;
+        transition: all 0.3s ease;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23004d40'%3E%3Cpath d='M4 6l4 4 4-4z'/%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 12px center !important;
+        background-size: 12px !important;
+    }
+
+        /* Highlighted option in dropdown */
+        .register-form select.form-select option:checked,
+        .register-form select.form-select option:hover {
+            background-color: #004d40 !important; /* dark teal */
+            color: #ffffff !important; /* white text */
+        }
+
+        /* Focused select */
+        .register-form select.form-select:focus {
+            border-color: #00897b !important;
+            box-shadow: 0 0 6px rgba(0, 150, 136, 0.3) !important;
+            background-color: #e0f2f1 !important;
+            color: #004d40 !important;
+        }
+
+    /* Labels */
+    .register-form label {
+        color: #004d40; /* dark teal labels */
+        font-weight: 600;
+    }
+
+    /* Buttons */
+    .register-form button {
+        background: linear-gradient(135deg, #00796b, #004d40);
+        border: none;
+        border-radius: 10px;
+        padding: 14px;
+        font-size: 21px;
+        font-weight: 600;
+        color: #ffffff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+
+        .register-form button:hover {
+            background: linear-gradient(135deg, #004d40, #00796b);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 121, 107, 0.3);
+        }
+
+    /* Checkbox */
+    .register-form .form-check-label {
+        color: #004d40;
+        font-weight: 500;
+    }
+
+    /* Links */
+    .register-form a {
+        color: #00796b;
+        font-weight: 600;
+    }
+
+        .register-form a:hover {
+            color: #004d40;
+            text-decoration: underline;
+        }
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .register-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .register-image {
+        height: 250px;
+    }
+}

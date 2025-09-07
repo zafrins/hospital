@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9jdG9yXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/3.2/SDHospital/Hospital.Web/Areas/Admin/Views/Doctor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRG9jdG9yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/3.2/SDHospital/Hospital.Web/Areas/Admin/Views/Hospitals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9zcGl0YWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/3.2/SDHospital/Hospital.Web/Areas/Admin/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3.2/SDHospital/Hospital.Web/Areas/Doctor/Views/AddTiming.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRG9jdG9yXFZpZXdzXEFkZFRpbWluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3.2/SDHospital/Hospital.Web/Areas/Identity/Pages/Account/AccessDenied.cshtml]
