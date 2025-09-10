@@ -2,18 +2,19 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+using Hospitals.Utilities;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Hospital.Web.Areas.Identity.Pages.Account
 {
@@ -21,10 +22,15 @@ namespace Hospital.Web.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+
+        public LoginModel(SignInManager<IdentityUser> signInManager,
+                    UserManager<IdentityUser> userManager,
+                    ILogger<LoginModel> logger)
         {
             _signInManager = signInManager;
+            _userManager = userManager; // added
             _logger = logger;
         }
 
@@ -115,8 +121,23 @@ namespace Hospital.Web.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+
+                    // Find the logged-in user by email
+                    var user = await _userManager.FindByEmailAsync(Input.Email);
+
+                    // Check if user is in Admin role
+                    if (await _userManager.IsInRoleAsync(user, WebSiteRoles.Website_Admin))
+                    {
+                        // Redirect Admin to Admin Dashboard
+                        return RedirectToAction("Index", "Hospitals", new { area = "Admin" });
+                    }
+                    else
+                    {
+                        // Redirect Patients/Doctors to Home/Index
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
+
                 if (result.RequiresTwoFactor)
                 {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });

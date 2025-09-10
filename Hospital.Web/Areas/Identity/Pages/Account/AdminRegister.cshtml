@@ -1,0 +1,92 @@
+﻿@page
+@model Hospital.Web.Areas.Identity.Pages.Account.AdminRegisterModel
+@{
+    ViewData["Title"] = "Admin Access";
+}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="admin-box p-4 text-center shadow-sm">
+        <h2 class="mb-3">Admin Access</h2>
+        <p class="text-muted mb-4">Enter the secret code to access the admin dashboard</p>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger small text-start">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <div>@error.ErrorMessage</div>
+                }
+            </div>
+        }
+
+        <form method="post">
+            <div class="mb-3">
+                <input asp-for="SecretCode" class="form-control" placeholder="Secret Code" />
+                <span asp-validation-for="SecretCode" class="text-danger small"></span>
+            </div>
+            <button type="submit" class="btn btn-gradient w-100">Enter</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    .admin-box {
+        border-radius: 15px;
+        background: #fff;
+        padding: 30px 25px;
+        max-width: 380px;
+        width: 100%;
+        border: 3px solid;
+        border-image-slice: 1;
+        border-width: 3px;
+        border-image-source: linear-gradient(135deg, #1f7a8c, #3fb0ac);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .admin-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 12px 14px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #1f7a8c;
+            box-shadow: 0 0 8px rgba(31, 122, 140, 0.3);
+            outline: none;
+        }
+
+    .btn-gradient {
+        border-radius: 8px;
+        padding: 12px;
+        font-weight: 600;
+        background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
+        border: none;
+        color: #fff;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #3fb0ac, #1f7a8c);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(31,122,140,0.3);
+        }
+
+    .alert {
+        border-radius: 8px;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+</style>

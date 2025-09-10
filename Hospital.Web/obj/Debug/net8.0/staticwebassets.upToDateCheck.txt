@@ -6,6 +6,10 @@ wwwroot\Images\hospital2.jpg
 wwwroot\Images\hospital3.jpg
 wwwroot\Images\hospital4.jpg
 wwwroot\Images\logo.png
+wwwroot\Images\medicines\2e738d71-92eb-410b-a38d-dcd9655b67df.jpg
+wwwroot\Images\medicines\53c01c41-a83f-44da-b341-a28f3e4db89d.jpg
+wwwroot\Images\medicines\58f26fc4-b32d-4055-bae3-ab79d30c1c3d.jpg
+wwwroot\Images\medicines\67c2c53c-4430-43cb-85d7-529ab4990cd5.jpeg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
