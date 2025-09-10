@@ -2,83 +2,210 @@
 @model PagedResult<Hospital.ViewModels.MedicineViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pharmacy Dashboard";
 }
 
-<h1>Index</h1>
+<div class="container my-5 pharmacy-container">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+        <h1 class="page-title mb-3 mb-md-0">Pharmacy Dashboard</h1>
+        <a asp-action="Create" class="btn btn-gradient btn-lg shadow-btn">
+            <i class="bi bi-plus-circle me-2"></i> Add Medicine
+        </a>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Type
-            </th>
-            <th>
-                Cost
-            </th>
-            <th>
-               Description
-            </th>
-            <th>
-                Stock
-            </th>
-            <th>
-                ExpiryDate
-            </th>
-            <th>
-                Manufacturer
-            </th>
-            <th>
-                ImageUrl
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Data) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExpiryDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Manufacturer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <!-- Medicine Cards Grid -->
+    <div class="row g-4">
+        @foreach (var item in Model.Data)
+        {
+            <div class="col-sm-12 col-md-6 col-lg-3 d-flex">
+                <div class="medicine-card h-100 w-100">
+                    <div class="card-img-container">
+                        <img src="@item.ImageUrl" alt="@item.Name" class="card-img-top">
+                        <div class="card-badge type-badge">@item.Type</div>
+                        <div class="card-badge cost-badge">$@item.Cost</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">
+                            <strong>Stock:</strong> @item.Stock <br />
+                            <strong>Expiry:</strong> @item.ExpiryDate.ToShortDateString() <br />
+                            <strong>Manufacturer:</strong> @item.Manufacturer
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-center gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-edit">
+                            <i class="bi bi-pencil"></i> Edit
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-delete">
+                            <i class="bi bi-trash"></i> Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Pager -->
+    <div class="mt-5 d-flex justify-content-center">
+        <cs-pager cs-paging-pagesize="@Model.PageSize"
+                  cs-paging-pagenumber="@Model.PageNumber"
+                  cs-paging-totalitems="@Model.TotalItems"
+                  cs-pagenumber-param="pageNumber"
+                  asp-controller="Medicines"
+                  asp-action="Index"
+                  cs-pager-li-current-class="page-item active"
+                  cs-pager-li-other-class="page-item"
+                  cs-pager-li-non-active-class="page-item disabled"
+                  cs-pager-link-current-class="page-link"
+                  cs-pager-link-other-class="page-link">
+        </cs-pager>
+    </div>
+</div>
+
+<style>
+    /* Container styling */
+    .pharmacy-container {
+        padding: 1.5rem;
+    }
+
+    /* Page title */
+    .page-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #1f7a8c;
+    }
+
+    /* Add button */
+    .btn-gradient {
+        background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
+        color: #fff;
+        border: none;
+        border-radius: 2rem;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+        .btn-gradient:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(31,122,140,0.3);
+        }
+
+    /* Medicine card */
+    .medicine-card {
+        border-radius: 1rem;
+        overflow: hidden;
+        background: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+        width: 100%;
+        max-width: 320px; /* limit card width */
+        margin: 0 auto; /* center the card inside column */
+    }
+
+
+        .medicine-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(31,122,140,0.15);
+        }
+
+    .card-img-container {
+        position: relative;
+    }
+
+        .card-img-container img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+    /* Badges */
+    .card-badge {
+        position: absolute;
+        padding: 0.35rem 0.75rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        color: #fff;
+        font-size: 0.85rem;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+
+    .type-badge {
+        top: 10px;
+        left: 10px;
+        background: #1f7a8c;
+    }
+
+    .cost-badge {
+        top: 10px;
+        right: 10px;
+        background: #3fb0ac;
+    }
+
+    .medicine-card .card-body {
+        padding: 1rem 1.2rem;
+    }
+
+    .medicine-card .card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1f7a8c;
+        margin-bottom: 0.5rem;
+    }
+
+    .medicine-card .card-text {
+        font-size: 0.95rem;
+        color: #333;
+        line-height: 1.3;
+    }
+
+    .medicine-card .card-footer {
+        background: #f7f9fb;
+        border-top: none;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Buttons inside cards */
+    .btn-edit {
+        background: #e3f2fd;
+        color: #1565c0;
+        border-radius: 0.5rem;
+        padding: 0.35rem 0.7rem;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-edit:hover {
+            background: linear-gradient(135deg, #42a5f5, #1565c0);
+            color: #fff;
+        }
+
+    .btn-delete {
+        background: #ffebee;
+        color: #c62828;
+        border-radius: 0.5rem;
+        padding: 0.35rem 0.7rem;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-delete:hover {
+            background: linear-gradient(135deg, #ef5350, #c62828);
+            color: #fff;
+        }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .card-img-container img
+
+    {
+        height: 180px;
+    }
+
+    }
+</style>

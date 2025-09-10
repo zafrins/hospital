@@ -6573,23 +6573,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\faiya\\.nuget\\packages\\": {},
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\sdpr\\Hospital.Services\\Hospital.Services.csproj",
+      "projectUniqueName": "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\Hospital.Services.csproj",
       "projectName": "Hospital.Services",
-      "projectPath": "D:\\sdpr\\Hospital.Services\\Hospital.Services.csproj",
-      "packagesPath": "C:\\Users\\faiya\\.nuget\\packages\\",
-      "outputPath": "D:\\sdpr\\Hospital.Services\\obj\\",
+      "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\Hospital.Services.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\faiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6605,11 +6605,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\sdpr\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
-              "projectPath": "D:\\sdpr\\Hospital.ViewModels\\Hospital.ViewModels.csproj"
+            "D:\\3.2\\SDHospital\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
+              "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj"
             },
-            "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
-              "projectPath": "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
+            "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
+              "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
             }
           }
         }

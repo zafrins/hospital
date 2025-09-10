@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\sdpr\\Hospital.Web\\Hospital.Web.csproj": {}
+    "D:\\3.2\\SDHospital\\hospital\\Hospital.Web\\Hospital.Web.csproj": {}
   },
   "projects": {
-    "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj": {
+    "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj",
+        "projectUniqueName": "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj",
         "projectName": "Hospital.Models",
-        "projectPath": "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj",
-        "packagesPath": "C:\\Users\\faiya\\.nuget\\packages\\",
-        "outputPath": "D:\\sdpr\\Hospital.Models\\obj\\",
+        "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\faiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -76,20 +76,20 @@
         }
       }
     },
-    "D:\\sdpr\\Hospital.Repositories\\Hospital.Repositories.csproj": {
+    "D:\\3.2\\SDHospital\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\sdpr\\Hospital.Repositories\\Hospital.Repositories.csproj",
+        "projectUniqueName": "D:\\3.2\\SDHospital\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj",
         "projectName": "Hospital.Repositories",
-        "projectPath": "D:\\sdpr\\Hospital.Repositories\\Hospital.Repositories.csproj",
-        "packagesPath": "C:\\Users\\faiya\\.nuget\\packages\\",
-        "outputPath": "D:\\sdpr\\Hospital.Repositories\\obj\\",
+        "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\faiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -105,8 +105,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj": {
-                "projectPath": "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj"
               }
             }
           }
@@ -162,20 +162,20 @@
         }
       }
     },
-    "D:\\sdpr\\Hospital.Services\\Hospital.Services.csproj": {
+    "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\Hospital.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\sdpr\\Hospital.Services\\Hospital.Services.csproj",
+        "projectUniqueName": "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\Hospital.Services.csproj",
         "projectName": "Hospital.Services",
-        "projectPath": "D:\\sdpr\\Hospital.Services\\Hospital.Services.csproj",
-        "packagesPath": "C:\\Users\\faiya\\.nuget\\packages\\",
-        "outputPath": "D:\\sdpr\\Hospital.Services\\obj\\",
+        "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\Hospital.Services.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\faiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -191,11 +191,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\sdpr\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
-                "projectPath": "D:\\sdpr\\Hospital.ViewModels\\Hospital.ViewModels.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj"
               },
-              "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
-                "projectPath": "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
               }
             }
           }
@@ -235,20 +235,20 @@
         }
       }
     },
-    "D:\\sdpr\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
+    "D:\\3.2\\SDHospital\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\sdpr\\Hospital.ViewModels\\Hospital.ViewModels.csproj",
+        "projectUniqueName": "D:\\3.2\\SDHospital\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj",
         "projectName": "Hospital.ViewModels",
-        "projectPath": "D:\\sdpr\\Hospital.ViewModels\\Hospital.ViewModels.csproj",
-        "packagesPath": "C:\\Users\\faiya\\.nuget\\packages\\",
-        "outputPath": "D:\\sdpr\\Hospital.ViewModels\\obj\\",
+        "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\faiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -264,8 +264,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj": {
-                "projectPath": "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj"
               }
             }
           }
@@ -311,20 +311,20 @@
         }
       }
     },
-    "D:\\sdpr\\Hospital.Web\\Hospital.Web.csproj": {
+    "D:\\3.2\\SDHospital\\hospital\\Hospital.Web\\Hospital.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\sdpr\\Hospital.Web\\Hospital.Web.csproj",
+        "projectUniqueName": "D:\\3.2\\SDHospital\\hospital\\Hospital.Web\\Hospital.Web.csproj",
         "projectName": "Hospital.Web",
-        "projectPath": "D:\\sdpr\\Hospital.Web\\Hospital.Web.csproj",
-        "packagesPath": "C:\\Users\\faiya\\.nuget\\packages\\",
-        "outputPath": "D:\\sdpr\\Hospital.Web\\obj\\",
+        "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Web\\Hospital.Web.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\faiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -340,17 +340,17 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj": {
-                "projectPath": "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj"
               },
-              "D:\\sdpr\\Hospital.Repositories\\Hospital.Repositories.csproj": {
-                "projectPath": "D:\\sdpr\\Hospital.Repositories\\Hospital.Repositories.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj"
               },
-              "D:\\sdpr\\Hospital.Services\\Hospital.Services.csproj": {
-                "projectPath": "D:\\sdpr\\Hospital.Services\\Hospital.Services.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\Hospital.Services.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Services\\Hospital.Services.csproj"
               },
-              "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
-                "projectPath": "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
               }
             }
           }
@@ -425,20 +425,20 @@
         }
       }
     },
-    "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
+    "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj",
+        "projectUniqueName": "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj",
         "projectName": "Hospitals.Utilities",
-        "projectPath": "D:\\sdpr\\Hospitals.Utilities\\Hospitals.Utilities.csproj",
-        "packagesPath": "C:\\Users\\faiya\\.nuget\\packages\\",
-        "outputPath": "D:\\sdpr\\Hospitals.Utilities\\obj\\",
+        "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\3.2\\SDHospital\\hospital\\Hospitals.Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\faiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -454,11 +454,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj": {
-                "projectPath": "D:\\sdpr\\Hospital.Models\\Hospital.Models.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Models\\Hospital.Models.csproj"
               },
-              "D:\\sdpr\\Hospital.Repositories\\Hospital.Repositories.csproj": {
-                "projectPath": "D:\\sdpr\\Hospital.Repositories\\Hospital.Repositories.csproj"
+              "D:\\3.2\\SDHospital\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj": {
+                "projectPath": "D:\\3.2\\SDHospital\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj"
               }
             }
           }

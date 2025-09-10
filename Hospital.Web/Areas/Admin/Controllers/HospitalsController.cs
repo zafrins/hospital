@@ -4,13 +4,12 @@ using Hospital.Services;
 using Hospital.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Hospital.Web.Controllers
+namespace Hospital.Web.Areas.Admin.Controllers
 {
-    [Area("admin")]
+    [Area("Admin")]
     public class HospitalsController : Controller
     {
-
-        private IHospitalInfo _hospitalInfo;
+        private readonly IHospitalInfo _hospitalInfo;
 
         public HospitalsController(IHospitalInfo hospitalInfo)
         {
@@ -19,6 +18,7 @@ namespace Hospital.Web.Controllers
 
         public IActionResult Index(int pageNumber = 1, int pageSize = 10)
         {
+            // Return paginated list of hospitals
             return View(_hospitalInfo.GetAll(pageNumber, pageSize));
         }
 
@@ -28,18 +28,20 @@ namespace Hospital.Web.Controllers
             var viewModel = _hospitalInfo.GetHospitalById(id);
             return View(viewModel);
         }
+
         [HttpPost]
         public IActionResult Edit(HospitalInfoViewModel vm)
         {
-
             _hospitalInfo.UpdateHospitalInfo(vm);
             return RedirectToAction("Index");
         }
+
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Create(HospitalInfoViewModel vm)
         {
@@ -50,7 +52,7 @@ namespace Hospital.Web.Controllers
         public IActionResult Delete(int id)
         {
             _hospitalInfo.DeleteHospitalInfo(id);
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }

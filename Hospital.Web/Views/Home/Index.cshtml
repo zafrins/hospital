@@ -2,7 +2,185 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="landing-carousel-container position-relative">
+
+    <!-- Carousel -->
+    <div id="landingCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/images/hospital1.jpg" class="d-block w-100 carousel-img" alt="Hospital 1">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/hospital2.jpg" class="d-block w-100 carousel-img" alt="Hospital 2">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/hospital3.jpg" class="d-block w-100 carousel-img" alt="Hospital 3">
+            </div>
+        </div>
+
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#landingCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#landingCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Overlay Text -->
+    <div class="carousel-text-overlay text-center">
+        <h1>Welcome to Hospital Portal</h1>
+        <p>Managing healthcare efficiently, one click at a time</p>
+
+        <!-- Buttons -->
+        <div class="mt-4 d-flex justify-content-center gap-3">
+            <a href="/Doctors" class="btn btn-hero btn-doctors">See Doctors</a>
+            <a href="/Hospitals" class="btn btn-hero btn-hospitals">Hospitals</a>
+        </div>
+
+    </div>
 </div>
+
+<style>
+
+    /* === Landing Page Styling === */
+
+    .landing-carousel-container {
+        position: relative;
+        width: 100%;
+        max-height: 500px;
+        overflow: hidden;
+    }
+
+    /* Softened carousel images */
+    .carousel-img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        transition: all 0.5s ease;
+        filter: brightness(70%) contrast(90%);
+    }
+
+        /* Optional subtle blur for a more muted effect */
+        .carousel-img.blur {
+            filter: brightness(70%) contrast(90%) blur(1px);
+        }
+
+    /* Overlay layer for extra softening (if needed) */
+    .carousel-inner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.35); /* dark overlay to mute images */
+        z-index: 1;
+    }
+
+
+    /* Overlay Text */
+    .carousel-text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+        .carousel-text-overlay h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .carousel-text-overlay p {
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+    /* === Hero Buttons === */
+    .mt-4.d-flex {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Common hero button style */
+    .btn-hero {
+        padding: 0.75rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 2rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Doctors button gradient */
+    .btn-doctors {
+        background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
+        color: #fff;
+    }
+
+        .btn-doctors:hover {
+            background: linear-gradient(135deg, #3fb0ac, #1f7a8c);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(31,122,140,0.35);
+        }
+
+    /* Hospitals button gradient */
+    .btn-hospitals {
+        background: linear-gradient(135deg, #f6d365, #fda085);
+        color: #fff;
+    }
+
+        .btn-hospitals:hover {
+            background: linear-gradient(135deg, #fda085, #f6d365);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(253,160,133,0.35);
+        }
+
+    /* Carousel controls */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-size: 100%, 100%;
+        border-radius: 50%;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    /* Optional: Add subtle fade overlay on images */
+    .carousel-inner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
+        z-index: 1;
+    }
+
+    /* Ensure text overlays above carousel */
+    .carousel-text-overlay {
+        z-index: 10;
+    }
+
+    /* Optional: smooth carousel image transition */
+    .carousel-item img {
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /* Hover effect for carousel images */
+    .carousel-item:hover img {
+        transform: scale(1.03);
+    }
+
+</style>
