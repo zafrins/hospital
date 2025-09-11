@@ -74,12 +74,12 @@ app.MapControllerRoute(
 //    name: "default",
 //    pattern: "{Area=admin}/{controller=Hospitals}/{action=Index}/{id?}");
 
-app.UseEndpoints(endpoints =>
+/*app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
         name: "areas",
         pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-});
+});*/
 
 app.Run();
 void DataSeeding()

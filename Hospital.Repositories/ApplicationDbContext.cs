@@ -50,13 +50,13 @@ namespace Hospital.Repositories
                 .WithMany()
                 .HasForeignKey(a => a.PatientId)
                 .OnDelete(DeleteBehavior.Restrict);
-
+/*
             modelBuilder.Entity<ApplicationUser>()
             .HasKey(p => p.Id);
 
             modelBuilder.Entity<ApplicationUser>()
                 .Property(p => p.Id)
-                .ValueGeneratedOnAdd();
+                .ValueGeneratedOnAdd();*/
         }
     }
 }
