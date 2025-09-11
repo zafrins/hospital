@@ -74,6 +74,16 @@ namespace Hospital.Web.Areas.Admin.Controllers
             _doctorService.DeleteTiming(id);
             return RedirectToAction(nameof(Index));
         }
+
+        //details
+       /* [HttpGet]
+        public IActionResult Details(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return BadRequest();
+            var patient = _doctorService.GetById(id);
+            if (patient == null) return NotFound();
+            return View(patient);
+        }*/
     }
 }
 

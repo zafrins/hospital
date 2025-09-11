@@ -1,7 +1,9 @@
 ﻿using Hospital.Models;
+using Hospital.Repositories;
 using Hospital.Repositories.Interfaces;
 using Hospital.ViewModels;
 using Hospitals.Utilities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,7 @@ namespace Hospital.Services
     public class PatientService : IPatientService
     {
         private readonly IUnitOfWork _unitOfWork;
-
+        private readonly ApplicationDbContext _context;
         public PatientService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -42,6 +44,7 @@ namespace Hospital.Services
         }
 
 
+
         private List<ApplicationUserViewModel> ConvertModelToViewModelList(List<ApplicationUser> patients)
         {
             throw new NotImplementedException();
@@ -49,28 +52,83 @@ namespace Hospital.Services
 
         public void Create(ApplicationUserViewModel model)
         {
-            // Add new patient logic
+            var user = new ApplicationUser
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = model.Name,
+                Email = model.Email,
+                UserName = model.UserName,
+                City = model.City,
+                Gender = model.Gender,
+                IsDoctor = false,
+                Specialist = null
+            };
+
+            _unitOfWork.Repository<ApplicationUser>().Add(user);
+            _unitOfWork.Save();
         }
+
 
         /*public ApplicationUserViewModel GetById(string id)
         {
             // Get patient by ID logic
         }
 */
-        public void Update(ApplicationUserViewModel model)
-        {
-            // Update patient logic
-        }
 
         public void Delete(string id)
         {
-            // Delete patient logic
+            var user = _unitOfWork.Repository<ApplicationUser>().GetById(id);
+            if (user != null)
+            {
+                _unitOfWork.Repository<ApplicationUser>().Delete(user);
+                _unitOfWork.Save(); // Make sure this commits changes
+            }
         }
+
+
 
         public ApplicationUserViewModel GetById(string id)
         {
-            throw new NotImplementedException();
+            var user = _unitOfWork.Repository<ApplicationUser>().GetById(id);
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            return new ApplicationUserViewModel
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Email = user.Email,
+                UserName = user.UserName,
+                City = user.City,
+                Gender = user.Gender
+                // Map other properties as necessary
+            };
         }
+
+
+        public void Update(ApplicationUserViewModel model)
+        {
+            var user = _unitOfWork.Repository<ApplicationUser>().GetById(model.Id);
+            if (user == null) return;
+
+            user.Name = model.Name;
+            user.Email = model.Email;
+            user.UserName = model.UserName;
+            user.City = model.City;
+            user.Gender = model.Gender;
+            // Map other fields as needed
+
+            _unitOfWork.Repository<ApplicationUser>().Add(user);
+            _unitOfWork.Save();// Make sure this method commits changes
+            
+        }
+
+
+
+
     }
 
 }
