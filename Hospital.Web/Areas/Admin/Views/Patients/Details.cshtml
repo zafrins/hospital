@@ -1,0 +1,29 @@
+﻿using Hospital.Models;
+using Hospital.Services;
+using Hospital.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Hospital.Web.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class PatientDetailsController : Controller
+    {
+        private readonly IPatientService _patientService;
+
+        public PatientDetailsController(IPatientService patientService)
+        {
+            _patientService = patientService;
+        }
+
+        // GET: Details page
+        public IActionResult Details(string id)
+        {
+            var patient = _patientService.GetById(id);
+            if (patient == null)
+                return NotFound();
+
+            var model = new ApplicationUserViewModel(patient);
+            return View(model);
+        }
+    }
+}

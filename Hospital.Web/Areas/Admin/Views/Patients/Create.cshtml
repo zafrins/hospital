@@ -1,0 +1,39 @@
+﻿using Hospital.Models;
+using Hospital.Services;
+using Hospital.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Hospital.Web.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class PatientCreateController : Controller
+    {
+        private readonly IPatientService _patientService;
+
+        public PatientCreateController(IPatientService patientService)
+        {
+            _patientService = patientService;
+        }
+
+        // GET: Create patient form
+        public IActionResult Create()
+        {
+            var model = new ApplicationUserViewModel();
+            return View(model);
+        }
+
+        // POST: Create patient
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(ApplicationUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var patientModel = model.ConvertViewModelToModel();
+                _patientService.CreatePatient(patientModel);
+                return RedirectToAction("Index", "PatientIndex");
+            }
+            return View(model);
+        }
+    }
+}

@@ -1,0 +1,38 @@
+﻿using Hospital.Models;
+using Hospital.Services;
+using Hospital.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Hospital.Web.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class PatientDeleteController : Controller
+    {
+        private readonly IPatientService _patientService;
+
+        public PatientDeleteController(IPatientService patientService)
+        {
+            _patientService = patientService;
+        }
+
+        // GET: Delete confirmation page
+        public IActionResult Delete(string id)
+        {
+            var patient = _patientService.GetById(id);
+            if (patient == null)
+                return NotFound();
+
+            var model = new ApplicationUserViewModel(patient);
+            return View(model);
+        }
+
+        // POST: Confirm delete
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(string id)
+        {
+            _patientService.Delete(id);
+            return RedirectToAction("Index", "PatientIndex");
+        }
+    }
+}

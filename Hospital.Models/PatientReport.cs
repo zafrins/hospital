@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,5 +16,8 @@ namespace Hospital.Models
 
         public ICollection<PrescribedMedicine> PrescribedMedicine { get;
         }
-}
+        [NotMapped]
+        public ICollection<PatientReport> PatientReports { get; set; }
+
+    }
 }

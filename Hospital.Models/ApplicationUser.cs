@@ -10,6 +10,7 @@ namespace Hospital.Models
 {
     public class ApplicationUser : IdentityUser
     {
+       // public string Id { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
         public Gender Gender{get;set;}
@@ -25,10 +26,10 @@ namespace Hospital.Models
         public Department? Department { get; set; }
         [NotMapped]
         public ICollection<Appointment> Appointments { get; set; }
-        [NotMapped]
         public ICollection<Payroll> Payrolls { get; set; }
+        [NotMapped]
+        public ICollection<PatientReport> PatientReports { get; set; }
 
-        public ICollection<Payroll> PatientReports { get; set; }
     }
 }
 

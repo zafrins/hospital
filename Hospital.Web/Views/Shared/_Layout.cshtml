@@ -36,9 +36,16 @@
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Medicines" asp-action="Index">Pharmacy</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Rooms" asp-action="Index">Rooms</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Users" asp-action="Index">Users</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Users" asp-action="AllDoctors">Doctors</a></li>
-                        <li class="nav-item">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">Users</a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" asp-area="admin" asp-controller="Patients" asp-action="Index">Patient</a></li>
+                                    <li><a class="dropdown-item" asp-area="admin" asp-controller="Users" asp-action="AllDoctors">Doctors</a></li>
+
+                            </ul>
+                        </li>
+                            <li class="nav-item">
                             <a class="nav-link" asp-area="Admin" asp-controller="DoctorTimings" asp-action="Index">Doctor Timing</a>
                         </li>
 

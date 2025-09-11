@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Hospital.ViewModels.ApplicationUserViewModel>
+
+@{
+    ViewData["Title"] = "Patients List";
+}
+
+<h1>Patients</h1>
+
+<p>
+    <a asp-action="Create">Create New Patient</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.First().Name)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Email)</th>
+            <th>@Html.DisplayNameFor(m => m.First().UserName)</th>
+            <th>@Html.DisplayNameFor(m => m.First().City)</th>
+            <th>@Html.DisplayNameFor(m => m.First().Gender)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.Name</td>
+                <td>@patient.Email</td>
+                <td>@patient.UserName</td>
+                <td>@patient.City</td>
+                <td>@patient.Gender</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@patient.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@patient.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@patient.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -20,39 +20,49 @@ namespace Hospital.Services
             _unitOfWork = unitOfWork;
         }
 
-        public PagedResult<ApplicationUserViewModel> GetAll(int PageNumber, int PageSize)
+        public void CreatePatient(ApplicationUserViewModel model)
         {
-            var vm = new ApplicationUserViewModel();
-            int totalCount;
-            List<ApplicationUserViewModel> vmList = new List<ApplicationUserViewModel>();
+            throw new NotImplementedException();
+        }
+
+        public void Delete(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public PagedResult<ApplicationUserViewModel> GetAll(int pageNumber, int pageSize)
+        {
             try
             {
-                int ExcludeRecords = (PageSize * PageNumber) - PageSize;
-                
-                var modelList = _unitOfWork.Repository<ApplicationUser>()
-                      .GetAll().Skip(ExcludeRecords).Take(PageSize).ToList();
+                // Your existing logic here
+                int skip = (pageNumber - 1) * pageSize;
 
-                totalCount = _unitOfWork.Repository<ApplicationUser>().GetAll().ToList().Count;
+                var patients = _unitOfWork.Repository<ApplicationUser>()
+                    .GetAll(u => !u.IsDoctor)
+                    .Skip(skip)
+                    .Take(pageSize)
+                    .ToList();
 
-                vmList = ConvertModelToViewModelList(modelList);
+                var totalCount = _unitOfWork.Repository<ApplicationUser>()
+                    .GetAll(u => !u.IsDoctor)
+                    .Count();
 
+                var vmList = ConvertModelToViewModelList(patients);
+
+                return new PagedResult<ApplicationUserViewModel>
+                {
+                    Data = vmList,
+                    TotalItems = totalCount,
+                    PageNumber = pageNumber,
+                    PageSize = pageSize
+                };
             }
             catch (Exception)
             {
+                // Handle or rethrow exception if necessary
                 throw;
             }
-
-            var result = new PagedResult<ApplicationUserViewModel> { 
-
-                   Data = vmList,
-                   TotalItems = totalCount,
-                   PageNumber = PageNumber,
-                   PageSize = PageSize
-
-
-
-                };
-            return result;
         }
 
 
@@ -93,6 +103,7 @@ namespace Hospital.Services
         }
 
         /*
+         *  public PagedResult<ApplicationUserViewModel> GetAll(int PageNumber, int PageSize)
         public PagedResult<ApplicationUserViewModel> GetAllDoctor(int PageNumber, int PageSize)
         {
             int totalCount;
@@ -159,12 +170,22 @@ namespace Hospital.Services
             };
         }
 
+        public ApplicationUserViewModel GetById(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         /*public PagedResult<ApplicationUserViewModel> GetAllPatient(int PageNumber, int PageSize)
         {
             throw new NotImplementedException();
         }*/
 
         public PagedResult<ApplicationUserViewModel> SearchDoctor(int PageNumber, int PageSize, string Speciality = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdatePatient(ApplicationUserViewModel model)
         {
             throw new NotImplementedException();
         }
