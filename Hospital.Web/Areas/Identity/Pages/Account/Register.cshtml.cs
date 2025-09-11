@@ -111,7 +111,8 @@ namespace Hospital.Web.Areas.Identity.Pages.Account
 
             public string Address { get; set; }
             public DateTime DOB { get; set; }
-               
+            
+            public string City { get; set; }
             public IFormFile PictureURL {  get; set; }
             
         

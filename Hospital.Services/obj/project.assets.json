@@ -6579,11 +6579,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\hospital\\Hospital.Services\\Hospital.Services.csproj",
+      "projectUniqueName": "E:\\hospital\\Hospital.Services\\Hospital.Services.csproj",
       "projectName": "Hospital.Services",
-      "projectPath": "C:\\hospital\\Hospital.Services\\Hospital.Services.csproj",
+      "projectPath": "E:\\hospital\\Hospital.Services\\Hospital.Services.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\hospital\\Hospital.Services\\obj\\",
+      "outputPath": "E:\\hospital\\Hospital.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6605,11 +6605,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
-              "projectPath": "C:\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj"
+            "E:\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
+              "projectPath": "E:\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj"
             },
-            "C:\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
-              "projectPath": "C:\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
+            "E:\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
+              "projectPath": "E:\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
             }
           }
         }

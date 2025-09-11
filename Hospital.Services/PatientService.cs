@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 
 namespace Hospital.Services
 {
@@ -58,7 +59,7 @@ namespace Hospital.Services
                 Name = model.Name,
                 Email = model.Email,
                 UserName = model.UserName,
-                City = model.City,
+                Address = model.Address,
                 Gender = model.Gender,
                 IsDoctor = false,
                 Specialist = null
@@ -102,7 +103,7 @@ namespace Hospital.Services
                 Name = user.Name,
                 Email = user.Email,
                 UserName = user.UserName,
-                City = user.City,
+                Address = user.Address,
                 Gender = user.Gender
                 // Map other properties as necessary
             };
@@ -117,7 +118,7 @@ namespace Hospital.Services
             user.Name = model.Name;
             user.Email = model.Email;
             user.UserName = model.UserName;
-            user.City = model.City;
+            user.Address = model.Address;
             user.Gender = model.Gender;
             // Map other fields as needed
 

@@ -28,17 +28,17 @@
                     </span>
 
                     <div class="card-body pt-5">
-                        <h5 class="card-title">@patient.Name</h5>
-                        <h6 class="card-subtitle">@patient.UserName</h6>
+                        <h5 class="card-text"><strong>Name:</strong>@patient.Name</h5>
+                        @* <h6 class="card-subtitle">@patient.UserName</h6> *@
                         <p class="card-text"><strong>Email:</strong> @patient.Email</p>
-                        <p class="card-text"><strong>City:</strong> @patient.City</p>
+                        <p class="card-text"><strong>Address:</strong> @patient.Address</p>
                         <p class="card-text"><strong>Gender:</strong> @patient.Gender</p>
 
                         <!-- Action buttons -->
                         <div class="d-flex justify-content-between mt-3 gap-2">
-                            <a asp-action="Edit" asp-route-id="@patient.Id" class="btn-icon edit flex-fill">
+                           @*  <a asp-action="Edit" asp-route-id="@patient.Id" class="btn-icon edit flex-fill">
                                 <i class="bi bi-pencil-square me-1"></i> Edit
-                            </a>
+                            </a> *@
                             <a asp-action="Details" asp-route-id="@patient.Id" class="btn-icon info flex-fill">
                                 <i class="bi bi-info-circle me-1"></i> Details
                             </a>

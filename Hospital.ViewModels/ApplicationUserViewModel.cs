@@ -17,7 +17,10 @@ namespace Hospital.ViewModels
         public string City { get; set; }
         public Gender Gender { get; set; }
         public bool IsDoctor { get; set; }
+        public string Address { get; set; }   
         public string Specialist { get; set; }
+
+        public DateTime DOB { get; set; }
         public ApplicationUserViewModel()
         {
 
@@ -32,6 +35,7 @@ namespace Hospital.ViewModels
             Specialist = user.Specialist;
             UserName = user.UserName;
             Email = user.Email;
+            Address = user.Address;
         }
 
         public ApplicationUser ConvertViewModelToModel(ApplicationUser user)
@@ -44,7 +48,8 @@ namespace Hospital.ViewModels
                 IsDoctor = user.IsDoctor,
                 Specialist = user.Specialist,
                 Email = user.Email,
-                UserName = user.UserName
+                UserName = user.UserName,
+                Address=user.Address
             };
         }
 

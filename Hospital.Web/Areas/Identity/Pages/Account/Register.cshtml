@@ -1,4 +1,5 @@
 ﻿@page
+@using Hospital.Models
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
@@ -12,6 +13,11 @@
             <h2>Create a new account.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.Name">Name</label>
+                <span asp-validation-for="Input.Name" class="text-danger"></span>
+            </div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
                 <label asp-for="Input.Email">Email</label>
@@ -32,7 +38,27 @@
                 <label asp-for="Input.PictureURL"></label>
                 <span asp-validation-for="Input.PictureURL" class="text-danger"></span>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Address" class="form-control" aria-required="true" />
+                <label asp-for="Input.Address">Address</label>
+                <span asp-validation-for="Input.Address" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.DOB" class="form-control" aria-required="true" />
+                <label asp-for="Input.DOB">DOB</label>
+                <span asp-validation-for="Input.DOB" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 form-floating">
+                @{
+                    var genderList = Html.GetEnumSelectList<Gender>().ToList();
+                    genderList.Insert(0, new SelectListItem { Text = "Select Gender", Value = "" });
+                }
+                <select asp-for="Input.Gender" asp-items="genderList" class="form-select"></select>
+                <label asp-for="Input.Gender">Gender</label>
+                <span asp-validation-for="Input.Gender" class="text-danger"></span>
+
+
+                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
     </div>
     <div class="col-md-6 col-md-offset-2">

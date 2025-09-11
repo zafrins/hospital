@@ -33,6 +33,7 @@ builder.Services.AddTransient<IHospitalInfo, HopitalInfoService>();
 builder.Services.AddTransient<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IPatientService, PatientService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IDoctorListService, DoctorListService>();
 
 
 builder.Services.AddTransient<IRoomService, RoomService>();
