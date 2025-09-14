@@ -48,6 +48,26 @@ namespace Hospital.ViewModels
             };
             
 
+
         }
+        public HospitalInfo ToHospitalInfo()
+        {
+            return new HospitalInfo
+            {
+                Id = this.Id,
+                Name = this.Name,
+                Type = this.Type,
+                City = this.City,
+                PinCode = this.PinCode,
+                Country = this.Country
+            };
+        }
+
+        // Optionally, a static method for mapping from model to viewmodel
+        public static HospitalInfoViewModel FromModel(HospitalInfo model)
+        {
+            return new HospitalInfoViewModel(model);
+        }
+
     }
 }

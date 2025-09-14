@@ -8,7 +8,9 @@ namespace Hospitals.Utilities
 {
     public class PagedResult<T> where T : class
     {
+
         public PagedResult() { }
+        public List<T> Items { get; set; } = new List<T>();
         public List<T> Data { get; set; }
         public int TotalItems { get; set; }
         public int PageNumber { get; set; }

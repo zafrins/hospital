@@ -32,7 +32,12 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Hospital" asp-action="Index">Hospital</a></li>
+
+                          @*   <li class="nav-item">
+                                <a class="nav-link" asp-area="Admin" asp-controller="Hospitals" asp-action="Index">Hospital</a>
+                            </li> *@
+
+
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Medicines" asp-action="Index">Pharmacy</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Rooms" asp-action="Index">Rooms</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
@@ -61,6 +66,10 @@
                             </ul>
                         </li>
                     </ul>
+@* 
+                    <a asp-area="Admin" asp-controller="Hospitals" asp-action="Create" class="btn btn-hero btn-hospitals">
+    Add Hospital
+</a> *@
 
                     <!-- Login/Logout -->
                     <partial name="_LoginPartial" />

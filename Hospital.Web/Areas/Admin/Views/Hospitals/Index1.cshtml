@@ -1,0 +1,358 @@
+﻿@using Hospitals.Utilities
+@model PagedResult<Hospital.ViewModels.HospitalInfoViewModel>
+
+@{
+    ViewData["Title"] = "Hospitals Dashboard";
+}
+
+<div class="container my-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="dashboard-title">Hospitals Dashboard</h1>
+        <a asp-action="Create" class="btn btn-gradient btn-lg shadow-btn">
+            <i class="bi bi-plus-circle me-2"></i> Add Hospital
+        </a>
+    </div>
+    </div>
+
+
+</div>
+
+
+
+
+<!-- Card Grid -->
+<div class="row g-4">
+    @foreach (var item in Model.Data)
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="dashboard-card h-100 position-relative">
+
+                <!-- Serial badge -->
+                <span class="serial-badge">@item.Id</span>
+
+                <!-- Card body -->
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <h6 class="card-subtitle">@item.Type</h6>
+
+                    <div class="hospital-details mt-3">
+                        <p><i class="bi bi-geo-alt-fill me-2 text-icon"></i> @item.City</p>
+                        <p><i class="bi bi-mailbox me-2 text-icon"></i> Pin: @item.PinCode</p>
+                        <p><i class="bi bi-globe2 me-2 text-icon"></i> @item.Country</p>
+                    </div>
+                </div>
+
+                <!-- Card footer -->
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Last updated: Today</small>
+                    <div class="d-flex gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-icon edit">
+                            <i class="bi bi-pencil me-1"></i> Edit
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn-icon info">
+                            <i class="bi bi-info-circle me-1"></i> Details
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-icon delete">
+                            <i class="bi bi-trash me-1"></i> Delete
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Pager -->
+<div class="mt-5 d-flex justify-content-center">
+    <cs-pager cs-paging-pagesize="@Model.PageSize"
+              cs-paging-pagenumber="@Model.PageNumber"
+              cs-paging-totalitems="@Model.TotalItems"
+              cs-pagenumber-param="pageNumber"
+              asp-controller="Hospitals"
+              asp-action="Index"
+              cs-pager-li-current-class="page-item active"
+              cs-pager-li-other-class="page-item"
+              cs-pager-li-non-active-class="page-item disabled"
+              cs-pager-link-current-class="page-link"
+              cs-pager-link-other-class="page-link">
+    </cs-pager>
+</div>
+</div>
+
+
+<style>
+    /* === Dashboard Styling === */
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #f4f9fb;
+    }
+
+    /* Header */
+    .dashboard-title {
+        font-size: 2.3rem;
+        font-weight: 700;
+        color: #1f7a8c;
+    }
+
+    /* Gradient button */
+    .btn-gradient {
+        background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
+        border: none;
+        color: #fff;
+        border-radius: 0.6rem;
+        padding: 0.65rem 1.5rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(31, 122, 140, 0.35);
+        }
+
+    /* Dashboard card */
+    .dashboard-card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,250,252,0.85));
+        backdrop-filter: blur(8px);
+        border-radius: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        transition: all 0.35s ease;
+        position: relative;
+    }
+
+    @*   /* Gradient header stripe */
+        .dashboard-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
+        } *@
+    /* Neon border effect */
+    .dashboard-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 2px; /* thickness of border */
+        border-radius: inherit;
+        background: linear-gradient(270deg, #1f7a8c, #3fb0ac, #1f7a8c);
+        background-size: 300% 300%;
+        animation: neonBorder 6s linear infinite;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    /* Keyframes for animated glowing border */
+    @@keyframes neonBorder {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+
+    /* Card hover effect */
+    .dashboard-card:hover {
+        transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+        box-shadow: 0 20px 40px rgba(31, 122, 140, 0.25);
+    }
+
+    /* Card body */
+    .dashboard-card .card-body {
+        padding: 2rem 1.5rem 1.5rem;
+        text-align: left;
+    }
+
+    /* Title */
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1f7a8c;
+        margin-top: 1.5rem;
+        margin-bottom: 0.6rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Subtitle */
+    .card-subtitle {
+        font-size: 1.05rem;
+        color: #495057;
+        margin-bottom: 1.2rem;
+        font-family: 'Roboto Slab', serif;
+        font-style: italic;
+    }
+
+    /* Hospital details */
+    .hospital-details p {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .text-icon {
+        color: #1f7a8c;
+    }
+
+    /* Serial badge */
+    .serial-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
+        color: #fff;
+        padding: 0.4rem 0.7rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+    }
+
+    .dashboard-card:hover .serial-badge {
+        box-shadow: 0 0 12px rgba(31, 122, 140, 0.6);
+    }
+
+    /* Footer */
+    .dashboard-card .card-footer {
+        background: #fdfdfd;
+        border-top: 1px solid #eee;
+        padding: 1rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    /* Icon buttons */
+    .btn-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.6rem;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+        /* Hover animations */
+        .btn-icon:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+
+        .btn-icon.edit {
+            background: #e0f7fa;
+            color: #00796b;
+        }
+
+            .btn-icon.edit:hover {
+                background: linear-gradient(135deg, #26a69a, #00796b);
+                color: #fff;
+                box-shadow: 0 8px 18px rgba(0, 150, 136, 0.35);
+            }
+
+        .btn-icon.info {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+            .btn-icon.info:hover {
+                background: linear-gradient(135deg, #42a5f5, #1565c0);
+                color: #fff;
+                box-shadow: 0 8px 18px rgba(21, 101, 192, 0.35);
+            }
+
+        .btn-icon.delete {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+            .btn-icon.delete:hover {
+                background: linear-gradient(135deg, #ef5350, #c62828);
+                color: #fff;
+                box-shadow: 0 8px 18px rgba(198, 40, 40, 0.35);
+            }
+
+    .carousel-text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* perfectly center */
+        text-align: center;
+        z-index: 10;
+    }
+
+        .carousel-text-overlay h2 {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* subtle glow */
+            letter-spacing: 1px;
+        }
+
+    .carousel-subtitle {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .carousel-inner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+        z-index: 1;
+    }
+
+    .carousel-text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 10;
+        animation: fadeInDown 1s ease-out;
+    }
+
+    @@keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -60%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+</style>
+

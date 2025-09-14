@@ -22,6 +22,12 @@ namespace Hospital.Web.Areas.Admin.Controllers
             return View(_hospitalInfo.GetAll(pageNumber, pageSize));
         }
 
+        public IActionResult Index1(int pageNumber = 1, int pageSize = 10)
+        {
+            // Return paginated list of hospitals
+            return View(_hospitalInfo.GetAll(pageNumber, pageSize));
+        }
+
         [HttpGet]
         public IActionResult Edit(int id)
         {
