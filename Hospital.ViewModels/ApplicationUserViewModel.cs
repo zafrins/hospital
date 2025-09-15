@@ -19,7 +19,7 @@ namespace Hospital.ViewModels
         public bool IsDoctor { get; set; }
         public string Address { get; set; }   
         public string Specialist { get; set; }
-
+        public int MobileNumber { get; set; }
         public DateTime DOB { get; set; }
         public ApplicationUserViewModel()
         {

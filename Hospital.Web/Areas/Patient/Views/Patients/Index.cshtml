@@ -1,0 +1,228 @@
+﻿@using Hospitals.Utilities
+@model PagedResult<Hospital.ViewModels.ApplicationUserViewModel>
+
+@{
+    ViewData["Title"] = "Patients Dashboard";
+}
+
+<div class="container my-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="patients-title">Patients Dashboard</h1>
+        <a asp-action="Create" class="btn btn-gradient-green btn-lg shadow-btn">
+            <i class="bi bi-plus-circle me-2"></i> Add New Patient
+        </a>
+    </div>
+
+    <!-- Card Grid -->
+    <div class="row g-4">
+        @foreach (var patient in Model.Data)
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="patient-card h-100 position-relative">
+
+                    <!-- Serial number badge -->
+                    <span class="serial-badge">
+                        @patient.Id
+                    </span>
+
+                    <div class="card-body pt-5">
+                        <h5 class="card-text"><strong>Name:</strong>@patient.Name</h5>
+                        @* <h6 class="card-subtitle">@patient.UserName</h6> *@
+                        <p class="card-text"><strong>Email:</strong> @patient.Email</p>
+                        <p class="card-text"><strong>Address:</strong> @patient.Address</p>
+                        <p class="card-text"><strong>Gender:</strong> @patient.Gender</p>
+
+                        <!-- Action buttons -->
+                        <div class="d-flex justify-content-between mt-3 gap-2">
+                           @*  <a asp-action="Edit" asp-route-id="@patient.Id" class="btn-icon edit flex-fill">
+                                <i class="bi bi-pencil-square me-1"></i> Edit
+                            </a> *@
+                            <a asp-action="Details" asp-route-id="@patient.Id" class="btn-icon info flex-fill">
+                                <i class="bi bi-info-circle me-1"></i> Details
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@patient.Id" class="btn-icon delete flex-fill">
+                                <i class="bi bi-trash me-1"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Pager -->
+    <div class="mt-5 d-flex justify-content-center">
+        <cs-pager cs-paging-pagesize="@Model.PageSize"
+                  cs-paging-pagenumber="@Model.PageNumber"
+                  cs-paging-totalitems="@Model.TotalItems"
+                  cs-pagenumber-param="pageNumber"
+                  asp-controller="Patients"
+                  asp-action="Index"
+                  cs-pager-li-current-class="page-item active"
+                  cs-pager-li-other-class="page-item"
+                  cs-pager-li-non-active-class="page-item disabled"
+                  cs-pager-link-current-class="page-link"
+                  cs-pager-link-other-class="page-link">
+        </cs-pager>
+    </div>
+</div>
+
+<style>
+    /* Reuse much of the Rooms Dashboard styles, with adjustments for Patients */
+
+    .patients-title {
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: #198754;
+        position: relative;
+        letter-spacing: 0.5px;
+    }
+
+        .patients-title::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 90px;
+            height: 4px;
+            background: #20c997;
+            border-radius: 3px;
+        }
+
+    /* Add New Patient Button (same as rooms) */
+    .btn-gradient-green {
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        background: linear-gradient(90deg, #28a745, #20c997);
+        color: #fff;
+        padding: 0.65rem 1.4rem;
+        transition: all 0.25s ease;
+    }
+
+        .btn-gradient-green:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #20c997, #28a745);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+    /* Patient Card Styling */
+    .patient-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .patient-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+        }
+
+    /* Serial badge */
+    .serial-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: #198754;
+        color: #fff;
+        padding: 0.45rem 0.8rem;
+        font-weight: 600;
+        border-radius: 8px;
+        font-size: 0.8rem;
+    }
+
+    /* Card Titles & Text */
+    .card-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #198754;
+        margin-bottom: 0.5rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card-subtitle {
+        font-size: 1rem;
+        color: #6c757d;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+        color: #333;
+        margin-bottom: 0.4rem;
+    }
+
+    /* Action Buttons */
+    .btn-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.25s ease;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+    }
+
+        .btn-icon.edit {
+            background: #e6f4ea;
+            color: #198754;
+        }
+
+            .btn-icon.edit:hover {
+                background: #198754;
+                color: #fff;
+            }
+
+        .btn-icon.info {
+            background: #e7f3fe;
+            color: #0d6efd;
+        }
+
+            .btn-icon.info:hover {
+                background: #0d6efd;
+                color: #fff;
+            }
+
+        .btn-icon.delete {
+            background: #fdecea;
+            color: #dc3545;
+        }
+
+            .btn-icon.delete:hover {
+                background: #dc3545;
+                color: #fff;
+            }
+
+    /* Pager styles (reuse from rooms) */
+    .page-link {
+        border-radius: 6px !important;
+        margin: 0 4px;
+        color: #198754 !important;
+        font-weight: 500;
+        border: 1px solid #dee2e6 !important;
+        transition: all 0.2s ease;
+    }
+
+        .page-link:hover {
+            background: #e9f7ef;
+            border-color: #198754 !important;
+        }
+
+    .page-item.active .page-link {
+        background: #198754 !important;
+        border-color: #198754 !important;
+        color: #fff !important;
+    }
+</style>

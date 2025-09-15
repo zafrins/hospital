@@ -22,6 +22,16 @@
                     <img src="~/Images/logo.png" alt="Hospital Logo" width="50" height="50" class="me-2 rounded-circle" />
                     Hospital Dashboard
                 </a>
+                    @if (User.IsInRole("Patient"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Patient" asp-controller="Patients" asp-action="Index">My Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="Patient" asp-controller="Doctors" asp-action="Index">Doctors</a>
+                        </li>
+                    }
+
 
                 <!-- Toggle button for small screens -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">

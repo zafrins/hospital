@@ -1,0 +1,39 @@
+﻿@model Hospitals.Utilities.PagedResult<Hospital.ViewModels.ApplicationUserViewModel>
+
+@{
+    ViewData["Title"] = "Doctors List";
+}
+
+<h1>Doctors</h1>
+
+<div class="row g-3">
+    @foreach (var doctor in Model.Data)
+    {
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@doctor.Name</h5>
+                    <p class="card-text"><strong>Specialization:</strong> @doctor.Specialist</p>
+                    <p class="card-text"><strong>Email:</strong> @doctor.Email</p>
+                    <a asp-action="Details" asp-route-id="@doctor.Id" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="mt-4">
+    <cs-pager cs-paging-pagesize="@Model.PageSize"
+              cs-paging-pagenumber="@Model.PageNumber"
+              cs-paging-totalitems="@Model.TotalItems"
+              cs-pagenumber-param="pageNumber"
+              asp-controller="Doctors"
+              asp-area="Patient"
+              asp-action="Index"
+              cs-pager-li-current-class="page-item active"
+              cs-pager-li-other-class="page-item"
+              cs-pager-li-non-active-class="page-item disabled"
+              cs-pager-link-current-class="page-link"
+              cs-pager-link-other-class="page-link">
+    </cs-pager>
+</div>

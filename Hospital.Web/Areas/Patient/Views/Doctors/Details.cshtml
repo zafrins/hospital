@@ -1,0 +1,21 @@
+﻿@model Hospital.ViewModels.ApplicationUserViewModel
+
+@{
+    ViewData["Title"] = "Doctor Details";
+}
+
+<h2>Doctor Details</h2>
+
+<div class="card p-3 shadow-sm">
+    <div class="card-body">
+        <h4>@Model.Name</h4>
+        <p><strong>Specialization:</strong> @Model.Specialist</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Phone:</strong> @Model.MobileNumber</p>
+        <p><strong>Address:</strong> @Model.Address</p>
+    </div>
+</div>
+
+<p>
+    <a asp-action="Index" asp-route-area="Patient" class="btn btn-secondary">Back to Doctors List</a>
+</p>

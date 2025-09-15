@@ -1,0 +1,18 @@
+﻿@model Hospital.ViewModels.ApplicationUserViewModel
+@{
+    ViewData["Title"] = "Delete Profile";
+}
+
+<h2>Delete Profile</h2>
+<h4>Are you sure you want to delete your profile?</h4>
+
+<div>
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a asp-action="Details" class="btn btn-secondary">Cancel</a>
+</form>
