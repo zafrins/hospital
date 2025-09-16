@@ -1,11 +1,13 @@
 ﻿using cloudscribe.Pagination.Models;
 using Hospital.Services;
 using Hospital.ViewModels;
+using Hospital.Web.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hospital.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class MedicinesController : Controller
     {
         private readonly IMedicineService _medicine;

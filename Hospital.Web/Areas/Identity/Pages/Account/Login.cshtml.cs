@@ -134,7 +134,7 @@ namespace Hospital.Web.Areas.Identity.Pages.Account
                     else
                     {
                         // Redirect Patients/Doctors to Home/Index
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Home",new {area = ""});
                     }
                 }
 

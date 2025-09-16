@@ -6573,23 +6573,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Users\\faiya\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\hospital\\Hospital.Services\\Hospital.Services.csproj",
+      "projectUniqueName": "D:\\sdpr2\\Hospital.Services\\Hospital.Services.csproj",
       "projectName": "Hospital.Services",
-      "projectPath": "E:\\hospital\\Hospital.Services\\Hospital.Services.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "E:\\hospital\\Hospital.Services\\obj\\",
+      "projectPath": "D:\\sdpr2\\Hospital.Services\\Hospital.Services.csproj",
+      "packagesPath": "C:\\Users\\faiya\\.nuget\\packages\\",
+      "outputPath": "D:\\sdpr2\\Hospital.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\faiya\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6605,11 +6605,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
-              "projectPath": "E:\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj"
+            "D:\\sdpr2\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
+              "projectPath": "D:\\sdpr2\\Hospital.ViewModels\\Hospital.ViewModels.csproj"
             },
-            "E:\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
-              "projectPath": "E:\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
+            "D:\\sdpr2\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
+              "projectPath": "D:\\sdpr2\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
             }
           }
         }
@@ -6645,7 +6645,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,27 +1,120 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Http
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+@inject IHttpContextAccessor HttpContextAccessor
 
 <ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-    </li>
-    <li class="nav-item">
-        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
-        </form>
-    </li>
-}
-else
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
-}
+    @if (SignInManager.IsSignedIn(User))
+    {
+        var cyrrentUser = await UserManager.GetUserAsync(User);
+        var roles = await UserManager.GetRolesAsync(cyrrentUser);
+        if (roles.Contains("Doctor"))
+        {
+            <!-- Doctor Menu -->
+            <li class="nav-item">
+                <a class="nav-link" asp-area="Doctor" asp-controller="Dashboard" asp-action="Index"> Doctor Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Appointments" asp-action="Index">Appointments</a>
+            </li>
+            <li class="nav-item">
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">
+                        Logout (@UserManager.GetUserName(User))
+                    </button>
+                </form>
+            </li>
+        }
+        else if (roles.Contains("Patient"))
+        {
+            <!-- Patient Menu -->
+            <li class="nav-item">
+                <a class="nav-link" asp-area="Patient" asp-controller="Patients" asp-action="Index">My Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="Patient" asp-controller="Doctors" asp-action="Index">Doctors</a>
+            </li>
+            <li class="nav-item">
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">
+                        Logout (@UserManager.GetUserName(User))
+                    </button>
+                </form>
+            </li>
+        }
+        else
+        {
+            <!-- Default Identity User (not assigned a role) -->
+            <li class="nav-item">
+                <a id="manage" class="nav-link text-dark"
+                   asp-area="Identity" asp-page="/Account/Manage/Index"
+                   title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            </li>
+            <li class="nav-item">
+                <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
+                </form>
+            </li>
+        }
+
+        @* <li class="nav-item">
+            <a id="manage" class="nav-link text-dark"
+               asp-area="Identity" asp-page="/Account/Manage/Index"
+               title="Manage">Hello @UserManager.GetUserName(User)!</a>
+        </li>
+        <li class="nav-item">
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                  asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">Logout</button>
+            </form>
+        </li> *@
+    }
+    else if (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin") == "true")
+    {
+        <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Hospitals" asp-action="Index">Hospital</a></li>
+        <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Medicines" asp-action="Index">Pharmacy</a></li>
+        <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Rooms" asp-action="Index">Rooms</a></li>
+        <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
+        <li class="nav-item">
+            <a class="nav-link" asp-area="Admin" asp-controller="DoctorTimings" asp-action="Index">Doctor Timing</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Hospitals" asp-action="Index">
+                🛠 Admin Dashboard
+            </a>
+        </li>
+        <li class="nav-item">
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                  asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-dark border-0">Logout (Admin)</button>
+            </form>
+        </li>
+
+    }
+    else
+    {
+        @* <li class="nav-item">
+            <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li> *@
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="registerDropdown" role="button" data-bs-toggle="dropdown">Register</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/DoctorRegister">Doctor</a></li>
+                <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Patient</a></li>
+                <li>
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/AdminRegister">Admin</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    }
+
 </ul>

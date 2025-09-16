@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var roles = user != null ? await UserManager.GetRolesAsync(user) : new List<string>();
+}
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,16 +23,16 @@
 </head>
 <body>
     <div class="page-wrapper d-flex flex-column min-vh-100">
-    <header>
+        <header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark header-gradient shadow-sm">
-            <div class="container-fluid">
-                <!-- Logo -->
-                <a class="navbar-brand fw-bold d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/Images/logo.png" alt="Hospital Logo" width="50" height="50" class="me-2 rounded-circle" />
-                    Hospital Dashboard
-                </a>
-                    @if (User.IsInRole("Patient"))
+            <nav class="navbar navbar-expand-lg navbar-dark header-gradient shadow-sm">
+                <div class="container-fluid">
+                    <!-- Logo -->
+                    <a class="navbar-brand fw-bold d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="~/Images/logo.png" alt="Hospital Logo" width="50" height="50" class="me-2 rounded-circle" />
+                        Hospital Dashboard
+                    </a>
+                    @* @if (User.IsInRole("Patient"))
                     {
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Patient" asp-controller="Patients" asp-action="Index">My Profile</a>
@@ -30,66 +40,60 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Patient" asp-controller="Doctors" asp-action="Index">Doctors</a>
                         </li>
-                    }
+                    } *@
 
 
-                <!-- Toggle button for small screens -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <!-- Toggle button for small screens -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <!-- Menu -->
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <!-- Menu -->
+                    <div class="collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                          @*   <li class="nav-item">
-                                <a class="nav-link" asp-area="Admin" asp-controller="Hospitals" asp-action="Index">Hospital</a>
-                            </li> *@
+                            @* Show Admin Menus Only For Admin *@
+                            @if (roles.Contains("Admin"))
+                            {
+                                <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Hospital" asp-action="Index">Hospital</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Medicines" asp-action="Index">Pharmacy</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Rooms" asp-action="Index">Rooms</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
 
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">Users</a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" asp-area="admin" asp-controller="Patients" asp-action="Index">Patients</a></li>
+                                        <li><a class="dropdown-item" asp-area="admin" asp-controller="Users" asp-action="AllDoctors">Doctors</a></li>
+                                    </ul>
+                                </li>
 
-                        <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Medicines" asp-action="Index">Pharmacy</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Rooms" asp-action="Index">Rooms</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="admin" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">Users</a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" asp-area="admin" asp-controller="Patients" asp-action="Index">Patients</a></li>
-                                    <li><a class="dropdown-item" asp-area="admin" asp-controller="Users" asp-action="AllDoctors">Doctors</a></li>
-
-                            </ul>
-                        </li>
-                            <li class="nav-item">
-                            <a class="nav-link" asp-area="Admin" asp-controller="DoctorTimings" asp-action="Index">Doctor Timing</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="Admin" asp-controller="DoctorTimings" asp-action="Index">Doctor Timing</a>
+                                </li>
+                            }
+                            <!-- Registration and login/logout links remain visible to all -->
+                            @* <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="registerDropdown" role="button" data-bs-toggle="dropdown">Register</a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/DoctorRegister">Doctor</a></li>
                                 <li><a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Patient</a></li>
-                                 <li>
+                                <li>
                                     <a class="dropdown-item" asp-area="Identity" asp-page="/Account/AdminRegister">Admin</a>
-                                 </li>
-
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
-@* 
-                    <a asp-area="Admin" asp-controller="Hospitals" asp-action="Create" class="btn btn-hero btn-hospitals">
-    Add Hospital
-</a> *@
+                        </li> *@
+                        </ul>
 
-                    <!-- Login/Logout -->
-                    <partial name="_LoginPartial" />
+                        <!-- Login/Logout -->
+                        <partial name="_LoginPartial" />
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
 
-    @*                 <partial name="_LoginPartial"/>
+        @*                 <partial name="_LoginPartial"/>
                 </div>
             </div>
         </nav>
@@ -101,25 +105,25 @@
         </main>
 
 
-        <footer class ="site-footer">
-            
+        <footer class="site-footer">
+
             <div class="footer-top py-2">
-            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-                <div class="footer-brand mb-3 mb-md-0">
-                    <span>HospitalHub</span>
-                </div>
-                <div class="footer-links d-flex flex-wrap gap-3 justify-content-center justify-content-md-end">
-                    <a href="/" class="footer-link">Home</a>
-                    <a href="/Rooms" class="footer-link">Rooms</a>
-                    <a href="/Doctors" class="footer-link">Doctors</a>
-                    <a href="/Contact" class="footer-link">Contact</a>
+                <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+                    <div class="footer-brand mb-3 mb-md-0">
+                        <span>HospitalHub</span>
+                    </div>
+                    <div class="footer-links d-flex flex-wrap gap-3 justify-content-center justify-content-md-end">
+                        <a href="/" class="footer-link">Home</a>
+                        <a href="/Rooms" class="footer-link">Rooms</a>
+                        <a href="/Doctors" class="footer-link">Doctors</a>
+                        <a href="/Contact" class="footer-link">Contact</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom text-center py-3">
-            &copy; @DateTime.Now.Year HospitalHub. All rights reserved.
-        </div>
-    </footer>
+            <div class="footer-bottom text-center py-3">
+                &copy; @DateTime.Now.Year HospitalHub. All rights reserved.
+            </div>
+        </footer>
 
     </div>
 
@@ -268,12 +272,12 @@
 
     /* Bottom section */
     /* .footer-bottom {
-        font-size: 0.95rem;
-        color: rgba(255,255,255,0.8);
-        background: rgba(0,0,0,0.1);
-    }
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            background: rgba(0,0,0,0.1);
+        }
 
-    /* Neon glow effect for top section */
+        /* Neon glow effect for top section */
     .footer-top::before {
         content: "";
         position: absolute;
@@ -287,34 +291,30 @@
     }
 
     @@keyframes footerGlow {
-        0%
+        0% {
+            background-position: 0% 50%;
+        }
 
-    {
-        background-position: 0% 50%;
-    }
+        50% {
+            background-position: 100% 50%;
+        }
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-
+        100% {
+            background-position: 0% 50%;
+        }
     }
 
     /* Responsive adjustments */
     @@media (max-width: 768px) {
-        .footer-top
+        .footer-top {
+            flex-direction: column;
+            text-align: center;
+        }
 
-    {
-        flex-direction: column;
-        text-align: center;
-    }
+        .footer-links {
+            justify-content: center;
+        }
 
-    .footer-links {
-        justify-content: center;
-    } */
-
+        */
     }
 </style>

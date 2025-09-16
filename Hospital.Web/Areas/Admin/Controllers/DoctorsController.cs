@@ -1,10 +1,12 @@
 ﻿using Hospital.Services;
 using Hospital.ViewModels;
+using Hospital.Web.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hospital.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class DoctorTimingsController : Controller
     {
         private readonly IDoctorService _doctorService;

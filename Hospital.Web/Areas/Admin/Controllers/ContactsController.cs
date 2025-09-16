@@ -2,12 +2,14 @@
 using Hospital.Models;
 using Hospital.Services;
 using Hospital.ViewModels;
+using Hospital.Web.Filters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Hospital.Web.Controllers
 {
-    [Area("admin")]
+    [Area("Admin")]
+    [AdminAuthorize]
     public class ContactsController : Controller
     {
 

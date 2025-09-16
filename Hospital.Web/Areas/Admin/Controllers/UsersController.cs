@@ -1,10 +1,12 @@
 ﻿using Hospital.Services;
+using Hospital.Web.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hospital.Web.Areas.Admin.Controllers
 {
-    [Area("Admin")]  
-      public class UsersController : Controller
+    [Area("Admin")]
+    [AdminAuthorize]
+    public class UsersController : Controller
     {
         private IApplicationUserService _userService;
 

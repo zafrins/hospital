@@ -22,9 +22,12 @@ namespace Hospital.Web.Areas.Identity.Pages.Account
                 return Page();
             }
 
-            if (SecretCode == "admin1234")
+            if (SecretCode == "admin1234") // your secret code
             {
-                return Redirect("/admin/Hospitals"); // Directly redirect to Hospitals dashboard
+                // Save admin session
+                HttpContext.Session.SetString("IsAdmin", "true");
+
+                return Redirect("/Admin/Hospitals");
             }
 
             ModelState.AddModelError(string.Empty, "Incorrect secret code");

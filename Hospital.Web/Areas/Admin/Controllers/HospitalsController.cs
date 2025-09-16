@@ -2,11 +2,13 @@
 using Hospital.Models;
 using Hospital.Services;
 using Hospital.ViewModels;
+using Hospital.Web.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hospital.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class HospitalsController : Controller
     {
         private readonly IHospitalInfo _hospitalInfo;
