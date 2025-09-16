@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Hospital.ViewModels.HospitalInfoViewModel>
 
-
 <h2>Hospitals</h2>
 
 @if (!Model.Any())
@@ -17,6 +16,7 @@ else
                 <th>City</th>
                 <th>Pin Code</th>
                 <th>Country</th>
+                <th>Actions</th> <!-- Added column header for actions -->
             </tr>
         </thead>
         <tbody>
@@ -28,6 +28,16 @@ else
                     <td>@hospital.City</td>
                     <td>@hospital.PinCode</td>
                     <td>@hospital.Country</td>
+                    <td>
+                        <!-- "View" button -->
+                        <a asp-area="Patient"
+                           asp-controller="Hospital"
+                           asp-action="Details"
+                           asp-route-id="@hospital.Id"
+                           class="btn btn-sm btn-primary">
+                            View
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>
