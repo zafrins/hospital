@@ -2,6 +2,7 @@
 using Hospital.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Hospital.Web.Areas.Patient.Controllers
@@ -67,8 +68,29 @@ namespace Hospital.Web.Areas.Patient.Controllers
 
             return View(model);
         }
+        
+    public IActionResult MyAppointment()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-        public IActionResult Confirmation()
+        var appointments = _context.Appointments
+            .Where(a => a.PatientId == userId)
+            .Include(a => a.Doctor)
+            .OrderByDescending(a => a.AppointmentDate)
+            .Select(a => new AppointmentViewModel
+            {
+                DoctorName = a.Doctor.Name ?? a.Doctor.UserName,
+                AppointmentDate = a.AppointmentDate,
+                Description = a.Description,
+                AppointmentNumber = a.Number,
+                Type = a.Type
+            })
+            .ToList();
+
+        return View(appointments);
+    }
+
+    public IActionResult Confirmation()
         {
             return View();
         }
