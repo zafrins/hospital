@@ -1,0 +1,29 @@
+﻿@model List<Hospital.ViewModels.RoomViewModel>
+
+@{
+    ViewData["Title"] = "Rooms for Doctor";
+}
+
+<h2>Available Rooms</h2>
+
+<table class="table table-bordered table-striped mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Room Number</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Hospital</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var room in Model)
+        {
+            <tr>
+                <td>@room.RoomNumber</td>
+                <td>@room.Type</td>
+                <td>@room.Status</td>
+                <td>@room.HospitalInfo?.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

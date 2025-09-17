@@ -16,6 +16,13 @@ wwwroot\Images\medicines\doc2.jpg
 wwwroot\Images\medicines\doc3.jpg
 wwwroot\Images\medicines\doc4.jpg
 wwwroot\Images\medicines\doc5.jpg
+wwwroot\Images\medicines\med1.webp
+wwwroot\Images\medicines\med2.jpg
+wwwroot\Images\medicines\med3.webp
+wwwroot\Images\medicines\med4.jpg
+wwwroot\Images\medicines\phar1.jpg
+wwwroot\Images\medicines\phar2.png
+wwwroot\Images\medicines\pic2.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

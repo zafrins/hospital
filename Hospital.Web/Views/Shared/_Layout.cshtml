@@ -75,9 +75,9 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item">
+                            @*     <li class="nav-item">
                                     <a class="nav-link" asp-area="Admin" asp-controller="DoctorTimings" asp-action="Index">Doctor Timing</a>
-                                </li>
+                                </li> *@
                             }
                             <!-- Registration and login/logout links remain visible to all -->
                             @* <li class="nav-item dropdown">
@@ -123,8 +123,8 @@
                         <a href="/" class="footer-link">Home</a>
                         <a href="/Pharmacy" class="footer-link">Pharmacy</a>
                         <a href="/HospitalPublic" class="footer-link">Hospitals</a>
-                        <a href="/Rooms" class="footer-link">Rooms</a>
-                        <a href="/Doctors" class="footer-link">Doctors</a>
+                        <a href="@Url.Action("Index", "Rooms", new { area = "Patient" })" class="footer-link">Rooms</a>
+                        <a href="@Url.Action("Index", "Doctors", new { area = "Patient" })" class="footer-link">Doctor</a>
                         <a href="/Contact" class="footer-link">Contact</a>
                     </div>
                 </div>

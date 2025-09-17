@@ -49,10 +49,10 @@
                 <a class="nav-link" asp-area="Patient" asp-controller="Patients" asp-action="Index">My Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-area="" asp-controller="Pharmacy" asp-action="MyOrders">My Orders</a>
+                <a class="nav-link" href="@Url.Action("Index", "Doctors", new { area = "Patient" })">Doctors</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-area="Patient" asp-controller="Doctors" asp-action="Index">Doctors</a>
+                <a class="nav-link" href="@Url.Action("Index", "Rooms", new { area = "Patient" })">Rooms</a>
             </li>
             @* <li class="nav-item">
                 <a class="nav-link" asp-area="Patient" asp-controller="Appointment" asp-action="MyAppointment">Doctors</a>
@@ -102,8 +102,15 @@
         <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Medicines" asp-action="Index">Add Medicine</a></li>
         <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Rooms" asp-action="Index">Rooms</a></li>
         <li class="nav-item"><a class="nav-link" asp-area="Admin" asp-controller="Contacts" asp-action="Index">Contacts</a></li>
-        <li class="nav-item">
+     @*    <li class="nav-item">
             <a class="nav-link" asp-area="Admin" asp-controller="DoctorTimings" asp-action="Index">Doctor Timing</a>
+        </li> *@  
+             <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">Users</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" asp-area="admin" asp-controller="Patients" asp-action="Index">Patients</a></li>
+                <li><a class="dropdown-item" asp-area="admin" asp-controller="Users" asp-action="AllDoctors">Doctors</a></li>
+            </ul>
         </li>
         <li class="nav-item">
             <a class="nav-link" asp-area="" asp-controller="Pharmacy" asp-action="ManageOrders">Manage Orders</a>
@@ -114,6 +121,7 @@
                  Admin Dashboard
             </a>
         </li>
+
         <li class="nav-item">
             <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
                   asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

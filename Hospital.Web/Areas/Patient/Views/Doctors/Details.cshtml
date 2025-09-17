@@ -11,11 +11,11 @@
         <h4>@Model.Name</h4>
         <p><strong>Specialization:</strong> @Model.Specialist</p>
         <p><strong>Email:</strong> @Model.Email</p>
-        <p><strong>Phone:</strong> @Model.MobileNumber</p>
+       
         <p><strong>Address:</strong> @Model.Address</p>
     </div>
     <p>
-        <a asp-action="Index" asp-route-area="Patient" class="btn btn-secondary">Back to Doctors List</a>
+        
         <a asp-area="Patient" asp-controller="Appointment" asp-action="BookAppointment" asp-route-doctorId="@Model.Id" class="btn btn-primary">
             Book Appointment
         </a>

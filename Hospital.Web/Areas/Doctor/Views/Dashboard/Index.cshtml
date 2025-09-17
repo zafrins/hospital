@@ -1,0 +1,29 @@
+﻿@model List<Hospital.ViewModels.ApplicationUserViewModel>
+
+@{
+    ViewData["Title"] = "Doctor Dashboard";
+}
+
+<h2>All Doctors</h2>
+
+<table class="table table-bordered table-striped mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+           
+            <th>Specialization</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doctor in Model)
+        {
+            <tr>
+                <td>@doctor.Name</td>
+                <td>@doctor.Email</td>
+              
+                <td>@doctor.Specialist</td>
+            </tr>
+        }
+    </tbody>
+</table>
