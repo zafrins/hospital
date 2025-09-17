@@ -6,6 +6,7 @@ wwwroot\Images\hospital2.jpg
 wwwroot\Images\hospital3.jpg
 wwwroot\Images\hospital4.jpg
 wwwroot\Images\logo.png
+wwwroot\Images\medicines\09b8a023-da57-49d3-a025-def4644732f2.jpg
 wwwroot\Images\medicines\2e738d71-92eb-410b-a38d-dcd9655b67df.jpg
 wwwroot\Images\medicines\53c01c41-a83f-44da-b341-a28f3e4db89d.jpg
 wwwroot\Images\medicines\58f26fc4-b32d-4055-bae3-ab79d30c1c3d.jpg
