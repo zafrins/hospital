@@ -170,97 +170,44 @@ main.flex-grow-1 {
 /* Footer Wrapper */
 /* Bottom section */
 /* ================================
-   FOOTER STYLING
+   COMPACT TEAL FOOTER
    ================================ */
 .site-footer {
-    background: linear-gradient(135deg, #0b486b, #1f7a8c, #3fb0ac); /* gradient background */
-    color: #fff;
+    background: #00897b; /* teal background */
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
-    position: relative;
     width: 100%;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    overflow: hidden;
-    padding: 1rem 0; /* give some height */
-    position: relative; /* needed if using ::before */
+    padding: 0.5rem 0; /* very narrow */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-    /* If you want a solid fallback color behind the gradient */
-    .site-footer::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: #1f7a8c; /* fallback solid color */
-        z-index: -1;
-    }
-
-
-.footer-top {
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    padding: 0.5rem 0; /* smaller top padding */
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.footer-brand span {
-    font-size: 1.3rem; /* smaller text */
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-}
-
-.footer-links a {
-    color: rgba(255,255,255,0.85);
-    font-weight: 500;
-    text-decoration: none;
-    padding: 0.2rem 0.5rem;
-    position: relative;
-    font-size: 0.95rem; /* smaller link text */
-    transition: all 0.3s ease;
-}
-
-    .footer-links a::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -2px;
-        width: 0;
-        height: 2px;
-        background: #ffcc70;
+    .footer-links a {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        padding: 0.3rem 0.6rem;
+        border-radius: 4px;
         transition: all 0.3s ease;
-        transform: translateX(-50%);
     }
 
-    .footer-links a:hover::after {
-        width: 60%;
-    }
+        .footer-links a:hover {
+            background: #00bfa5; /* slightly lighter teal on hover */
+            color: #fff;
+            transform: translateY(-2px);
+            text-shadow: 0 0 3px rgba(255,255,255,0.5);
+        }
 
-    .footer-links a:hover {
-        color: #fffae3;
-        transform: translateY(-2px) scale(1.03);
-        text-shadow: 0 0 4px rgba(255,255,255,0.5);
-    }
 
-.footer-bottom {
-    font-size: 0.85rem; /* smaller bottom text */
-    color: rgba(255,255,255,0.8);
-    background: rgba(0,0,0,0.08);
-    padding: 0.25rem 0; /* smaller bottom padding */
-    text-align: center;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .footer-top {
-        flex-direction: column;
-        text-align: center;
-        padding: 0.5rem 0;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
-}
 
 .register-container {
     background: #f4f7f6; /* soft background to make box pop */

@@ -160,3 +160,21 @@ E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\refint\Hospital.Re
 E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.pdb
 E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.genruntimeconfig.cache
 E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\ref\Hospital.Repositories.dll
+D:\HospitalProject\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.deps.json
+D:\HospitalProject\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.runtimeconfig.json
+D:\HospitalProject\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.dll
+D:\HospitalProject\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.pdb
+D:\HospitalProject\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Models.dll
+D:\HospitalProject\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Models.pdb
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.csproj.AssemblyReference.cache
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.AssemblyInfoInputs.cache
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.AssemblyInfo.cs
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.csproj.CoreCompileInputs.cache
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.sourcelink.json
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.043409E1.Up2Date
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.dll
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\refint\Hospital.Repositories.dll
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.pdb
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.genruntimeconfig.cache
+D:\HospitalProject\hospital\Hospital.Repositories\obj\Debug\net8.0\ref\Hospital.Repositories.dll

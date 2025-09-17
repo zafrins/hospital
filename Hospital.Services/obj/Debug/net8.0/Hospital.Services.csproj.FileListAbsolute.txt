@@ -186,3 +186,25 @@ E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.dll
 E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\refint\Hospital.Services.dll
 E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.pdb
 E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\ref\Hospital.Services.dll
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.deps.json
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.dll
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.pdb
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Models.dll
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Repositories.dll
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.ViewModels.dll
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospitals.Utilities.dll
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.ViewModels.pdb
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospitals.Utilities.pdb
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Models.pdb
+D:\HospitalProject\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Repositories.pdb
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.csproj.AssemblyReference.cache
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.AssemblyInfoInputs.cache
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.AssemblyInfo.cs
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.csproj.CoreCompileInputs.cache
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.sourcelink.json
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.18A9D8D9.Up2Date
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.dll
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\refint\Hospital.Services.dll
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.pdb
+D:\HospitalProject\hospital\Hospital.Services\obj\Debug\net8.0\ref\Hospital.Services.dll

@@ -4,22 +4,23 @@
     ViewData["Title"] = "Pharmacy Store";
 }
 
-<h2>Pharmacy</h2>
-<div class="row">
+<h2 class="text-center mb-4 pharmacy-header">Pharmacy Store</h2>
+
+<div class="row pharmacy">
     @foreach (var med in Model)
     {
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <img src="@med.ImageUrl" class="card-img-top" style="height:180px;object-fit:cover" alt="@med.Name" />
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card pharmacy-card h-100">
+                <img src="@med.ImageUrl" class="card-img-top" alt="@med.Name" />
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">@med.Name</h5>
                     <p class="card-text">@med.Description?.Substring(0, Math.Min(100, (med.Description ?? "").Length))</p>
-                    <div class="mt-auto">
+                    <div class="mt-auto d-flex justify-content-between align-items-center">
                         <strong>৳ @med.Cost</strong>
-                        <form asp-action="AddToCart" method="post" class="d-inline-block float-end">
+                        <form asp-action="AddToCart" method="post" class="m-0 p-0">
                             <input type="hidden" name="id" value="@med.Id" />
                             <input type="hidden" name="quantity" value="1" />
-                            <button class="btn btn-sm btn-primary">Add to cart</button>
+                            <button class="btn btn-sm btn-addtocart">Add to cart</button>
                         </form>
                     </div>
                 </div>
@@ -27,3 +28,67 @@
         </div>
     }
 </div>
+
+<style>
+    .pharmacy-header {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #00796b;
+    }
+
+    .pharmacy .pharmacy-card {
+        border-radius: 0.75rem;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+        .pharmacy .pharmacy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        }
+
+        .pharmacy .pharmacy-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .pharmacy .pharmacy-card:hover img {
+            transform: scale(1.05);
+        }
+
+    .pharmacy .card-title {
+        font-weight: 600;
+        font-size: 1.15rem;
+        color: #00796b;
+        margin-bottom: 0.5rem;
+    }
+
+    .pharmacy .card-text {
+        font-size: 0.95rem;
+        color: #444;
+        flex-grow: 1;
+    }
+
+    .pharmacy .btn-addtocart {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.8rem;
+        border-radius: 2rem;
+        background: #008080;
+        color: #fff;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 10px rgba(0,128,128,0.2);
+        border: none;
+    }
+
+        .pharmacy .btn-addtocart:hover {
+            background: #006666;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,128,128,0.35);
+        }
+</style>

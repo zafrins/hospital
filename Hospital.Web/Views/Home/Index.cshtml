@@ -2,6 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+<!-- ===============================
+     Landing Page Carousel
+================================ -->
 <div class="landing-carousel-container position-relative">
 
     <!-- Carousel -->
@@ -37,30 +40,151 @@
         <!-- Buttons -->
         <div class="mt-4 d-flex justify-content-center gap-3">
             <a asp-controller="Doctors" asp-action="Index" class="btn btn-hero btn-doctors">See Doctors</a>
-           @*  <a href="/Admin/Hospitals" class="btn btn-hero btn-hospitals">See Hospitals</a> *@
             <a asp-controller="HospitalPublic" asp-action="Index" class="btn btn-hero btn-hospitals">See Hospitals</a>
             @{
                 var currentArea = ViewContext.RouteData.Values["area"]?.ToString();
             }
-
             @if (currentArea == "Admin")
             {
                 <a asp-area="Admin" asp-controller="Hospitals" asp-action="Create" class="btn btn-success">
                     Add Hospital
                 </a>
             }
-
-
         </div>
-
     </div>
+
 </div>
 
+<!-- ===============================
+     Find the Best Doctor Section
+================================ -->
+<section class="best-doctors py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-2">Find the Best Doctor</h2>
+        <p class="text-muted mb-5">Choose a doctor according to your need and specialty</p>
 
+        <div class="row justify-content-center g-4">
+            <!-- Doctor 1 -->
+            <div class="col-md-3">
+                <div class="card doctor-card shadow-sm border-0">
+                    <img src="~/images/medicines/doc1.jpg" class="card-img-top" alt="Doctor 1">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dr. John Doe</h5>
+                        <p class="card-text text-muted">Cardiologist</p>
+                        <a href="#" class="btn btn-sm btn-doctors">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="col-md-3">
+                <div class="card doctor-card shadow-sm border-0">
+                    <img src="~/images/medicines/doc2.jpg" class="card-img-top" alt="Doctor 2">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dr. Jane Smith</h5>
+                        <p class="card-text text-muted">Neurologist</p>
+                        <a href="#" class="btn btn-sm btn-doctors">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="col-md-3">
+                <div class="card doctor-card shadow-sm border-0">
+                    <img src="~/images/medicines/doc3.jpg" class="card-img-top" alt="Doctor 3">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dr. Alan Brown</h5>
+                        <p class="card-text text-muted">Orthopedic</p>
+                        <a href="#" class="btn btn-sm btn-doctors">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 4 -->
+            <div class="col-md-3">
+                <div class="card doctor-card shadow-sm border-0">
+                    <img src="~/images/medicines/doc4.jpg" class="card-img-top" alt="Doctor 4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Dr. Emily White</h5>
+                        <p class="card-text text-muted">Pediatrician</p>
+                        <a href="#" class="btn btn-sm btn-doctors">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===============================
+     Medicines Section
+================================ -->
+<section class="medicines py-5">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <!-- Left Side Photo -->
+            <div class="col-md-4">
+                <img src="~/images/medicines/phar1.jpg" class="img-fluid rounded shadow" alt="Pharmacy">
+            </div>
+
+            <!-- Right Side Medicine Cards -->
+            <div class="col-md-8">
+                <div class="row g-4">
+                    <!-- Medicine 1 -->
+                    <div class="col-md-6">
+                        <div class="card medicine-card shadow-sm border-0">
+                            <img src="~/images/medicines/med1.webp" class="card-img-top" alt="Medicine 1">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Paracetamol</h5>
+                                <a href="#" class="btn btn-sm btn-doctors">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medicine 2 -->
+                    <div class="col-md-6">
+                        <div class="card medicine-card shadow-sm border-0">
+                            <img src="~/images/medicines/med2.jpg" class="card-img-top" alt="Medicine 2">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Omeprazople</h5>
+                                <a href="#" class="btn btn-sm btn-doctors">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medicine 3 -->
+                    <div class="col-md-6">
+                        <div class="card medicine-card shadow-sm border-0">
+                            <img src="~/images/medicines/med3.webp" class="card-img-top" alt="Medicine 3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Bilastin</h5>
+                                <a href="#" class="btn btn-sm btn-doctors">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medicine 4 -->
+                    <div class="col-md-6">
+                        <div class="card medicine-card shadow-sm border-0">
+                            <img src="~/images/medicines/med4.jpg" class="card-img-top" alt="Medicine 4">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Pantonix</h5>
+                                <a href="#" class="btn btn-sm btn-doctors">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===============================
+     CSS Styling
+================================ -->
 <style>
-
-    /* === Landing Page Styling === */
-
+    /* Carousel Styling */
     .landing-carousel-container {
         position: relative;
         width: 100%;
@@ -68,7 +192,6 @@
         overflow: hidden;
     }
 
-    /* Softened carousel images */
     .carousel-img {
         width: 100%;
         height: 350px;
@@ -77,12 +200,6 @@
         filter: brightness(70%) contrast(90%);
     }
 
-        /* Optional subtle blur for a more muted effect */
-        .carousel-img.blur {
-            filter: brightness(70%) contrast(90%) blur(1px);
-        }
-
-    /* Overlay layer for extra softening (if needed) */
     .carousel-inner::before {
         content: '';
         position: absolute;
@@ -90,12 +207,10 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.35); /* dark overlay to mute images */
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
         z-index: 1;
     }
 
-
-    /* Overlay Text */
     .carousel-text-overlay {
         position: absolute;
         top: 50%;
@@ -104,6 +219,7 @@
         text-align: center;
         color: #fff;
         text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        z-index: 10;
     }
 
         .carousel-text-overlay h1 {
@@ -116,13 +232,6 @@
             margin-top: 0.5rem;
         }
 
-    /* === Hero Buttons === */
-    .mt-4.d-flex {
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    /* Common hero button style */
     .btn-hero {
         padding: 0.75rem 2rem;
         font-size: 1.1rem;
@@ -133,7 +242,6 @@
         box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
-    /* Doctors button gradient */
     .btn-doctors {
         background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
         color: #fff;
@@ -145,7 +253,6 @@
             box-shadow: 0 10px 20px rgba(31,122,140,0.35);
         }
 
-    /* Hospitals button gradient */
     .btn-hospitals {
         background: linear-gradient(135deg, #f6d365, #fda085);
         color: #fff;
@@ -157,44 +264,56 @@
             box-shadow: 0 10px 20px rgba(253,160,133,0.35);
         }
 
-    /* Carousel controls */
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 5%;
+    /* Best Doctor Section */
+    .best-doctors {
+        background: #e0f7fa; /* light teal background */
     }
 
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-size: 100%, 100%;
-        border-radius: 50%;
-        background-color: rgba(0,0,0,0.4);
+        .best-doctors h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00796b;
+        }
+
+        .best-doctors p {
+            font-size: 1rem;
+            color: #004d40;
+        }
+
+    .doctor-card img {
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
     }
 
-    /* Optional: Add subtle fade overlay on images */
-    .carousel-inner::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));
-        z-index: 1;
+    .doctor-card .card-body h5 {
+        font-weight: 600;
     }
 
-    /* Ensure text overlays above carousel */
-    .carousel-text-overlay {
-        z-index: 10;
+    .doctor-card .btn-doctors {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+        border-radius: 2rem;
     }
 
-    /* Optional: smooth carousel image transition */
-    .carousel-item img {
-        transition: transform 0.5s ease-in-out;
+    /* Medicines Section Styling */
+    .medicines .medicine-card img {
+        height: 150px;
+        object-fit: cover;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
     }
 
-    /* Hover effect for carousel images */
-    .carousel-item:hover img {
-        transform: scale(1.03);
+    .medicines .card-body h6 {
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .medicines .btn-doctors {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.8rem;
+        border-radius: 2rem;
     }
 
 </style>

@@ -160,3 +160,21 @@ E:\New folder\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.
 E:\New folder\hospital\Hospitals.Utilities\obj\Debug\net8.0\refint\Hospitals.Utilities.dll
 E:\New folder\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.pdb
 E:\New folder\hospital\Hospitals.Utilities\obj\Debug\net8.0\ref\Hospitals.Utilities.dll
+D:\HospitalProject\hospital\Hospitals.Utilities\bin\Debug\net8.0\Hospitals.Utilities.deps.json
+D:\HospitalProject\hospital\Hospitals.Utilities\bin\Debug\net8.0\Hospitals.Utilities.dll
+D:\HospitalProject\hospital\Hospitals.Utilities\bin\Debug\net8.0\Hospitals.Utilities.pdb
+D:\HospitalProject\hospital\Hospitals.Utilities\bin\Debug\net8.0\Hospital.Models.dll
+D:\HospitalProject\hospital\Hospitals.Utilities\bin\Debug\net8.0\Hospital.Repositories.dll
+D:\HospitalProject\hospital\Hospitals.Utilities\bin\Debug\net8.0\Hospital.Repositories.pdb
+D:\HospitalProject\hospital\Hospitals.Utilities\bin\Debug\net8.0\Hospital.Models.pdb
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.csproj.AssemblyReference.cache
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.AssemblyInfoInputs.cache
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.AssemblyInfo.cs
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.csproj.CoreCompileInputs.cache
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.sourcelink.json
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospital.032CF14C.Up2Date
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.dll
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\refint\Hospitals.Utilities.dll
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\Hospitals.Utilities.pdb
+D:\HospitalProject\hospital\Hospitals.Utilities\obj\Debug\net8.0\ref\Hospitals.Utilities.dll

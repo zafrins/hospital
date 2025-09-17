@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\New folder\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {}
+    "D:\\HospitalProject\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {}
   },
   "projects": {
-    "E:\\New folder\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
+    "D:\\HospitalProject\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\New folder\\hospital\\Hospital.Models\\Hospital.Models.csproj",
+        "projectUniqueName": "D:\\HospitalProject\\hospital\\Hospital.Models\\Hospital.Models.csproj",
         "projectName": "Hospital.Models",
-        "projectPath": "E:\\New folder\\hospital\\Hospital.Models\\Hospital.Models.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "E:\\New folder\\hospital\\Hospital.Models\\obj\\",
+        "projectPath": "D:\\HospitalProject\\hospital\\Hospital.Models\\Hospital.Models.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\HospitalProject\\hospital\\Hospital.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -72,24 +72,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\New folder\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
+    "D:\\HospitalProject\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\New folder\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj",
+        "projectUniqueName": "D:\\HospitalProject\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj",
         "projectName": "Hospital.ViewModels",
-        "projectPath": "E:\\New folder\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "E:\\New folder\\hospital\\Hospital.ViewModels\\obj\\",
+        "projectPath": "D:\\HospitalProject\\hospital\\Hospital.ViewModels\\Hospital.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\HospitalProject\\hospital\\Hospital.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -105,8 +105,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\New folder\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
-                "projectPath": "E:\\New folder\\hospital\\Hospital.Models\\Hospital.Models.csproj"
+              "D:\\HospitalProject\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
+                "projectPath": "D:\\HospitalProject\\hospital\\Hospital.Models\\Hospital.Models.csproj"
               }
             }
           }
@@ -148,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -138,3 +138,19 @@ E:\New folder\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.
 E:\New folder\hospital\Hospital.ViewModels\obj\Debug\net8.0\refint\Hospital.ViewModels.dll
 E:\New folder\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.pdb
 E:\New folder\hospital\Hospital.ViewModels\obj\Debug\net8.0\ref\Hospital.ViewModels.dll
+D:\HospitalProject\hospital\Hospital.ViewModels\bin\Debug\net8.0\Hospital.ViewModels.deps.json
+D:\HospitalProject\hospital\Hospital.ViewModels\bin\Debug\net8.0\Hospital.ViewModels.dll
+D:\HospitalProject\hospital\Hospital.ViewModels\bin\Debug\net8.0\Hospital.ViewModels.pdb
+D:\HospitalProject\hospital\Hospital.ViewModels\bin\Debug\net8.0\Hospital.Models.dll
+D:\HospitalProject\hospital\Hospital.ViewModels\bin\Debug\net8.0\Hospital.Models.pdb
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.csproj.AssemblyReference.cache
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.AssemblyInfoInputs.cache
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.AssemblyInfo.cs
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.csproj.CoreCompileInputs.cache
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.sourcelink.json
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.62AB27C3.Up2Date
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.dll
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\refint\Hospital.ViewModels.dll
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\Hospital.ViewModels.pdb
+D:\HospitalProject\hospital\Hospital.ViewModels\obj\Debug\net8.0\ref\Hospital.ViewModels.dll

@@ -11633,23 +11633,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\New folder\\hospital\\Hospital.Web\\Hospital.Web.csproj",
+      "projectUniqueName": "D:\\HospitalProject\\hospital\\Hospital.Web\\Hospital.Web.csproj",
       "projectName": "Hospital.Web",
-      "projectPath": "E:\\New folder\\hospital\\Hospital.Web\\Hospital.Web.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "E:\\New folder\\hospital\\Hospital.Web\\obj\\",
+      "projectPath": "D:\\HospitalProject\\hospital\\Hospital.Web\\Hospital.Web.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "D:\\HospitalProject\\hospital\\Hospital.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -11665,17 +11665,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\New folder\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
-              "projectPath": "E:\\New folder\\hospital\\Hospital.Models\\Hospital.Models.csproj"
+            "D:\\HospitalProject\\hospital\\Hospital.Models\\Hospital.Models.csproj": {
+              "projectPath": "D:\\HospitalProject\\hospital\\Hospital.Models\\Hospital.Models.csproj"
             },
-            "E:\\New folder\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj": {
-              "projectPath": "E:\\New folder\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj"
+            "D:\\HospitalProject\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj": {
+              "projectPath": "D:\\HospitalProject\\hospital\\Hospital.Repositories\\Hospital.Repositories.csproj"
             },
-            "E:\\New folder\\hospital\\Hospital.Services\\Hospital.Services.csproj": {
-              "projectPath": "E:\\New folder\\hospital\\Hospital.Services\\Hospital.Services.csproj"
+            "D:\\HospitalProject\\hospital\\Hospital.Services\\Hospital.Services.csproj": {
+              "projectPath": "D:\\HospitalProject\\hospital\\Hospital.Services\\Hospital.Services.csproj"
             },
-            "E:\\New folder\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
-              "projectPath": "E:\\New folder\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
+            "D:\\HospitalProject\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj": {
+              "projectPath": "D:\\HospitalProject\\hospital\\Hospitals.Utilities\\Hospitals.Utilities.csproj"
             }
           }
         }
@@ -11746,7 +11746,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
