@@ -47,7 +47,11 @@ namespace Hospital.Repositories
                 .WithMany()
                 .HasForeignKey(a => a.DoctorId)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            modelBuilder.Entity<Appointment>()
+        .HasOne(a => a.Doctor)
+        .WithMany()
+        .HasForeignKey(a => a.DoctorId)
+        .OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<Appointment>()
                 .HasOne(a => a.Patient)
                 .WithMany()

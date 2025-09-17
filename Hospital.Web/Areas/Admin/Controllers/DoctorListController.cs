@@ -68,20 +68,28 @@ namespace Hospital.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeleteDoctor(string id)
+        public IActionResult Delete(string id)
         {
-            var doctor = _doctorService.GetDoctorById(id);
-            if (doctor == null) return NotFound();
-            return View(doctor);
+            var patient = _doctorService.GetDoctorById(id);
+            if (patient == null)
+            {
+                return NotFound();
+            }
+            return View(patient); // returns to Delete.cshtml
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(ApplicationUserViewModel model)
         {
-            if (string.IsNullOrEmpty(model.Id)) return BadRequest();
+            if (string.IsNullOrEmpty(model.Id))
+            {
+                return BadRequest("Invalid patient ID.");
+            }
+
             _doctorService.DeleteDoctor(model.Id);
             return RedirectToAction("Index");
         }
+
     }
 }

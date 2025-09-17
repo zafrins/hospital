@@ -38,9 +38,11 @@
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn-icon edit flex-fill">
                                 <i class="bi bi-pencil-square me-1"></i> Edit
                             </a>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn-icon info flex-fill">
-                                <i class="bi bi-info-circle me-1"></i> Details
-                            </a>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                    <i class="bi bi-eye"></i> Details
+                                </a>
+                            </td>
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn-icon delete flex-fill">
                                 <i class="bi bi-trash me-1"></i> Delete
                             </a>
