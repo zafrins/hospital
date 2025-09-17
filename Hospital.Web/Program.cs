@@ -94,6 +94,11 @@ app.UseEndpoints(endpoints =>
     );
     endpoints.MapDefaultControllerRoute();
 });
+app.MapControllerRoute(
+    name: "doctorAppointments",
+    pattern: "Appointments/{action=Scheduled}/{id?}",
+    defaults: new { area = "Doctor", controller = "Appointments" });
+
 
 
 //app.MapControllerRoute(

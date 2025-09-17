@@ -8,27 +8,31 @@
 }
 else
 {
+
     <table class="table">
         <thead>
             <tr>
                 <th>Doctor</th>
+                <th>Email</th>
                 <th>Date</th>
                 <th>Description</th>
-                <th>Number</th>
                 <th>Type</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var appointment in Model)
+            @foreach (var appt in Model)
             {
                 <tr>
-                    <td>@appointment.DoctorName</td>
-                    <td>@appointment.AppointmentDate.ToString("g")</td>
-                    <td>@appointment.Description</td>
-                    <td>@appointment.AppointmentNumber</td>
-                    <td>@appointment.Type</td>
+                    <td>@appt.DoctorName</td>
+                    <td>@appt.DoctorEmail</td>
+                    <td>@appt.AppointmentDate.ToString("g")</td>
+                    <td>@appt.Description</td>
+                    <td>@appt.Type</td>
+                    <td>@appt.Status</td>
                 </tr>
             }
         </tbody>
     </table>
+
 }

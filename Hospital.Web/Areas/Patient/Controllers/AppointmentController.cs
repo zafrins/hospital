@@ -1,5 +1,6 @@
 ﻿using Hospital.Models;
 using Hospital.Repositories;
+using Hospital.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +36,7 @@ namespace Hospital.Web.Areas.Patient.Controllers
             var model = new BookAppointmentViewModel
             {
                 DoctorId = doctor.Id,
-                DoctorName = doctor.Name ?? doctor.UserName // or adjust as needed
+                DoctorName = doctor.Name ?? doctor.UserName
             };
 
             return View(model);
@@ -47,7 +48,7 @@ namespace Hospital.Web.Areas.Patient.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // <-- Get logged-in user ID
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 var appointment = new Appointment
                 {
@@ -57,7 +58,8 @@ namespace Hospital.Web.Areas.Patient.Controllers
                     DoctorId = model.DoctorId,
                     PatientId = userId,
                     Number = Guid.NewGuid().ToString().Substring(0, 8),
-                    Type = "In-Person"
+                    Type = "In-Person",
+                    Status = "Pending" // always pending when created
                 };
 
                 _context.Appointments.Add(appointment);
@@ -68,34 +70,34 @@ namespace Hospital.Web.Areas.Patient.Controllers
 
             return View(model);
         }
-        
-    public IActionResult MyAppointment()
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-        var appointments = _context.Appointments
-            .Where(a => a.PatientId == userId)
-            .Include(a => a.Doctor)
-            .OrderByDescending(a => a.AppointmentDate)
-            .Select(a => new AppointmentViewModel
-            {
-                DoctorName = a.Doctor.Name ?? a.Doctor.UserName,
-                AppointmentDate = a.AppointmentDate,
-                Description = a.Description,
-                AppointmentNumber = a.Number,
-                Type = a.Type
-            })
-            .ToList();
+        // GET: Patient/Appointment/MyAppointment
+        public IActionResult MyAppointment()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-        return View(appointments);
-    }
+            var appointments = _context.Appointments
+                .Where(a => a.PatientId == userId)
+                .Include(a => a.Doctor)
+                .OrderByDescending(a => a.AppointmentDate)
+                .Select(a => new AppointmentViewModel
+                {
+                    DoctorName = a.Doctor.Name ?? a.Doctor.UserName,
+                    DoctorEmail = a.Doctor.Email,              // <-- populate email here
+                    AppointmentDate = a.AppointmentDate,
+                    Description = a.Description,
+                    AppointmentNumber = a.Number,
+                    Type = a.Type,
+                    Status = a.Status
+                })
+                .ToList();
 
-    public IActionResult Confirmation()
+            return View(appointments);
+        }
+
+        public IActionResult Confirmation()
         {
             return View();
         }
-
-
     }
-
 }

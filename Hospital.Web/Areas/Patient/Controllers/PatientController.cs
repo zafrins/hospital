@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
+﻿using Hospital.Models;
 using Hospital.Services;
 using Hospital.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Hospital.Web.Areas.Patient.Controllers
 {
@@ -17,52 +18,40 @@ namespace Hospital.Web.Areas.Patient.Controllers
             _patientService = patientService;
         }
 
-        // GET: /Patient/Patients/Index
+        // Convenience property for current user id
+        private string? CurrentUserId =>
+            User.FindFirstValue(ClaimTypes.NameIdentifier);
+
         public IActionResult Index()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userId))
-            {
-                return Unauthorized();
-            }
-            var patient = _patientService.GetById(userId);
-            if (patient == null) return NotFound();
-            return View("Details", patient);  // or a custom view if you want
+            var patient = GetLoggedInPatient();
+            if (patient == null) return Unauthorized();
+
+            return View("Details", patient);
         }
 
-        // GET: /Patient/Patients/Details
         public IActionResult Details()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userId))
-                return Unauthorized();
-
-            var patient = _patientService.GetById(userId);
-            if (patient == null) return NotFound();
+            var patient = GetLoggedInPatient();
+            if (patient == null) return Unauthorized();
 
             return View(patient);
         }
 
-        // GET: /Patient/Patients/Edit
         [HttpGet]
         public IActionResult Edit()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userId))
-                return Unauthorized();
-
-            var patient = _patientService.GetById(userId);
-            if (patient == null) return NotFound();
+            var patient = GetLoggedInPatient();
+            if (patient == null) return Unauthorized();
 
             return View(patient);
         }
 
-        // POST: /Patient/Patients/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(ApplicationUserViewModel model)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userId = CurrentUserId;
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized();
 
@@ -76,16 +65,11 @@ namespace Hospital.Web.Areas.Patient.Controllers
             return RedirectToAction(nameof(Details));
         }
 
-        // GET: /Patient/Patients/Delete
         [HttpGet]
         public IActionResult Delete()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userId))
-                return Unauthorized();
-
-            var patient = _patientService.GetById(userId);
-            if (patient == null) return NotFound();
+            var patient = GetLoggedInPatient();
+            if (patient == null) return Unauthorized();
 
             return View(patient);
         }
@@ -95,13 +79,23 @@ namespace Hospital.Web.Areas.Patient.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed()
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userId = CurrentUserId;
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized();
 
             _patientService.Delete(userId);
-            // optionally log out after deletion
+
+
             return RedirectToAction("Index", "Home", new { area = "" });
+        }
+
+        private ApplicationUserViewModel? GetLoggedInPatient()
+        {
+            var userId = CurrentUserId;
+            if (string.IsNullOrEmpty(userId))
+                return null;
+
+            return _patientService.GetById(userId);
         }
     }
 }

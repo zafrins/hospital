@@ -164,3 +164,25 @@ D:\sdpr2\Hospital.Services\obj\Debug\net8.0\Hospital.Services.dll
 D:\sdpr2\Hospital.Services\obj\Debug\net8.0\refint\Hospital.Services.dll
 D:\sdpr2\Hospital.Services\obj\Debug\net8.0\Hospital.Services.pdb
 D:\sdpr2\Hospital.Services\obj\Debug\net8.0\ref\Hospital.Services.dll
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.deps.json
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.dll
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Services.pdb
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Models.dll
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Repositories.dll
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.ViewModels.dll
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospitals.Utilities.dll
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.ViewModels.pdb
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospitals.Utilities.pdb
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Models.pdb
+E:\New folder\hospital\Hospital.Services\bin\Debug\net8.0\Hospital.Repositories.pdb
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.csproj.AssemblyReference.cache
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.AssemblyInfoInputs.cache
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.AssemblyInfo.cs
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.csproj.CoreCompileInputs.cache
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.sourcelink.json
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.18A9D8D9.Up2Date
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.dll
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\refint\Hospital.Services.dll
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\Hospital.Services.pdb
+E:\New folder\hospital\Hospital.Services\obj\Debug\net8.0\ref\Hospital.Services.dll

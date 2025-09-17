@@ -14,6 +14,6 @@
 
         public string PatientId { get; set; }
         public ApplicationUser Patient { get; set; }
-
+        public string Status { get; set; }
     }
 }

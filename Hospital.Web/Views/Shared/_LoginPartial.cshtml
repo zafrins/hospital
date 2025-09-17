@@ -12,6 +12,17 @@
         var roles = await UserManager.GetRolesAsync(cyrrentUser);
         if (roles.Contains("Doctor"))
         {
+            <li class="nav-item">
+                <a class="nav-link" asp-area="Doctor" asp-controller="Dashboard" asp-action="Index"> Doctor Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   asp-area="Doctor"
+                   asp-controller="Appointments"
+                   asp-action="Scheduled">
+                    My Scheduled Appointments
+                </a>
+            </li>
             <!-- Doctor Menu -->
             <li class="nav-item">
                 <a class="nav-link" asp-area="Doctor" asp-controller="Dashboard" asp-action="Index"> Doctor Dashboard</a>
@@ -19,9 +30,9 @@
             <li class="nav-item">
                 <a class="nav-link" asp-area="" asp-controller="Pharmacy" asp-action="MyOrders">My Orders</a>
             </li>
-            <li class="nav-item">
+            @* <li class="nav-item">
                 <a class="nav-link" asp-area="" asp-controller="Appointments" asp-action="Index">Appointments</a>
-            </li>
+            </li> *@
             <li class="nav-item">
                 <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
                       asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">

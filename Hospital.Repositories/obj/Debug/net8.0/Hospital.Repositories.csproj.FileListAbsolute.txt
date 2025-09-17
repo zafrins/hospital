@@ -142,3 +142,21 @@ D:\sdpr2\Hospital.Repositories\obj\Debug\net8.0\refint\Hospital.Repositories.dll
 D:\sdpr2\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.pdb
 D:\sdpr2\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.genruntimeconfig.cache
 D:\sdpr2\Hospital.Repositories\obj\Debug\net8.0\ref\Hospital.Repositories.dll
+E:\New folder\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.deps.json
+E:\New folder\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.runtimeconfig.json
+E:\New folder\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.dll
+E:\New folder\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Repositories.pdb
+E:\New folder\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Models.dll
+E:\New folder\hospital\Hospital.Repositories\bin\Debug\net8.0\Hospital.Models.pdb
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.csproj.AssemblyReference.cache
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.AssemblyInfoInputs.cache
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.AssemblyInfo.cs
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.csproj.CoreCompileInputs.cache
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.sourcelink.json
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.043409E1.Up2Date
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.dll
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\refint\Hospital.Repositories.dll
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.pdb
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\Hospital.Repositories.genruntimeconfig.cache
+E:\New folder\hospital\Hospital.Repositories\obj\Debug\net8.0\ref\Hospital.Repositories.dll
