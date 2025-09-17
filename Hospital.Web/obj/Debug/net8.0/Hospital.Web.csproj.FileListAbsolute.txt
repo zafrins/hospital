@@ -2202,7 +2202,6 @@ E:\hospital\Hospital.Web\obj\Debug\net8.0\refint\Hospital.Web.dll
 E:\hospital\Hospital.Web\obj\Debug\net8.0\Hospital.Web.pdb
 E:\hospital\Hospital.Web\obj\Debug\net8.0\Hospital.Web.genruntimeconfig.cache
 E:\hospital\Hospital.Web\obj\Debug\net8.0\ref\Hospital.Web.dll
-E:\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\sdpr2\Hospital.Web\bin\Debug\net8.0\appsettings.Development.json
 D:\sdpr2\Hospital.Web\bin\Debug\net8.0\appsettings.json
 D:\sdpr2\Hospital.Web\bin\Debug\net8.0\Hospital.Web.staticwebassets.runtime.json
@@ -2522,3 +2521,16 @@ D:\sdpr2\Hospital.Web\obj\Debug\net8.0\refint\Hospital.Web.dll
 D:\sdpr2\Hospital.Web\obj\Debug\net8.0\Hospital.Web.pdb
 D:\sdpr2\Hospital.Web\obj\Debug\net8.0\Hospital.Web.genruntimeconfig.cache
 D:\sdpr2\Hospital.Web\obj\Debug\net8.0\ref\Hospital.Web.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\System.IO.Pipelines.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\System.Text.Json.dll
+E:\hospital\Hospital.Web\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+E:\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

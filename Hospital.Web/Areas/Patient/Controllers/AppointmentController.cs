@@ -1,9 +1,12 @@
 ﻿using Hospital.Models;
 using Hospital.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Hospital.Web.Areas.Patient.Controllers
 {
+    [Authorize]
     [Area("Patient")]
     public class AppointmentController : Controller
     {
@@ -41,40 +44,30 @@ namespace Hospital.Web.Areas.Patient.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult BookAppointment(BookAppointmentViewModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                // Repopulate DoctorName if validation fails
-                var doctor = _context.ApplicationUsers.FirstOrDefault(d => d.Id == model.DoctorId);
-                model.DoctorName = doctor?.Name ?? doctor?.UserName ?? "Unknown";
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // <-- Get logged-in user ID
 
-                return View(model);
+                var appointment = new Appointment
+                {
+                    AppointmentDate = model.AppointmentDate,
+                    CreatedDate = DateTime.Now,
+                    Description = model.Reason,
+                    DoctorId = model.DoctorId,
+                    PatientId = userId,
+                    Number = Guid.NewGuid().ToString().Substring(0, 8),
+                    Type = "In-Person"
+                };
+
+                _context.Appointments.Add(appointment);
+                _context.SaveChanges();
+
+                return RedirectToAction("Confirmation");
             }
 
-            // Get currently logged-in user (the patient)
-            var patientId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-
-            if (string.IsNullOrEmpty(patientId))
-            {
-                return Unauthorized("User must be logged in to book an appointment.");
-            }
-
-            // Create and save the appointment
-            var appointment = new Appointment
-            {
-                DoctorId = model.DoctorId,
-                PatientId = patientId,
-                CreatedDate = DateTime.UtcNow,
-                AppointmentDate = model.AppointmentDate,
-                Description = model.Reason,
-                Type = "General", // or set dynamically if needed
-                // optional: auto-generated number
-            };
-
-            _context.Appointments.Add(appointment);
-            _context.SaveChanges();
-
-            return RedirectToAction("Confirmation"); // or wherever you want to go next
+            return View(model);
         }
+
         public IActionResult Confirmation()
         {
             return View();
