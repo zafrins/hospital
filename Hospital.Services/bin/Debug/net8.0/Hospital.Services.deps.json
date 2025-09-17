@@ -1334,6 +1334,7 @@
         "dependencies": {
           "Hospital.Models": "1.0.0",
           "Hospital.Repositories": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "2.3.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.11",
           "Microsoft.Extensions.Identity.Stores": "8.0.11"

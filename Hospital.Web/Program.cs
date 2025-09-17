@@ -41,6 +41,7 @@ builder.Services.AddTransient<IContactService, ContactService>();
 builder.Services.AddTransient<IApplicationUserService, ApplicationUserService>();
 builder.Services.AddScoped<IMedicineService, MedicineService>();
 
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.AddRazorPages();
 builder.Services.AddSession(options =>

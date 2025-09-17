@@ -1,0 +1,16 @@
+﻿@model Hospital.Models.Order
+<h2>Order Confirmed</h2>
+
+<p>Order #@Model.Id placed on @Model.OrderDate.ToLocalTime()</p>
+<p>Total: @Model.TotalAmount</p>
+<p>Payment: @Model.PaymentMethod</p>
+
+<h4>Items</h4>
+<ul>
+    @foreach (var it in Model.Items)
+    {
+        <li>@it.MedicineName - @it.Quantity x @it.Price</li>
+    }
+</ul>
+
+<a asp-action="MyOrders" class="btn btn-primary">Go to My Orders</a>

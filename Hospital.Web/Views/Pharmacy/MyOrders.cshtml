@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Hospital.Models.Order>
+
+<h2>My Orders</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">You have no orders yet.</div>
+}
+else
+{
+    foreach (var o in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>Order #@o.Id - @o.OrderDate.ToLocalTime()</h5>
+                <p>Total: @o.TotalAmount | Status: @o.Status</p>
+                <ul>
+                    @foreach (var it in o.Items)
+                    {
+                        <li>@it.MedicineName - @it.Quantity x @it.Price</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+}

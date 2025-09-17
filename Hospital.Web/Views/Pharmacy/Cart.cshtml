@@ -1,0 +1,47 @@
+﻿@model List<Hospital.ViewModels.CartItemViewModel>
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<h2>Your Cart</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Your cart is empty. <a asp-action="Index">Back to store</a></div>
+}
+else
+{
+    <form asp-action="UpdateCart" method="post">
+        <table class="table">
+            <thead><tr><th>Item</th><th>Price</th><th>Qty</th><th>Total</th><th></th></tr></thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <img src="@Model[i].ImageUrl" style="width:60px;height:60px;object-fit:cover" />
+                            @Model[i].MedicineName
+                        </td>
+                        <td>@Model[i].Price</td>
+                        <td>
+                            <input type="hidden" name="items[@i].MedicineId" value="@Model[i].MedicineId" />
+                            <input type="hidden" name="items[@i].MedicineName" value="@Model[i].MedicineName" />
+                            <input type="number" name="items[@i].Quantity" value="@Model[i].Quantity" min="1" class="form-control" style="width:80px" />
+                            <input type="hidden" name="items[@i].Price" value="@Model[i].Price" />
+                            <input type="hidden" name="items[@i].ImageUrl" value="@Model[i].ImageUrl" />
+                        </td>
+                        <td>@(Model[i].Total)</td>
+                        <td>
+                            <form asp-action="RemoveFromCart" method="post" class="d-inline">
+                                <input type="hidden" name="medicineId" value="@Model[i].MedicineId" />
+                                <button class="btn btn-danger btn-sm">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button class="btn btn-primary">Update Cart</button>
+        <a asp-action="Checkout" class="btn btn-success ms-2">Proceed to Checkout</a>
+    </form>
+}

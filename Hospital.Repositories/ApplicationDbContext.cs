@@ -34,6 +34,9 @@ namespace Hospital.Repositories
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<TestPrice> TestPrices { get; set; }
         public DbSet<Timing> Timings { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
