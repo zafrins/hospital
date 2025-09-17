@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Hospital.ViewModels.HospitalInfoViewModel>
+
+
+<h2>Hospitals</h2>
+
+@if (!Model.Any())
+{
+    <p>No hospitals available.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>City</th>
+                <th>Pin Code</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hospital in Model)
+            {
+                <tr>
+                    <td>@hospital.Name</td>
+                    <td>@hospital.Type</td>
+                    <td>@hospital.City</td>
+                    <td>@hospital.PinCode</td>
+                    <td>@hospital.Country</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

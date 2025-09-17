@@ -1,0 +1,29 @@
+﻿@model BookAppointmentViewModel
+
+<h2>Book Appointment</h2>
+
+@using (Html.BeginForm("BookAppointment", "Appointment", FormMethod.Post, new { area = "Patient" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.DoctorId)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DoctorName)
+        @Html.TextBoxFor(m => m.DoctorName, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.AppointmentDate)
+        @Html.TextBoxFor(m => m.AppointmentDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.AppointmentDate, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Reason)
+        @Html.TextAreaFor(m => m.Reason, new { @class = "form-control", rows = 3 })
+        @Html.ValidationMessageFor(m => m.Reason, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

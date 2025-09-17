@@ -332,6 +332,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/hospital/Hospital.Web/Areas/Patient/Views/Appointment/BookAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF0aWVudFxWaWV3c1xBcHBvaW50bWVudFxCb29rQXBwb2ludG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/hospital/Hospital.Web/Areas/Patient/Views/Appointment/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF0aWVudFxWaWV3c1xBcHBvaW50bWVudFxDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/hospital/Hospital.Web/Areas/Patient/Views/Doctors/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGF0aWVudFxWaWV3c1xEb2N0b3JzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -398,6 +406,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/hospital/Hospital.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/hospital/Hospital.Web/Views/HospitalPublic/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxQdWJsaWNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/hospital/Hospital.Web/Views/HospitalPublic/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWxQdWJsaWNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/hospital/Hospital.Web/Views/Shared/Error.cshtml]
