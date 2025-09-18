@@ -4,95 +4,133 @@
     ViewData["Title"] = "Create Room";
 }
 
-<div class="container my-5">
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
 
-    <!-- Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="text-success fw-bold">Create Room</h1>
-        <a asp-action="Index" class="btn btn-outline-success btn-lg shadow-sm">
-            <i class="bi bi-arrow-left-circle me-1"></i> Back to Rooms
-        </a>
-    </div>
+    <div class="col-md-5">
+        <div class="card shadow-sm border-teal border-2 form-card">
+            <div class="card-body">
+                <h1 class="text-teal fw-bold text-center mb-4">Create Room</h1>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-    <div class="row justify-content-start">
-        <div class="col-md-5">
-            <div class="card shadow-sm border-success border-2">
-                <div class="card-body">
-                    <form asp-action="Create">
-                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="RoomNumber" class="form-control form-control-pill" placeholder="Room Number" />
+                        <label asp-for="RoomNumber">Room Number</label>
+                        <span asp-validation-for="RoomNumber" class="text-danger"></span>
+                    </div>
 
-                        <div class="mb-3">
-                            <label asp-for="RoomNumber" class="form-label fw-bold"></label>
-                            <input asp-for="RoomNumber" class="form-control shadow-sm" />
-                            <span asp-validation-for="RoomNumber" class="text-danger"></span>
-                        </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Type" class="form-control form-control-pill" placeholder="Type" />
+                        <label asp-for="Type">Type</label>
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
 
-                        <div class="mb-3">
-                            <label asp-for="Type" class="form-label fw-bold"></label>
-                            <input asp-for="Type" class="form-control shadow-sm" />
-                            <span asp-validation-for="Type" class="text-danger"></span>
-                        </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Status" class="form-control form-control-pill" placeholder="Status" />
+                        <label asp-for="Status">Status</label>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
 
-                        <div class="mb-3">
-                            <label asp-for="Status" class="form-label fw-bold"></label>
-                            <input asp-for="Status" class="form-control shadow-sm" />
-                            <span asp-validation-for="Status" class="text-danger"></span>
-                        </div>
+                    <div class="form-floating mb-4">
+                        <input asp-for="HospitalInfoId" class="form-control form-control-pill" placeholder="Hospital ID" />
+                        <label asp-for="HospitalInfoId">Hospital ID</label>
+                        <span asp-validation-for="HospitalInfoId" class="text-danger"></span>
+                    </div>
 
-                        <div class="mb-3">
-                            <label asp-for="HospitalInfoId" class="form-label fw-bold"></label>
-                            <input asp-for="HospitalInfoId" class="form-control shadow-sm" />
-                            <span asp-validation-for="HospitalInfoId" class="text-danger"></span>
-                        </div>
-
-                        <div class="d-grid">
-                            <input type="submit" value="Create" class="btn btn-gradient-green btn-lg shadow-sm" />
-                        </div>
-                    </form>
-                </div>
+                    <div class="d-grid gap-2">
+                        <input type="submit" value="Create" class="btn btn-gradient-teal btn-lg shadow-sm" />
+                        <a asp-action="Index" class="btn btn-outline-teal btn-lg shadow-sm">Back to Rooms</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+
 </div>
 
 <style>
+    /* Center container */
+    .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     /* Card styling */
-    .card {
-        border-radius: 1rem;
+    .form-card {
+        border-radius: 1.5rem;
+        padding: 2rem 1.5rem;
+        border: 2px solid #20c997;
+        background: #ffffff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Form input shadows */
-    .form-control {
-        border-radius: 0.5rem;
-        border: 1px solid #ced4da;
-        transition: all 0.25s ease;
-    }
-
-        .form-control:focus {
-            border-color: #28a745;
-            box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
-            outline: none;
+        .form-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
         }
 
-    /* Gradient Create button */
-    .btn-gradient-green {
+    /* Form floating inputs */
+    .form-control-pill {
+        border-radius: 50px;
+        border: 1.5px solid #20c997;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+        box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+        .form-control-pill:focus {
+            border-color: #008080;
+            box-shadow: 0 0 12px rgba(32,201,151,0.3);
+            outline: none;
+            transform: translateY(-1px);
+        }
+
+    .form-floating > label {
+        font-weight: 600;
+        color: #008080;
+    }
+
+    /* Buttons */
+    .btn-gradient-teal {
         border: none;
         border-radius: 50px;
-        font-weight: 500;
-        background: linear-gradient(90deg, #28a745, #20c997);
+        font-weight: 600;
+        background: linear-gradient(90deg, #008080, #20c997);
         color: #fff;
-        transition: transform 0.15s, box-shadow 0.2s;
+        padding: 0.65rem 1.6rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-        .btn-gradient-green:hover {
+        .btn-gradient-teal:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+            background: linear-gradient(90deg, #20c997, #008080);
         }
 
-    /* Back button hover */
-    .btn-outline-success:hover {
-        background-color: #28a745;
-        color: #fff;
-        box-shadow: 0 4px 8px rgba(0,128,0,0.2);
+    /* Back button */
+    .btn-outline-teal {
+        border: 2px solid #008080;
+        color: #008080;
+        border-radius: 50px;
+        font-weight: 600;
+        padding: 0.65rem 1.6rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-outline-teal:hover {
+            background-color: #008080;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0,128,128,0.2);
+        }
+
+    /* Page title */
+    .rooms-title {
+        font-size: 2rem;
+        letter-spacing: 0.5px;
     }
 </style>

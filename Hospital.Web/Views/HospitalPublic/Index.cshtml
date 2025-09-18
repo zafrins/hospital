@@ -1,35 +1,136 @@
 ﻿@model IEnumerable<Hospital.ViewModels.HospitalInfoViewModel>
 
+<div class="hospital-container">
+    <h2 class="page-title">All Hospitals in Our Portal</h2>
 
-<h2>Hospitals</h2>
-
-@if (!Model.Any())
-{
-    <p>No hospitals available.</p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>City</th>
-                <th>Pin Code</th>
-                <th>Country</th>
-            </tr>
-        </thead>
-        <tbody>
+    @if (!Model.Any())
+    {
+        <p class="no-data">No hospitals available.</p>
+    }
+    else
+    {
+        <div class="hospital-cards">
             @foreach (var hospital in Model)
             {
-                <tr>
-                    <td>@hospital.Name</td>
-                    <td>@hospital.Type</td>
-                    <td>@hospital.City</td>
-                    <td>@hospital.PinCode</td>
-                    <td>@hospital.Country</td>
-                </tr>
+                <div class="hospital-card">
+                    <h3>@hospital.Name</h3>
+                    <p><span class="label">Type:</span> <span class="value">@hospital.Type</span></p>
+                    <p><span class="label">City:</span> <span class="value">@hospital.City</span></p>
+                    <p><span class="label">Pin Code:</span> <span class="value">@hospital.PinCode</span></p>
+                    <p><span class="label">Country:</span> <span class="value">@hospital.Country</span></p>
+                </div>
             }
-        </tbody>
-    </table>
-}
+        </div>
+    }
+</div>
+
+<style>
+    /* Container */
+    .hospital-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background: #f7f9fc;
+        border-radius: 1rem;
+    }
+
+    /* Page title */
+    .page-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: #333;
+    }
+
+    /* No data text */
+    .no-data {
+        text-align: center;
+        color: #888;
+        font-size: 1rem;
+    }
+
+    /* Card grid */
+    .hospital-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Individual hospital card */
+    .hospital-card {
+        background: #fff;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .hospital-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .hospital-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #4e9cff;
+            font-weight: 600;
+        }
+
+        /* Labels and values */
+        .hospital-card p {
+            margin: 0.4rem 0;
+            font-size: 0.95rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .hospital-card .label {
+            font-weight: 600;
+            color: #333;
+            width: 90px; /* Fixed width for labels */
+        }
+
+        .hospital-card .value {
+            color: #555;
+            font-weight: 400;
+        }
+
+        /* Optional: Add icons */
+        .hospital-card p::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.5rem;
+            background-size: cover;
+        }
+
+        .hospital-card p:nth-child(2)::before {
+            background-image: url('/images/icons/type-icon.png');
+        }
+
+        .hospital-card p:nth-child(3)::before {
+            background-image: url('/images/icons/city-icon.png');
+        }
+
+        .hospital-card p:nth-child(4)::before {
+            background-image: url('/images/icons/pin-icon.png');
+        }
+
+        .hospital-card p:nth-child(5)::before {
+            background-image: url('/images/icons/country-icon.png');
+        }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .hospital-cards
+
+    {
+        grid-template-columns: 1fr;
+    }
+
+    }
+</style>

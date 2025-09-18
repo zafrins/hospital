@@ -4,80 +4,168 @@
     ViewData["Title"] = "Edit Contact";
 }
 
-<div class="container my-5">
+<div class="container my-5 d-flex justify-content-center">
+    <div class="edit-card">
 
-    <!-- Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="text-success fw-bold">Edit Contact</h1>
-        <a asp-action="Index" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left-circle me-1"></i> Back to List
-        </a>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 col-lg-5">
-            <form asp-action="Edit" class="p-4 shadow-sm rounded bg-light">
-                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-
-                <div class="mb-3">
-                    <label asp-for="Id" class="form-label fw-bold"></label>
-                    <input asp-for="Id" class="form-control border-success" readonly />
-                    <span asp-validation-for="Id" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Email" class="form-label fw-bold"></label>
-                    <input asp-for="Email" class="form-control border-success" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="Phone" class="form-label fw-bold"></label>
-                    <input asp-for="Phone" class="form-control border-success" />
-                    <span asp-validation-for="Phone" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label asp-for="HospitalInfoId" class="form-label fw-bold"></label>
-                    <input asp-for="HospitalInfoId" class="form-control border-success" />
-                    <span asp-validation-for="HospitalInfoId" class="text-danger"></span>
-                </div>
-
-                <div class="d-flex justify-content-end gap-2 mt-4">
-                    <input type="submit" value="Save" class="btn btn-success btn-gradient" />
-                    <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
-                </div>
-            </form>
+        <!-- Header -->
+        <div class="header d-flex justify-content-between align-items-center mb-4">
+            <h1>Edit Contact</h1>
+            <a asp-action="Index" class="btn btn-back">
+                <i class="bi bi-arrow-left-circle me-1"></i> Back
+            </a>
         </div>
-    </div>
 
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Id">ID</label>
+                <input asp-for="Id" readonly class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Phone">Phone</label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="HospitalInfoId">Hospital ID</label>
+                <input asp-for="HospitalInfoId" class="form-control" />
+                <span asp-validation-for="HospitalInfoId" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-end gap-3">
+                <input type="submit" value="Save" class="btn btn-save" />
+                <a asp-action="Index" class="btn btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
 </div>
 
 <style>
-    /* Gradient button */
-    .btn-gradient {
-        background: linear-gradient(45deg, #28a745, #198754);
-        color: #fff;
-        border: none;
-        transition: all 0.2s;
+    /* Card */
+    .edit-card {
+        width: 100%;
+        max-width: 500px;
+        background: #ffffff;
+        border-radius: 1.5rem;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-        .btn-gradient:hover {
-            background: linear-gradient(45deg, #198754, #28a745);
-            box-shadow: 0 4px 8px rgba(0,128,0,0.3);
+        .edit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.15);
         }
 
-    /* Input focus effect */
-    .form-control:focus {
-        box-shadow: 0 0 5px rgba(40,167,69,0.5);
-        border-color: #28a745;
+    /* Header */
+    .header h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #0c595f;
+        margin: 0;
     }
 
-    .bg-light {
-        background: #f9fef9;
+    .btn-back {
+        display: flex;
+        align-items: center;
+        border: 2px solid #0c595f;
+        color: #0c595f;
+        padding: 0.5rem 1.4rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        background: transparent;
     }
 
-    .form-label {
-        font-size: 0.95rem;
+        .btn-back:hover {
+            background: #d4f0f2;
+            color: #0c595f;
+        }
+
+    /* Inputs */
+    input.form-control {
+        width: 100%;
+        padding: 0.65rem 0.85rem;
+        border-radius: 0.75rem;
+        border: 1.5px solid #0c595f;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+        input.form-control:focus {
+            border-color: #38a3a5;
+            box-shadow: 0 0 8px rgba(56,163,165,0.3);
+            outline: none;
+        }
+
+    /* Labels */
+    label {
+        font-weight: 700;
+        color: #0c595f;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Buttons */
+    .btn-save {
+        background: linear-gradient(90deg, #0c595f, #38a3a5);
+        color: #fff;
+        border: none;
+        border-radius: 0.75rem;
+        padding: 0.65rem 1.6rem;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+        .btn-save:hover {
+            background: linear-gradient(90deg, #38a3a5, #0c595f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+    .btn-cancel {
+        border: 2px solid #0c595f;
+        color: #0c595f;
+        padding: 0.65rem 1.6rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        background: transparent;
+    }
+
+        .btn-cancel:hover {
+            background: #d4f0f2;
+            color: #0c595f;
+            transform: translateY(-2px);
+        }
+
+    /* Responsive */
+    @@media (max-width: 576px) {
+        .edit-card {
+            padding: 2rem 1.5rem;
+        }
+
+        .btn-save, .btn-cancel, .btn-back {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .d-flex.justify-content-end {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
     }
 </style>

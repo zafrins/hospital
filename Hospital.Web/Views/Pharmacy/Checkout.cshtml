@@ -3,37 +3,253 @@
     ViewData["Title"] = "Checkout";
 }
 
-<h2>Checkout</h2>
+<div class="checkout-wrapper">
 
-@if (!Model.Items.Any())
-{
-    <div class="alert alert-info">Your cart is empty.</div>
+    <!-- Checkout Progress -->
+    <div class="checkout-steps">
+        <div class="step completed">Cart</div>
+        <div class="step active">Checkout</div>
+        <div class="step">Confirmation</div>
+    </div>
+
+    <h2 class="checkout-header">Checkout</h2>
+
+    @if (!Model.Items.Any())
+    {
+        <div class="empty-cart">
+            <p>Your cart is empty.</p>
+            <a asp-action="Index" asp-controller="Pharmacy" class="btn-back">Back to store</a>
+        </div>
+    }
+    else
+    {
+        <div class="checkout-main">
+
+            <!-- Items List -->
+            <div class="items-list">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="item-card">
+                        <div class="item-info">
+                            <h4>@item.MedicineName</h4>
+                            <p>Qty: <strong>@item.Quantity</strong></p>
+                        </div>
+                        <div class="item-price">
+                            <p>@item.Total.ToString("C")</p>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Summary -->
+            <div class="checkout-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>@Model.Subtotal.ToString("C")</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>@Model.Shipping.ToString("C")</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>@Model.Total.ToString("C")</span>
+                </div>
+
+                <!-- Payment & Buttons -->
+                <div class="checkout-actions">
+                    <p class="payment-info">Payment: <strong>Cash on Delivery</strong></p>
+                    <form asp-action="ConfirmOrder" method="post" class="actions-form">
+                        <button type="submit" class="btn-confirm">Confirm Order</button>
+                    </form>
+                    <a asp-action="Cart" class="btn-back">Back to Cart</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }
-else
-{
-    <table class="table">
-        <thead><tr><th>Item</th><th>Price</th><th>Qty</th><th>Total</th></tr></thead>
-        <tbody>
-            @foreach (var it in Model.Items)
-            {
-                <tr>
-                    <td>@it.MedicineName</td>
-                    <td>@it.Price</td>
-                    <td>@it.Quantity</td>
-                    <td>@it.Total</td>
-                </tr>
+
+<style>
+    /* Wrapper */
+    .checkout-wrapper {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 1rem;
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+    }
+
+    /* Progress Steps */
+    .checkout-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+
+        .checkout-steps .step {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem 0;
+            border-bottom: 3px solid #ccc;
+            font-weight: 600;
+            color: #888;
+            position: relative;
+        }
+
+            .checkout-steps .step.completed {
+                border-bottom: 3px solid #38a3a5;
+                color: #38a3a5;
             }
-        </tbody>
-        <tfoot>
-            <tr><th colspan="3">Subtotal</th><th>@Model.Subtotal</th></tr>
-            <tr><th colspan="3">Shipping</th><th>@Model.Shipping</th></tr>
-            <tr><th colspan="3">Total</th><th>@Model.Total</th></tr>
-        </tfoot>
-    </table>
 
-    <form asp-action="ConfirmOrder" method="post">
-        <p>Payment: <strong>Cash on Delivery</strong></p>
-        <button type="submit" class="btn btn-success">Confirm Order</button>
-        <a asp-action="Cart" class="btn btn-secondary ms-2">Back to Cart</a>
-    </form>
-}
+            .checkout-steps .step.active {
+                border-bottom: 3px solid #0d4f5f;
+                color: #0d4f5f;
+            }
+
+    /* Header */
+    .checkout-header {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Empty Cart */
+    .empty-cart {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: #f8f9fa;
+        border-radius: 16px;
+    }
+
+        .empty-cart p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+    /* Main Checkout */
+    .checkout-main {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    /* Items List */
+    .items-list {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .item-card {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        border-radius: 16px;
+        background: #f1f7f9;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+        .item-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+    .item-info h4 {
+        margin: 0 0 0.3rem 0;
+        font-weight: 600;
+    }
+
+    /* Summary */
+    .checkout-summary {
+        flex: 1;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        height: fit-content;
+    }
+
+        .checkout-summary h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #0d4f5f;
+        }
+
+    .summary-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+        .summary-row.total {
+            font-size: 1.25rem;
+            color: #0d4f5f;
+        }
+
+    /* Actions */
+    .checkout-actions {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .payment-info {
+        text-align: center;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .actions-form button.btn-confirm {
+        width: 100%;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #0d4f5f, #38a3a5);
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .actions-form button.btn-confirm:hover {
+            background: linear-gradient(90deg, #38a3a5, #0d4f5f);
+        }
+
+    .btn-back {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        border-radius: 12px;
+        background: #adb5bd;
+        text-align: center;
+        font-weight: 600;
+        text-decoration: none;
+        color: #fff;
+    }
+
+        .btn-back:hover {
+            background: #6c757d;
+        }
+
+    /* Responsive */
+    @@media (max-width: 900px) {
+        .checkout-main
+
+    {
+        flex-direction: column;
+    }
+
+    }
+</style>

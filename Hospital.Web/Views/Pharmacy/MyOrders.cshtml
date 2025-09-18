@@ -1,26 +1,168 @@
 ﻿@model IEnumerable<Hospital.Models.Order>
 
-<h2>My Orders</h2>
+<div class="orders-wrapper">
 
-@if (!Model.Any())
-{
-    <div class="alert alert-info">You have no orders yet.</div>
-}
-else
-{
-    foreach (var o in Model)
+    <h2 class="orders-header">My Orders</h2>
+
+    @if (!Model.Any())
     {
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5>Order #@o.Id - @o.OrderDate.ToLocalTime()</h5>
-                <p>Total: @o.TotalAmount | Status: @o.Status</p>
-                <ul>
-                    @foreach (var it in o.Items)
-                    {
-                        <li>@it.MedicineName - @it.Quantity x @it.Price</li>
-                    }
-                </ul>
-            </div>
+        <div class="empty-orders">
+            <p>You have no orders yet.</p>
+            <a asp-action="Index" asp-controller="Pharmacy" class="btn-back">Back to store</a>
         </div>
     }
-}
+    else
+    {
+        <div class="orders-list">
+            @foreach (var o in Model)
+            {
+                <div class="order-card">
+                    <div class="order-header">
+                        <h4>Order #@o.Id</h4>
+                        <span class="order-date">@o.OrderDate.ToLocalTime()</span>
+                    </div>
+                    <div class="order-info">
+                        <p><strong>Total:</strong> @o.TotalAmount.ToString("C")</p>
+                        <p><strong>Status:</strong> <span class="order-status">@o.Status</span></p>
+                    </div>
+                    <ul class="order-items">
+                        @foreach (var it in o.Items)
+                        {
+                            <li>@it.MedicineName - @it.Quantity x @it.Price.ToString("C")</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<style>
+    /* Wrapper */
+    .orders-wrapper {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 1rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .orders-header {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0d4f5f;
+        margin-bottom: 2rem;
+    }
+
+    /* Empty orders */
+    .empty-orders {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: #f8f9fa;
+        border-radius: 16px;
+    }
+
+        .empty-orders p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+    .btn-back {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: #6c757d;
+        color: #fff;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+        .btn-back:hover {
+            background: #5a6268;
+        }
+
+    /* Order cards */
+    .orders-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .order-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+        padding: 1.5rem 2rem;
+        transition: all 0.3s;
+    }
+
+        .order-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+    .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.8rem;
+    }
+
+        .order-header h4 {
+            font-size: 1.3rem;
+            color: #0d4f5f;
+            margin: 0;
+        }
+
+    .order-date {
+        font-size: 0.95rem;
+        color: #888;
+    }
+
+    .order-info p {
+        margin: 0.3rem 0;
+        color: #555;
+        font-weight: 500;
+    }
+
+    /* Status badge */
+    .order-status {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 12px;
+        background: #d1f0ff; /* light teal background */
+        color: #0d4f5f; /* teal text */
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .order-items {
+        list-style: none;
+        padding: 0;
+        margin: 0.8rem 0 1.2rem 0;
+        border-top: 1px solid #eee;
+        padding-top: 0.8rem;
+    }
+
+        .order-items li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+        }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .order-card
+
+    {
+        padding: 1rem 1.2rem;
+    }
+
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    }
+</style>

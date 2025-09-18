@@ -4,78 +4,138 @@
     ViewData["Title"] = "Create Contact";
 }
 
-<div class="container my-5">
-
-    <!-- Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="text-success fw-bold">Create Contact</h1>
-        <a asp-action="Index" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left-circle me-1"></i> Back to List
-        </a>
-    </div>
+<div class="container my-5 d-flex justify-content-center">
 
     <!-- Form Card -->
-    <div class="card shadow-sm p-4 bg-light rounded">
-        <h4 class="mb-3 text-success">Contact Details</h4>
+    <div class="card form-card p-4">
+        <!-- Header -->
+        <div class="form-header text-center mb-4">
+            <h1 class="form-title">Create Contact</h1>
+            <p class="form-subtitle">Add a new contact for the hospital</p>
+        </div>
+
+        <!-- Form -->
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-            @* <div class="mb-3">
-                <label asp-for="Id" class="form-label fw-bold"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div> *@
-
-            <div class="mb-3">
-                <label asp-for="Email" class="form-label fw-bold"></label>
-                <input asp-for="Email" class="form-control" />
+            <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control" placeholder="Email" />
+                <label asp-for="Email">Email</label>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="Phone" class="form-label fw-bold"></label>
-                <input asp-for="Phone" class="form-control" />
+            <div class="form-floating mb-3">
+                <input asp-for="Phone" class="form-control" placeholder="Phone" />
+                <label asp-for="Phone">Phone</label>
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="HospitalInfoId" class="form-label fw-bold"></label>
-                <input asp-for="HospitalInfoId" class="form-control" />
+            <div class="form-floating mb-4">
+                <input asp-for="HospitalInfoId" class="form-control" placeholder="Hospital ID" />
+                <label asp-for="HospitalInfoId">Hospital ID</label>
                 <span asp-validation-for="HospitalInfoId" class="text-danger"></span>
             </div>
 
-            <div class="d-flex justify-content-end gap-2">
-                <input type="submit" value="Create" class="btn btn-gradient-success" />
-                <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+            <div class="d-flex justify-content-center gap-3">
+                <input type="submit" value="Create" class="btn btn-submit" />
+                <a asp-action="Index" class="btn btn-cancel">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
 <style>
-    /* Gradient button for create */
-    .btn-gradient-success {
-        background: linear-gradient(45deg, #28a745, #218838);
-        color: #fff;
-        border: none;
-        transition: all 0.2s;
+    /* Centered, narrow card */
+    .form-card {
+        max-width: 400px;
+        width: 100%;
+        border-radius: 1.2rem;
+        background: rgba(31, 122, 140, 0.05);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 25px rgba(31,122,140,0.2);
+        transition: all 0.3s ease;
     }
 
-        .btn-gradient-success:hover {
-            background: linear-gradient(45deg, #218838, #28a745);
-            box-shadow: 0 4px 8px rgba(33, 136, 56, 0.3);
+        .form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(31,122,140,0.3);
         }
 
-    /* Card style */
-    .bg-light {
-        background: #f9fef9;
+    /* Header */
+    .form-header {
+        margin-bottom: 2rem;
     }
 
-    .form-label {
+    .form-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1f7a8c;
+        margin-bottom: 0.25rem;
+    }
+
+    .form-subtitle {
         font-size: 0.95rem;
+        color: #3fb0ac;
     }
 
-    input.form-control {
-        border-radius: 0.5rem;
+    /* Floating labels */
+    .form-floating .form-control {
+        height: 3rem;
+        border-radius: 0.75rem;
+        border: 1px solid #3fb0ac;
+        padding: 1rem 0.75rem 0 0.75rem;
+        background: #ffffffaa;
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+
+        .form-floating .form-control:focus {
+            border-color: #1f7a8c;
+            box-shadow: 0 0 10px rgba(31,122,140,0.2);
+        }
+
+    .form-floating label {
+        color: #1f7a8c;
+        padding-left: 0.75rem;
+    }
+
+    /* Buttons */
+    .btn-submit {
+        background: linear-gradient(135deg, #1f7a8c, #3fb0ac);
+        color: #fff;
+        border: none;
+        border-radius: 1rem;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #3fb0ac, #1f7a8c);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(63,176,172,0.3);
+        }
+
+    .btn-cancel {
+        border-radius: 1rem;
+        padding: 0.55rem 1.5rem;
+        font-weight: 500;
+        color: #1f7a8c;
+        border: 1px solid #1f7a8c;
+        background: #e0f7f9;
+        transition: all 0.3s ease;
+    }
+
+        .btn-cancel:hover {
+            background: #3fb0ac;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+    /* Validation errors */
+    .text-danger {
+        font-size: 0.85rem;
+        margin-top: 0.25rem;
     }
 </style>

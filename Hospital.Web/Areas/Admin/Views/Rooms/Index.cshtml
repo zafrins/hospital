@@ -8,9 +8,9 @@
 <div class="container my-5">
 
     <!-- Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
         <h1 class="rooms-title">Rooms Dashboard</h1>
-        <a asp-action="Create" class="btn btn-gradient-green btn-lg shadow-btn">
+        <a asp-action="Create" class="btn btn-gradient-teal btn-lg shadow-btn mt-2 mt-md-0">
             <i class="bi bi-plus-circle me-2"></i> Add New Room
         </a>
     </div>
@@ -34,15 +34,13 @@
                         <p class="card-text mb-3"><strong>Hospital:</strong> @item.HospitalInfo.Name</p>
 
                         <!-- Action buttons -->
-                        <div class="d-flex justify-content-between mt-3 gap-2">
+                        <div class="d-flex justify-content-between mt-3 gap-2 flex-wrap">
                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn-icon edit flex-fill">
                                 <i class="bi bi-pencil-square me-1"></i> Edit
                             </a>
-                            <td>
-                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
-                                    <i class="bi bi-eye"></i> Details
-                                </a>
-                            </td>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn-icon info flex-fill">
+                                <i class="bi bi-eye me-1"></i> Details
+                            </a>
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn-icon delete flex-fill">
                                 <i class="bi bi-trash me-1"></i> Delete
                             </a>
@@ -69,126 +67,13 @@
         </cs-pager>
     </div>
 </div>
+
 <style>
-
-    /* HEADER WRAPPER */
-    .navbar {
-        background: linear-gradient(135deg, #1f7a8c, #0b486b, #3fb0ac);
-        background-size: 300% 300%;
-        animation: gradientShift 8s ease infinite;
-        padding: 1rem 2rem;
-        border-bottom: 3px solid #ffcc70;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    }
-
-    /* GRADIENT ANIMATION */
-    @@keyframes gradientShift {
-        0%
-
-    {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-
-    }
-
-    /* BRAND */
-    .navbar-brand {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #fff !important;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-        transition: transform 0.3s ease;
-    }
-
-        .navbar-brand:hover {
-            transform: scale(1.1) rotate(-2deg);
-        }
-
-    /* NAV LINKS */
-    .nav-link {
-        font-weight: 600;
-        color: rgba(255,255,255,0.85) !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 0.7rem 1.2rem;
-        transition: all 0.4s ease;
-        position: relative;
-    }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            width: 0;
-            height: 3px;
-            background: #ffcc70;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after {
-            width: 60%;
-        }
-
-        .nav-link:hover {
-            color: #fff !important;
-            transform: translateY(-3px);
-        }
-
-    /* DROPDOWN MENU */
-    .dropdown-menu {
-        background: #0b486b;
-        border-radius: 10px;
-        border: 2px solid #3fb0ac;
-        padding: 0.5rem;
-        animation: dropdownFade 0.3s ease;
-    }
-
-    @@keyframes dropdownFade {
-        from
-
-    {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    }
-
-    .dropdown-item {
-        font-weight: 500;
-        color: #fff;
-        padding: 0.7rem 1rem;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-    }
-
-        .dropdown-item:hover {
-            background: #3fb0ac;
-            color: #fffae3;
-            transform: translateX(8px);
-        }
-
     /* ================= HEADER ================= */
     .rooms-title {
         font-size: 2.4rem;
         font-weight: 800;
-        color: #198754;
+        color: #008080; /* Teal */
         position: relative;
         letter-spacing: 0.5px;
     }
@@ -200,34 +85,34 @@
             left: 0;
             width: 70px;
             height: 4px;
-            background: #20c997;
+            background: #20c997; /* Teal gradient accent */
             border-radius: 3px;
         }
 
     /* ================= ADD NEW ROOM BUTTON ================= */
-    .btn-gradient-green {
+    .btn-gradient-teal {
         border: none;
         border-radius: 12px;
         font-weight: 600;
-        background: linear-gradient(90deg, #28a745, #20c997);
+        background: linear-gradient(90deg, #008080, #20c997);
         color: #fff;
         padding: 0.65rem 1.4rem;
         transition: all 0.25s ease;
     }
 
-        .btn-gradient-green:hover {
+        .btn-gradient-teal:hover {
             transform: translateY(-2px);
-            background: linear-gradient(90deg, #20c997, #28a745);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(90deg, #20c997, #008080);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
     /* ================= ROOM CARD ================= */
     .room-card {
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 1rem;
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 128, 128, 0.15);
         backdrop-filter: blur(6px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
@@ -235,7 +120,7 @@
 
         .room-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.12);
         }
 
     /* ================= SERIAL BADGE ================= */
@@ -243,19 +128,19 @@
         position: absolute;
         top: 1rem;
         left: 1rem;
-        background: #198754;
+        background: #008080;
         color: #fff;
         padding: 0.45rem 0.8rem;
         font-weight: 600;
         border-radius: 8px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     /* ================= CARD CONTENT ================= */
     .card-title {
         font-size: 1.4rem;
         font-weight: 700;
-        color: #198754;
+        color: #008080;
         margin-bottom: 0.5rem;
         font-family: 'Poppins', sans-serif;
     }
@@ -286,27 +171,27 @@
     }
 
         .btn-icon.edit {
-            background: #e6f4ea;
-            color: #198754;
+            background: #e0f7f7;
+            color: #008080;
         }
 
             .btn-icon.edit:hover {
-                background: #198754;
+                background: #008080;
                 color: #fff;
             }
 
         .btn-icon.info {
-            background: #e7f3fe;
-            color: #0d6efd;
+            background: #e0f9f9;
+            color: #20c997;
         }
 
             .btn-icon.info:hover {
-                background: #0d6efd;
+                background: #20c997;
                 color: #fff;
             }
 
         .btn-icon.delete {
-            background: #fdecea;
+            background: #fdeaea;
             color: #dc3545;
         }
 
@@ -319,20 +204,31 @@
     .page-link {
         border-radius: 6px !important;
         margin: 0 4px;
-        color: #198754 !important;
+        color: #008080 !important;
         font-weight: 500;
         border: 1px solid #dee2e6 !important;
         transition: all 0.2s ease;
     }
 
         .page-link:hover {
-            background: #e9f7ef;
-            border-color: #198754 !important;
+            background: #e0f7f7;
+            border-color: #008080 !important;
         }
 
     .page-item.active .page-link {
-        background: #198754 !important;
-        border-color: #198754 !important;
+        background: #008080 !important;
+        border-color: #008080 !important;
         color: #fff !important;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @@media (max-width: 576px) {
+        .d-flex.justify-content-between.flex-wrap
+
+    {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     }
 </style>

@@ -1,16 +1,141 @@
 ﻿@model Hospital.Models.Order
-<h2>Order Confirmed</h2>
 
-<p>Order #@Model.Id placed on @Model.OrderDate.ToLocalTime()</p>
-<p>Total: @Model.TotalAmount</p>
-<p>Payment: @Model.PaymentMethod</p>
+<div class="confirmation-wrapper">
 
-<h4>Items</h4>
-<ul>
-    @foreach (var it in Model.Items)
-    {
-        <li>@it.MedicineName - @it.Quantity x @it.Price</li>
+    <!-- Checkout Progress Steps -->
+    <div class="checkout-steps">
+        <div class="step">Cart</div>
+        <div class="step">Checkout</div>
+        <div class="step active">Confirmation</div>
+    </div>
+
+    <div class="confirmation-card">
+        <h2 class="confirmation-title">Order Confirmed</h2>
+
+        <div class="order-info">
+            <p><strong>Order #:</strong> @Model.Id</p>
+            <p><strong>Placed on:</strong> @Model.OrderDate.ToLocalTime()</p>
+            <p><strong>Total:</strong> @Model.TotalAmount.ToString("C")</p>
+            <p><strong>Payment Method:</strong> @Model.PaymentMethod</p>
+        </div>
+
+        <h4 class="items-title">Items</h4>
+        <ul class="order-items">
+            @foreach (var it in Model.Items)
+            {
+                <li>@it.MedicineName - @it.Quantity x @it.Price.ToString("C")</li>
+            }
+        </ul>
+
+        <a asp-action="MyOrders" class="btn-go-orders">Go to My Orders</a>
+    </div>
+</div>
+
+<style>
+    /* Wrapper */
+    .confirmation-wrapper {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 1rem;
+        font-family: 'Poppins', sans-serif;
     }
-</ul>
 
-<a asp-action="MyOrders" class="btn btn-primary">Go to My Orders</a>
+    /* Progress Steps */
+    .checkout-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+
+        .checkout-steps .step {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem 0;
+            border-bottom: 3px solid #ccc;
+            font-weight: 600;
+            color: #888;
+            position: relative;
+        }
+
+            .checkout-steps .step.completed {
+                border-bottom: 3px solid #0d4f5f;
+                color: #0d4f5f;
+            }
+
+            .checkout-steps .step.active {
+                border-bottom: 3px solid #38a3a5; /* brighter teal for current step */
+                color: #0d4f5f;
+            }
+
+
+    /* Card */
+    .confirmation-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        text-align: center;
+    }
+
+    .confirmation-title {
+        font-size: 2rem;
+        color: #0d4f5f;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    .order-info p {
+        font-size: 1rem;
+        margin: 0.3rem 0;
+        color: #333;
+    }
+
+    .items-title {
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #0d4f5f;
+    }
+
+    .order-items {
+        list-style: none;
+        padding: 0;
+        margin: 0.5rem 0 1.5rem 0;
+    }
+
+        .order-items li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+    .btn-go-orders {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(90deg, #0d4f5f, #38a3a5);
+        color: #fff;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .btn-go-orders:hover {
+            background: linear-gradient(90deg, #38a3a5, #0d4f5f);
+        }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .confirmation-card
+
+    {
+        padding: 1.5rem;
+    }
+
+    .checkout-steps {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    }
+</style>

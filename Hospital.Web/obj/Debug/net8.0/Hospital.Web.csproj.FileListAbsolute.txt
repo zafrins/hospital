@@ -3201,7 +3201,6 @@ D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.build.
 D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.development.json
 D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\Hospital.D7BD65CF.Up2Date
 D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\Hospital.Web.dll
 D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\refint\Hospital.Web.dll
@@ -3539,3 +3538,4 @@ D:\hospital\Hospital.Web\obj\Debug\net8.0\refint\Hospital.Web.dll
 D:\hospital\Hospital.Web\obj\Debug\net8.0\Hospital.Web.pdb
 D:\hospital\Hospital.Web\obj\Debug\net8.0\Hospital.Web.genruntimeconfig.cache
 D:\hospital\Hospital.Web\obj\Debug\net8.0\ref\Hospital.Web.dll
+D:\HospitalProject\hospital\Hospital.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

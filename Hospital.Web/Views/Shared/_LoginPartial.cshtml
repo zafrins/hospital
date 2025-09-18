@@ -54,15 +54,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Action("Index", "Rooms", new { area = "Patient" })">Rooms</a>
             </li>
-            @* <li class="nav-item">
-                <a class="nav-link" asp-area="Patient" asp-controller="Appointment" asp-action="MyAppointment">Doctors</a>
-            </li> *@
-            <a href="/Patient/Appointment/MyAppointment" class="btn btn-primary">My Appointments</a>
+            <li class="nav-item">
+                <a href="/Patient/Appointment/MyAppointment" class="nav-link my-appointments">My Appointments</a>
+            </li>
 
             <li class="nav-item">
                 <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
                       asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                    <button id="logout" type="submit" class="nav-link btn btn-link text-dark border-0">
+                    <button id="logout" type="submit" class="nav-link logout-btn">
                         Logout (@UserManager.GetUserName(User))
                     </button>
                 </form>
@@ -152,3 +151,53 @@
     }
 
 </ul>
+
+
+<style>
+    /* My Appointments (match nav-link style) */
+    .navbar-nav .my-appointments {
+        color: rgba(255,255,255,0.95);
+        font-weight: 600;
+        position: relative;
+        padding: 0.5rem 0.8rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .navbar-nav .my-appointments::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 2px;
+            width: 0;
+            height: 2px;
+            background: #ffcc70;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-nav .my-appointments:hover {
+            color: #fffae3;
+            text-shadow: 0 0 6px rgba(255,255,255,0.5);
+        }
+
+            .navbar-nav .my-appointments:hover::after {
+                width: 60%;
+            }
+
+    /* Logout button */
+    .navbar-nav .logout-btn {
+        color: rgba(255,255,255,0.95);
+        background: transparent;
+        border: none;
+        padding: 0.5rem 0.8rem;
+        font-weight: 600;
+        transition: all 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .navbar-nav .logout-btn:hover {
+            color: #fffae3;
+            text-shadow: 0 0 6px rgba(255,255,255,0.5);
+        }
+
+</style>

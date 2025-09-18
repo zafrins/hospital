@@ -6,11 +6,15 @@ wwwroot\Images\hospital2.jpg
 wwwroot\Images\hospital3.jpg
 wwwroot\Images\hospital4.jpg
 wwwroot\Images\logo.png
+wwwroot\Images\medicines\01b19018-939e-4894-86cf-c5366b7dc594.jpg
 wwwroot\Images\medicines\09b8a023-da57-49d3-a025-def4644732f2.jpg
 wwwroot\Images\medicines\2e738d71-92eb-410b-a38d-dcd9655b67df.jpg
+wwwroot\Images\medicines\43109ca2-5fa8-4ecf-93ba-3af95b3b7bd9.webp
 wwwroot\Images\medicines\53c01c41-a83f-44da-b341-a28f3e4db89d.jpg
 wwwroot\Images\medicines\58f26fc4-b32d-4055-bae3-ab79d30c1c3d.jpg
 wwwroot\Images\medicines\67c2c53c-4430-43cb-85d7-529ab4990cd5.jpeg
+wwwroot\Images\medicines\8e21de47-cc81-496c-bb96-b3324556f24b.webp
+wwwroot\Images\medicines\9bd1f5f9-1043-4d64-ba68-bf1ee0d6114a.jpg
 wwwroot\Images\medicines\doc1.jpg
 wwwroot\Images\medicines\doc2.jpg
 wwwroot\Images\medicines\doc3.jpg

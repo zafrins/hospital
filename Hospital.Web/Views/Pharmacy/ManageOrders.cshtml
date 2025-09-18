@@ -1,51 +1,188 @@
 ﻿@model IEnumerable<Hospital.Models.Order>
 
-<h2>Manage Orders</h2>
+<div class="manage-orders-wrapper">
+    <h2 class="manage-orders-header">Manage Orders</h2>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Order ID</th>
-            <th>User ID</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Items</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var order in Model)
-        {
-            <tr>
-                <td>@order.Id</td>
-                <td>@order.UserId</td>
-                <td>@order.OrderDate.ToString("dd-MM-yyyy HH:mm")</td>
-                <td>@order.Status</td>
-                <td>@order.TotalAmount</td>
-                <td>
-                    <ul>
-                        @foreach (var item in order.Items)
-                        {
-                            <li>@item.MedicineName - @item.Quantity x @item.Price</li>
-                        }
-                    </ul>
-                </td>
-                <td>
-                    @if (order.Status == "Pending")
+    @if (!Model.Any())
+    {
+        <div class="empty-orders">
+            <p>No orders found.</p>
+        </div>
+    }
+    else
+    {
+        <div class="orders-table-wrapper">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>User ID</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Items</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
                     {
-                        <form asp-action="UpdateStatus" asp-controller="Pharmacy" method="post" style="display:inline">
-                            <input type="hidden" name="id" value="@order.Id" />
-                            <input type="hidden" name="status" value="Delivered" />
-                            <button type="submit" class="btn btn-success btn-sm">Mark Delivered</button>
-                        </form>
+                        <tr>
+                            <td>@order.Id</td>
+                            <td>@order.UserId</td>
+                            <td>@order.OrderDate.ToString("dd-MM-yyyy HH:mm")</td>
+                            <td>
+                                <span class="order-status @(order.Status == "Pending" ? "pending" : "delivered")">
+                                    @order.Status
+                                </span>
+                            </td>
+                            <td>@order.TotalAmount.ToString("C")</td>
+                            <td>
+                                <ul class="order-items-list">
+                                    @foreach (var item in order.Items)
+                                    {
+                                        <li>@item.MedicineName - @item.Quantity x @item.Price.ToString("C")</li>
+                                    }
+                                </ul>
+                            </td>
+                            <td>
+                                @if (order.Status == "Pending")
+                                {
+                                    <form asp-action="UpdateStatus" asp-controller="Pharmacy" method="post" class="status-form">
+                                        <input type="hidden" name="id" value="@order.Id" />
+                                        <input type="hidden" name="status" value="Delivered" />
+                                        <button type="submit" class="btn-deliver">Mark Delivered</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <span class="badge delivered">Delivered</span>
+                                }
+                            </td>
+                        </tr>
                     }
-                    else
-                    {
-                        <span class="badge bg-success">Delivered</span>
-                    }
-                </td>
-            </tr>
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+<style>
+    .manage-orders-wrapper {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 1rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .manage-orders-header {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0d4f5f;
+        margin-bottom: 2rem;
+    }
+
+    .orders-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .orders-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 0.5rem;
+        background: #fff;
+    }
+
+        .orders-table th, .orders-table td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 500;
+            vertical-align: middle;
+            color: #333;
         }
-    </tbody>
-</table>
+
+        .orders-table thead th {
+            background: #0d4f5f;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .orders-table tbody tr {
+            background: #f5f7fa;
+            transition: all 0.3s;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+            .orders-table tbody tr:hover {
+                box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            }
+
+    .order-items-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .order-items-list li {
+            padding: 0.2rem 0;
+            color: #555;
+        }
+
+    .order-status {
+        padding: 0.3rem 0.8rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-block;
+    }
+
+        .order-status.pending {
+            background: #ffe8d6;
+            color: #ff7a00;
+        }
+
+        .order-status.delivered {
+            background: #d1f0ff;
+            color: #0d4f5f;
+        }
+
+    .btn-deliver {
+        padding: 0.4rem 0.8rem;
+        background: linear-gradient(90deg, #0d4f5f, #38a3a5);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+        .btn-deliver:hover {
+            background: linear-gradient(90deg, #38a3a5, #0d4f5f);
+            transform: scale(1.05);
+        }
+
+    .badge.delivered {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        background: #d1f0ff;
+        color: #0d4f5f;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @@media (max-width: 900px) {
+        .orders-table th, .orders-table td
+
+    {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    }
+</style>
